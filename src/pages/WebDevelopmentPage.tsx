@@ -426,7 +426,10 @@ export function WebDevelopmentPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <p className="text-[14px] font-semibold text-[#059669] mb-3">
+            <p
+              className="text-[14px] font-semibold text-[#059669] mb-3"
+              style={{ fontFamily: "'Clash Display', sans-serif" }}
+            >
               {t.solution.label}
             </p>
             <h2 className="text-[32px] md:text-[36px] font-bold text-[#0E1116] mb-4">
@@ -481,7 +484,10 @@ export function WebDevelopmentPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-20"
           >
-            <p className="text-[14px] font-semibold text-[#059669] mb-3">
+            <p
+              className="text-[14px] font-semibold text-[#059669] mb-3"
+              style={{ fontFamily: "'Clash Display', sans-serif" }}
+            >
               {t.beforeAfter.label}
             </p>
             <h2 className="text-[32px] md:text-[40px] font-bold text-[#0E1116] mb-4">
@@ -574,7 +580,10 @@ export function WebDevelopmentPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-20"
           >
-            <p className="text-[14px] font-semibold text-[#059669] mb-3">
+            <p
+              className="text-[14px] font-semibold text-[#059669] mb-3"
+              style={{ fontFamily: "'Clash Display', sans-serif" }}
+            >
               {t.whyUs.label}
             </p>
             <h2 className="text-[32px] md:text-[40px] font-bold text-[#0E1116] mb-4">
@@ -626,7 +635,10 @@ export function WebDevelopmentPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <p className="text-[14px] font-semibold text-[#059669] mb-3">
+            <p
+              className="text-[14px] font-semibold text-[#059669] mb-3"
+              style={{ fontFamily: "'Clash Display', sans-serif" }}
+            >
               {t.deliverables.label}
             </p>
             <h2 className="text-[32px] md:text-[36px] font-bold text-[#0E1116] mb-4">
