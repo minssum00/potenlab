@@ -22,6 +22,9 @@ import { PartnerTestPage } from './pages/PartnerTestPage';
 import { PotenBoosterPage } from './pages/PotenBoosterPage';
 import { CustomProductPage } from './pages/CustomProductPage';
 import { ITConsultingDetailPage } from './pages/ITConsultingDetailPage';
+import { UXUIDesignPage } from './pages/UXUIDesignPage';
+import { WebDevelopmentPage } from './pages/WebDevelopmentPage';
+import { OtherServicesPage } from './pages/OtherServicesPage';
 import { PotenLampPage } from './pages/PotenLampPage';
 import { AdminLogin } from './components/admin/AdminLogin';
 import { AdminLayout } from './components/admin/AdminLayout';
@@ -177,6 +180,9 @@ function AppContent() {
     case "poten-booster": return <PotenBoosterPage />;
     case "custom-product": return <CustomProductPage />;
     case "consulting": return <ITConsultingDetailPage />;
+    case "uxui-design": return <UXUIDesignPage />;
+    case "web-development": return <WebDevelopmentPage />;
+    case "other-services": return <OtherServicesPage />;
     case "poten-lamp": return <PotenLampPage />;
     case "admin":
       if (isAdminAuthenticated) return null;

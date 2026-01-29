@@ -13,7 +13,7 @@ export function Header() {
   const { language, setLanguage, t } = useLanguage();
   const { navigate, setSelectedServiceId } = useRouter();
 
-  const handleNavigate = (page: 'home' | 'services' | 'portfolio' | 'contents' | 'lecture' | 'about' | 'partner' | 'partner3' | 'poten-booster' | 'custom-product' | 'consulting') => {
+  const handleNavigate = (page: 'home' | 'services' | 'portfolio' | 'contents' | 'lecture' | 'about' | 'partner' | 'partner3' | 'poten-booster' | 'custom-product' | 'consulting' | 'other-services') => {
     navigate(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setMobileMenuOpen(false);
@@ -87,19 +87,13 @@ export function Header() {
                     onClick={() => handleNavigate('custom-product')}
                     className="w-full text-left px-4 py-3 text-[14px] font-medium text-[#64748b] hover:text-[#0E1116] hover:bg-[#F8FAFC] transition-all duration-200"
                   >
-                    {language === 'ko' ? '커스텀 프로덕트 개발' : 'Custom Product Development'}
+                    {language === 'ko' ? '커스텀 프로젝트 개발' : 'Custom Project Development'}
                   </button>
                   <button
-                    onClick={() => handleNavigate('consulting')}
+                    onClick={() => handleNavigate('other-services')}
                     className="w-full text-left px-4 py-3 text-[14px] font-medium text-[#64748b] hover:text-[#0E1116] hover:bg-[#F8FAFC] transition-all duration-200"
                   >
-                    {language === 'ko' ? 'IT/Biz 기술 컨설팅' : 'IT/Biz Strategic Consulting'}
-                  </button>
-                  <button
-                    onClick={() => handleNavigate('services')}
-                    className="w-full text-left px-4 py-3 text-[14px] font-medium text-[#64748b] hover:text-[#0E1116] hover:bg-[#F8FAFC] transition-all duration-200"
-                  >
-                    {language === 'ko' ? '서비스 의뢰' : 'Request Service'}
+                    {language === 'ko' ? '기타 문의' : 'Other Services'}
                   </button>
                 </motion.div>
               )}

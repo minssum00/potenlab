@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 import { projectId } from '../utils/supabase/info';
 
-type Page = 'home' | 'services' | 'portfolio' | 'contents' | 'lecture' | 'resources' | 'about' | 'partner' | 'partner-test' | 'test3' | 'service' | 'portfolio-detail' | 'article-detail' | 'mvp-detail' | 'uxui-detail' | 'webapp-detail' | 'rnd-detail' | 'style-guide' | 'contact' | 'poten-booster' | 'custom-product' | 'consulting' | 'poten-lamp' | 'admin' | 'admin-dashboard' | 'admin-inquiries' | 'admin-portfolio' | 'admin-article' | 'admin-article-form' | 'admin-seo' | 'admin-seo-global' | 'admin-seo-detail' | 'admin-courses' | 'admin-og-image' | 'naver-verification' | 'robots-txt' | 'sitemap-xml';
+type Page = 'home' | 'services' | 'portfolio' | 'contents' | 'lecture' | 'resources' | 'about' | 'partner' | 'partner-test' | 'test3' | 'service' | 'portfolio-detail' | 'article-detail' | 'mvp-detail' | 'uxui-detail' | 'webapp-detail' | 'rnd-detail' | 'style-guide' | 'contact' | 'poten-booster' | 'custom-product' | 'consulting' | 'uxui-design' | 'web-development' | 'other-services' | 'poten-lamp' | 'admin' | 'admin-dashboard' | 'admin-inquiries' | 'admin-portfolio' | 'admin-article' | 'admin-article-form' | 'admin-seo' | 'admin-seo-global' | 'admin-seo-detail' | 'admin-courses' | 'admin-og-image' | 'naver-verification' | 'robots-txt' | 'sitemap-xml';
 
 interface RouterContextType {
   currentPage: Page;
@@ -93,6 +93,12 @@ export function RouterProvider({ children }: { children: ReactNode }) {
         setCurrentPage('custom-product');
       } else if (path === '/consulting') {
         setCurrentPage('consulting');
+      } else if (path === '/uxui-design') {
+        setCurrentPage('uxui-design');
+      } else if (path === '/web-development') {
+        setCurrentPage('web-development');
+      } else if (path === '/other-services') {
+        setCurrentPage('other-services');
       } else if (path === '/poten-lamp') {
         setCurrentPage('poten-lamp');
       } else if (path.startsWith('/potenlab/')) {
@@ -189,6 +195,9 @@ export function RouterProvider({ children }: { children: ReactNode }) {
       else if (page === 'poten-booster') url = '/poten-booster';
       else if (page === 'custom-product') url = '/custom-product';
       else if (page === 'consulting') url = '/consulting';
+      else if (page === 'uxui-design') url = '/uxui-design';
+      else if (page === 'web-development') url = '/web-development';
+      else if (page === 'other-services') url = '/other-services';
       else if (page === 'poten-lamp') url = '/poten-lamp';
       else if (page === 'portfolio-detail' && (portfolioId || selectedPortfolioId)) {
         url = `/potenlab/${portfolioId || selectedPortfolioId}`;
