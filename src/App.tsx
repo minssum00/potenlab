@@ -25,6 +25,7 @@ import { ITConsultingDetailPage } from './pages/ITConsultingDetailPage';
 import { UXUIDesignPage } from './pages/UXUIDesignPage';
 import { WebDevelopmentPage } from './pages/WebDevelopmentPage';
 import { OtherServicesPage } from './pages/OtherServicesPage';
+import { BusinessPlanPage } from './pages/BusinessPlanPage';
 import { PotenLampPage } from './pages/PotenLampPage';
 import { AdminLogin } from './components/admin/AdminLogin';
 import { AdminLayout } from './components/admin/AdminLayout';
@@ -183,6 +184,7 @@ function AppContent() {
     case "uxui-design": return <UXUIDesignPage />;
     case "web-development": return <WebDevelopmentPage />;
     case "other-services": return <OtherServicesPage />;
+    case "business-plan": return <BusinessPlanPage />;
     case "poten-lamp": return <PotenLampPage />;
     case "admin":
       if (isAdminAuthenticated) return null;

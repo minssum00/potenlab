@@ -13,7 +13,7 @@ export function Header() {
   const { language, setLanguage, t } = useLanguage();
   const { navigate, setSelectedServiceId } = useRouter();
 
-  const handleNavigate = (page: 'home' | 'services' | 'portfolio' | 'contents' | 'lecture' | 'about' | 'partner' | 'partner3' | 'poten-booster' | 'custom-product' | 'consulting' | 'other-services') => {
+  const handleNavigate = (page: 'home' | 'services' | 'portfolio' | 'contents' | 'lecture' | 'about' | 'partner' | 'partner3' | 'poten-booster' | 'custom-product' | 'consulting' | 'other-services' | 'business-plan') => {
     navigate(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setMobileMenuOpen(false);
@@ -140,11 +140,17 @@ export function Header() {
                   >
                     {t('header.courses')}
                   </button>
+                  <button
+                    onClick={() => handleNavigate('business-plan')}
+                    className="w-full text-left px-4 py-3 text-[14px] font-medium text-[#64748b] hover:text-[#0E1116] hover:bg-[#F8FAFC] transition-all duration-200"
+                  >
+                    {language === 'ko' ? '사업계획서 작성' : 'Business Plan'}
+                  </button>
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
-          
+
           {/* Language Toggle */}
           <button
             onClick={() => setLanguage(language === 'ko' ? 'en' : 'ko')}
@@ -221,8 +227,14 @@ export function Header() {
               >
                 {t('header.courses')}
               </button>
+              <button
+                onClick={() => handleNavigate('business-plan')}
+                className="block w-full text-left h-[40px] px-4 ml-4 text-[14px] font-medium text-[#64748b] hover:text-[#0E1116] hover:bg-[#F8FAFC] rounded-[24px] transition-all"
+              >
+                {language === 'ko' ? '사업계획서 작성' : 'Business Plan'}
+              </button>
             </div>
-            
+
             {/* Mobile Language Toggle */}
             <button
               onClick={() => setLanguage(language === 'ko' ? 'en' : 'ko')}
