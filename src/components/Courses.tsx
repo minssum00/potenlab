@@ -120,46 +120,43 @@ export function Courses({ activeTab }: CoursesProps) {
                         window.open(course.url, '_blank', 'noopener,noreferrer');
                       }
                     }}
-                    className="bg-white rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300 cursor-pointer group"
+                    className="bg-white rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg hover:border-[#0079FF]/30 transition-all duration-300 cursor-pointer group"
                   >
-                    {/* Thumbnail with Overlay Title */}
-                    <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
-                      <img 
-                        src={course.thumbnail} 
+                    {/* Thumbnail - Clean without text overlay */}
+                    <div className="relative aspect-[16/10] overflow-hidden bg-gray-100">
+                      <img
+                        src={course.thumbnail}
                         alt={language === 'ko' ? course.title_ko : course.title_en}
-                        className="w-full h-full object-cover brightness-75 group-hover:scale-105 transition-transform duration-300"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                       {/* Category Tag */}
                       <div className="absolute top-3 left-3">
-                        <span className="px-2.5 py-1 bg-primary text-white text-xs rounded">
+                        <span className="px-3 py-1.5 bg-[#0079FF] text-white text-xs font-medium rounded-full shadow-sm">
                           {language === 'ko' ? course.categoryTag_ko : course.categoryTag_en}
                         </span>
                       </div>
-                      {/* Title Overlay */}
-                      <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
-                        <h4 className="text-white text-base mb-1 line-clamp-2">
-                          {language === 'ko' ? course.title_ko : course.title_en}
-                        </h4>
-                        <p className="text-white/80 text-xs">
-                          {language === 'ko' ? course.categoryTag_ko : course.categoryTag_en}
-                        </p>
-                      </div>
                     </div>
 
-                    {/* Content */}
-                    <div className="p-4">
-                      <p className="text-sm text-gray-600 mb-3 line-clamp-2 min-h-[40px]">
+                    {/* Content - Title moved here for better readability */}
+                    <div className="p-5">
+                      {/* Title */}
+                      <h4 className="text-[16px] font-bold text-[#0E1116] mb-2 line-clamp-2 group-hover:text-[#0079FF] transition-colors">
+                        {language === 'ko' ? course.title_ko : course.title_en}
+                      </h4>
+
+                      {/* Description */}
+                      <p className="text-[14px] text-[#666666] mb-4 line-clamp-2 leading-relaxed">
                         {language === 'ko' ? course.description_ko : course.description_en}
                       </p>
 
                       {/* Price & Rating */}
-                      <div className="flex items-center justify-between border-t border-gray-100 pt-3">
-                        <p className="text-lg font-medium">
-                          ₩ {course.price.toLocaleString()}
+                      <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                        <p className="text-[18px] font-bold text-[#0079FF]">
+                          ₩{course.price.toLocaleString()}
                         </p>
-                        <div className="flex items-center gap-1 text-sm text-gray-500">
+                        <div className="flex items-center gap-1.5 text-[14px] text-[#666666]">
                           <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                          <span>{course.rating.toFixed(1)}</span>
+                          <span className="font-medium">{course.rating.toFixed(1)}</span>
                         </div>
                       </div>
                     </div>

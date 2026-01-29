@@ -138,6 +138,9 @@ export function RouterProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const navigate = (page: Page, serviceId?: string | null, portfolioId?: string | null, params?: Record<string, any>) => {
+    if (page === 'article-detail' && params?.articleId) {
+      setSelectedArticleId(params.articleId);
+    }
     setCurrentPage(page);
     
     if (params) {
@@ -190,8 +193,8 @@ export function RouterProvider({ children }: { children: ReactNode }) {
       else if (page === 'portfolio-detail' && (portfolioId || selectedPortfolioId)) {
         url = `/potenlab/${portfolioId || selectedPortfolioId}`;
       }
-      else if (page === 'article-detail' && selectedArticleId) {
-        url = `/article/${selectedArticleId}`;
+      else if (page === 'article-detail' && (params?.articleId || selectedArticleId)) {
+        url = `/article/${params?.articleId || selectedArticleId}`;
       }
       
       window.history.pushState({}, '', url);

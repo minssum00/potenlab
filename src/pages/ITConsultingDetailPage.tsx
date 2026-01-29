@@ -1,663 +1,718 @@
-import { motion } from "motion/react";
+import React from "react";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import { motion } from "motion/react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { useRouter } from "../contexts/RouterContext";
-import { ChevronLeft, Target, Users, TrendingUp, CheckCircle2 } from "lucide-react";
+import {
+  CheckCircle,
+  AlertCircle,
+  TrendingUp,
+  XCircle,
+  Shield,
+  Target,
+  Award,
+  Lightbulb,
+  BarChart3,
+  FileText,
+  Users,
+} from "lucide-react";
 
 export function ITConsultingDetailPage() {
   const { language } = useLanguage();
   const { navigate } = useRouter();
 
-  const handleBack = () => {
-    navigate("services");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  const content = {
+    ko: {
+      hero: {
+        label: "IT/Biz 컨설팅",
+        title: "IT 프로젝트, 어디서부터",
+        titleHighlight: "시작해야 할지 막막하신가요?",
+        description:
+          "비용, 기간, 기술 스택까지\n전문가가 명확한 방향을 제시해드립니다.",
+        cta: "무료 상담 신청하기",
+      },
+      problem: {
+        title:
+          "아이디어는 있는데, 어떻게 실현해야 할지\n막막한 상황이신가요?",
+        checks: [
+          "IT 프로젝트를 시작하고 싶은데 어디서부터 시작해야 할지 모르겠어요.",
+          "기존 시스템을 개선하고 싶은데 비용과 기간이 얼마나 들지 궁금해요.",
+          "디지털 전환 전략을 세우고 싶은데 전문가의 조언이 필요해요.",
+        ],
+      },
+      solution: {
+        label: "Process",
+        title: "체계적인 4단계 컨설팅",
+        description:
+          "현황 분석부터 실행 계획까지, 검증된 프로세스로 최적의 IT 전략을 수립합니다.",
+        steps: [
+          {
+            icon: "Target",
+            title: "현황 분석",
+            description:
+              "비즈니스 목표 파악, 기존 시스템 분석, 시장 벤치마킹",
+          },
+          {
+            icon: "Lightbulb",
+            title: "전략 수립",
+            description:
+              "IT 전략 및 로드맵 설계, 기술 스택 제안, 비용/일정 추정",
+          },
+          {
+            icon: "FileText",
+            title: "실행 계획",
+            description:
+              "단계별 실행 방안, 리스크 관리 전략, 팀 구성 및 역할 정의",
+          },
+          {
+            icon: "BarChart3",
+            title: "지속 지원",
+            description:
+              "프로젝트 모니터링, 정기 피드백, 추가 컨설팅 및 자문",
+          },
+        ],
+      },
+      beforeAfter: {
+        label: "Impact",
+        title: "컨설팅 전후 차이",
+        description:
+          "명확한 방향성과 실행 가능한 로드맵으로 프로젝트 성공률을 높입니다.",
+        before: {
+          title: "Before",
+          subtitle: "막연한 계획과 불확실한 방향",
+          items: [
+            {
+              label: "비용 불확실성",
+              description:
+                "개발 비용이 얼마나 들지 감이 안 잡혀 예산 수립이 어렵습니다.",
+            },
+            {
+              label: "기술 선택 어려움",
+              description:
+                "어떤 기술 스택이 적합한지, 외주를 맡겨야 할지 판단이 어렵습니다.",
+            },
+            {
+              label: "일정 예측 불가",
+              description:
+                "프로젝트가 얼마나 걸릴지 몰라 사업 계획 수립이 힘듭니다.",
+            },
+          ],
+        },
+        after: {
+          title: "After",
+          subtitle: "명확한 로드맵과 실행 가능한 계획",
+          items: [
+            {
+              label: "정확한 예산 수립",
+              description:
+                "상세한 견적과 단계별 비용 분석으로 예산을 명확히 계획합니다.",
+            },
+            {
+              label: "최적의 기술 제안",
+              description:
+                "비즈니스 목표에 맞는 기술 스택과 아키텍처를 제안받습니다.",
+            },
+            {
+              label: "현실적인 일정표",
+              description:
+                "마일스톤 기반의 상세 일정으로 프로젝트를 예측 가능하게 관리합니다.",
+            },
+          ],
+        },
+      },
+      whyUs: {
+        label: "Why Us",
+        title: "포텐랩 컨설팅의 차별점",
+        description:
+          "다년간의 IT 프로젝트 경험을 바탕으로 실질적인 조언을 제공합니다.",
+        points: [
+          {
+            icon: "Shield",
+            title: "실전 경험 기반",
+            description:
+              "이론이 아닌 실제 프로젝트 경험\n\n다양한 산업군의 IT 프로젝트를 직접 수행한 경험을 바탕으로 현실적이고 실행 가능한 조언을 제공합니다.",
+          },
+          {
+            icon: "Target",
+            title: "비용 효율 극대화",
+            description:
+              "불필요한 비용 최소화\n\n과도한 기능이나 불필요한 기술 도입을 막고, 비즈니스 목표 달성에 필요한 핵심 요소에 집중합니다.",
+          },
+          {
+            icon: "Award",
+            title: "원스톱 서비스",
+            description:
+              "컨설팅부터 개발까지\n\n컨설팅에서 끝나지 않고, 필요시 개발과 운영까지 일관된 품질로 지원하여 프로젝트의 연속성을 보장합니다.",
+          },
+        ],
+      },
+      deliverables: {
+        label: "Deliverables",
+        title: "컨설팅 결과물",
+        description: "명확하고 실행 가능한 산출물을 제공합니다.",
+        items: [
+          {
+            title: "IT 전략 보고서",
+            description: "현황 분석, 전략 방향, 실행 로드맵을 담은 종합 보고서",
+          },
+          {
+            title: "기술 스택 제안서",
+            description: "비즈니스에 최적화된 기술 스택 및 아키텍처 설계안",
+          },
+          {
+            title: "비용/일정 견적서",
+            description: "단계별 상세 비용 분석과 마일스톤 기반 일정표",
+          },
+          {
+            title: "리스크 관리 계획",
+            description: "예상 리스크 및 대응 방안, 의사결정 기준 가이드",
+          },
+        ],
+      },
+      cta: {
+        title: "IT 프로젝트의 방향이\n명확해지는 순간을 경험하세요.",
+        button: "무료 상담 신청하기",
+      },
+    },
+    en: {
+      hero: {
+        label: "IT/Biz Consulting",
+        title: "Starting an IT Project,",
+        titleHighlight: "But Not Sure Where to Begin?",
+        description:
+          "From costs and timelines to tech stacks,\nexperts will provide clear direction.",
+        cta: "Request Free Consultation",
+      },
+      problem: {
+        title:
+          "You have ideas, but not sure\nhow to make them reality?",
+        checks: [
+          "I want to start an IT project but don't know where to begin.",
+          "I want to improve our existing system but need cost and timeline estimates.",
+          "I need expert advice to develop a digital transformation strategy.",
+        ],
+      },
+      solution: {
+        label: "Process",
+        title: "Systematic 4-Step Consulting",
+        description:
+          "From current state analysis to execution planning, we establish optimal IT strategies through proven processes.",
+        steps: [
+          {
+            icon: "Target",
+            title: "Current Analysis",
+            description:
+              "Business goal identification, system analysis, market benchmarking",
+          },
+          {
+            icon: "Lightbulb",
+            title: "Strategy Development",
+            description:
+              "IT strategy & roadmap design, tech stack proposal, cost/timeline estimation",
+          },
+          {
+            icon: "FileText",
+            title: "Execution Planning",
+            description:
+              "Phased execution plan, risk management strategy, team composition",
+          },
+          {
+            icon: "BarChart3",
+            title: "Ongoing Support",
+            description:
+              "Project monitoring, regular feedback, additional consulting",
+          },
+        ],
+      },
+      beforeAfter: {
+        label: "Impact",
+        title: "Before & After Consulting",
+        description:
+          "Clear direction and actionable roadmaps increase project success rates.",
+        before: {
+          title: "Before",
+          subtitle: "Vague Plans and Uncertain Direction",
+          items: [
+            {
+              label: "Cost Uncertainty",
+              description:
+                "Difficult to establish a budget without knowing development costs.",
+            },
+            {
+              label: "Tech Choice Difficulty",
+              description:
+                "Hard to judge which tech stack is suitable or whether to outsource.",
+            },
+            {
+              label: "Unpredictable Timeline",
+              description:
+                "Business planning is difficult without knowing project duration.",
+            },
+          ],
+        },
+        after: {
+          title: "After",
+          subtitle: "Clear Roadmap and Actionable Plan",
+          items: [
+            {
+              label: "Accurate Budgeting",
+              description:
+                "Plan budgets clearly with detailed estimates and phased cost analysis.",
+            },
+            {
+              label: "Optimal Tech Proposal",
+              description:
+                "Receive tech stack and architecture proposals aligned with business goals.",
+            },
+            {
+              label: "Realistic Timeline",
+              description:
+                "Manage projects predictably with milestone-based detailed schedules.",
+            },
+          ],
+        },
+      },
+      whyUs: {
+        label: "Why Us",
+        title: "What Sets Potenlab Apart",
+        description:
+          "We provide practical advice based on years of IT project experience.",
+        points: [
+          {
+            icon: "Shield",
+            title: "Experience-Based",
+            description:
+              "Not Theory, Real Project Experience\n\nWe provide realistic, actionable advice based on hands-on experience in IT projects across various industries.",
+          },
+          {
+            icon: "Target",
+            title: "Cost Efficiency",
+            description:
+              "Minimize Unnecessary Costs\n\nWe prevent excessive features and unnecessary technology adoption, focusing on core elements needed to achieve business goals.",
+          },
+          {
+            icon: "Award",
+            title: "One-Stop Service",
+            description:
+              "From Consulting to Development\n\nWe don't stop at consulting. When needed, we support development and operations with consistent quality, ensuring project continuity.",
+          },
+        ],
+      },
+      deliverables: {
+        label: "Deliverables",
+        title: "Consulting Deliverables",
+        description: "We provide clear and actionable outputs.",
+        items: [
+          {
+            title: "IT Strategy Report",
+            description: "Comprehensive report with current analysis, strategic direction, and execution roadmap",
+          },
+          {
+            title: "Tech Stack Proposal",
+            description: "Optimized tech stack and architecture design for your business",
+          },
+          {
+            title: "Cost/Timeline Estimate",
+            description: "Detailed phased cost analysis and milestone-based schedule",
+          },
+          {
+            title: "Risk Management Plan",
+            description: "Expected risks, response strategies, and decision-making guidelines",
+          },
+        ],
+      },
+      cta: {
+        title: "Experience the moment when\nyour IT project direction becomes clear.",
+        button: "Request Free Consultation",
+      },
+    },
   };
 
-  const handleContact = () => {
-    navigate("contact");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  const t = content[language as keyof typeof content];
+
+  const iconMap = {
+    Shield: Shield,
+    Target: Target,
+    Award: Award,
+    Lightbulb: Lightbulb,
+    BarChart3: BarChart3,
+    FileText: FileText,
+    Users: Users,
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white flex flex-col">
       <Header />
 
-      <main className="pt-[72px]">
-        {/* Hero Section */}
-        <section className="py-12 px-4 sm:px-8 xl:px-[62px] bg-gradient-to-br from-[#226BEF] to-[#1B54C0]">
-          <div className="max-w-[1156px] mx-auto">
-            {/* Back Button */}
-            <motion.button
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              onClick={handleBack}
-              className="flex items-center gap-2 text-white/80 hover:text-white mb-6 transition-colors"
-            >
-              <ChevronLeft className="w-5 h-5" />
-              <span className="text-sm">
-                {language === "ko"
-                  ? "서비스 목록으로"
-                  : "Back to Services"}
+      {/* Hero Section */}
+      <section className="pt-[120px] pb-32 px-8 bg-gradient-to-b from-[#E6F3FF] via-[#F5F9FF] to-white">
+        <div className="max-w-[1156px] mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center"
+          >
+            <div className="mb-4">
+              <span className="inline-block text-[#0079FF] px-4 py-1.5 rounded-full text-[14px] font-semibold border border-[#0079FF]/20 bg-white/50">
+                💼 {t.hero.label}
               </span>
-            </motion.button>
-
-            {/* Hero Content */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-white"
+            </div>
+            <h1 className="md:text-[48px] font-bold mb-2 text-[#0E1116] text-[40px] m-[0px]">
+              {t.hero.title}
+            </h1>
+            <h2 className="text-[32px] md:text-[40px] font-bold mb-6 text-[#0079FF]">
+              {t.hero.titleHighlight}
+            </h2>
+            <p className="text-[16px] md:text-[18px] leading-relaxed mb-10 text-[#666666] max-w-[700px] mx-auto whitespace-pre-line">
+              {t.hero.description}
+            </p>
+            <button
+              onClick={() => navigate("contact")}
+              className="bg-[#0079FF] text-white px-8 h-12 rounded-xl hover:bg-[#0066DD] transition-colors font-semibold text-[16px] inline-flex items-center gap-2 shadow-lg hover:shadow-xl"
             >
-              <div className="mb-3">
-                <span className="inline-block bg-white/20 text-white px-4 py-2 rounded-full text-sm font-semibold">
-                  {language === "ko"
-                    ? "IT/Biz 기술 컨설팅"
-                    : "IT/Biz Strategic Consulting"}
-                </span>
+              {t.hero.cta}
+            </button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Problem Section */}
+      <section className="py-20 px-8 bg-white">
+        <div className="max-w-[1156px] mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-[28px] md:text-[32px] font-bold mb-12 text-center leading-relaxed whitespace-pre-line text-[#0E1116]">
+              {t.problem.title}
+            </h2>
+            <div className="space-y-4 max-w-[900px] mx-auto">
+              {t.problem.checks.map((check, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.6,
+                    delay: idx * 0.1,
+                  }}
+                  className="bg-[#E6F3FF] p-6 rounded-xl border border-[#B3D9FF]"
+                >
+                  <div className="flex items-start gap-4">
+                    <AlertCircle className="w-5 h-5 text-[#0079FF] flex-shrink-0 mt-0.5" />
+                    <p className="text-[15px] leading-relaxed text-[#424242]">
+                      {check}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Solution Process */}
+      <section className="py-32 px-8 bg-[#F8F9FA]">
+        <div className="max-w-[1156px] mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <p
+              className="text-[14px] font-semibold text-[#0079FF] mb-3"
+              style={{
+                fontFamily: "'Clash Display', sans-serif",
+              }}
+            >
+              {t.solution.label}
+            </p>
+            <h2 className="text-[32px] md:text-[36px] font-bold text-[#0E1116] mb-4">
+              {t.solution.title}
+            </h2>
+            <p className="text-[15px] text-[#666666] max-w-[600px] mx-auto">
+              {t.solution.description}
+            </p>
+          </motion.div>
+
+          {/* Process Cards */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {t.solution.steps.map((step, idx) => {
+              const Icon = iconMap[step.icon as keyof typeof iconMap];
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.6,
+                    delay: idx * 0.1,
+                  }}
+                  className="bg-white p-6 rounded-xl border border-[#E5E5E5] hover:border-[#0079FF]/30 transition-all"
+                >
+                  <div className="w-12 h-12 bg-[#E6F3FF] rounded-xl flex items-center justify-center mb-4">
+                    <Icon className="w-6 h-6 text-[#0079FF]" />
+                  </div>
+                  <div className="text-[13px] font-semibold text-[#0079FF] mb-2">
+                    Step {idx + 1}
+                  </div>
+                  <h3 className="text-[18px] font-bold mb-2 text-[#0E1116]">
+                    {step.title}
+                  </h3>
+                  <p className="text-[14px] text-[#666666] leading-relaxed">
+                    {step.description}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Before/After Section */}
+      <section className="py-32 px-8 bg-white">
+        <div className="max-w-[1156px] mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-20"
+          >
+            <p
+              className="text-[14px] font-semibold text-[#0079FF] mb-3"
+              style={{
+                fontFamily: "'Clash Display', sans-serif",
+              }}
+            >
+              {t.beforeAfter.label}
+            </p>
+            <h2 className="text-[32px] md:text-[40px] font-bold text-[#0E1116] mb-4">
+              {t.beforeAfter.title}
+            </h2>
+            <p className="text-[15px] text-[#666666] max-w-[600px] mx-auto">
+              {t.beforeAfter.description}
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Before */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-[#F8F9FA] p-8 rounded-xl"
+            >
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-16 h-16 bg-[#FFE5E5] rounded-xl flex items-center justify-center">
+                  <XCircle className="w-8 h-8 text-[#FF6B6B]" />
+                </div>
+                <div>
+                  <h3 className="text-[20px] font-bold text-[#0E1116] mb-1">
+                    {t.beforeAfter.before.title}
+                  </h3>
+                  <p className="text-[14px] text-[#666666]">
+                    {t.beforeAfter.before.subtitle}
+                  </p>
+                </div>
               </div>
-              <h1 className="text-[48px] font-bold mb-3">
-                {language === "ko"
-                  ? "성공적인 IT 전환을 위한\n전략적 컨설팅"
-                  : "Strategic Consulting\nfor Successful IT Transformation"}
-              </h1>
-              <p className="text-[18px] text-white/90 mb-5 max-w-[700px]">
-                {language === "ko"
-                  ? "비즈니스 목표에 맞는 최적의 IT 전략을 수립하고, 실행 가능한 로드맵을 제시합니다."
-                  : "Establish optimal IT strategies aligned with business goals and provide actionable roadmaps."}
-              </p>
-              <div className="flex flex-wrap gap-4 text-sm">
-                <div className="bg-white/20 px-4 py-2 rounded-lg">
-                  <span className="font-semibold">
-                    {language === "ko" ? "기간" : "Duration"}
-                    :{" "}
-                  </span>
-                  <span>
-                    {language === "ko"
-                      ? "2주 ~ 1개월"
-                      : "2 weeks ~ 1 month"}
-                  </span>
+              <div className="space-y-6">
+                {t.beforeAfter.before.items.map((item, idx) => (
+                  <div key={idx}>
+                    <p className="text-[14px] font-semibold text-[#FF6B6B] mb-2">
+                      {item.label}
+                    </p>
+                    <p className="text-[14px] text-[#666666] leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* After */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-[#F8F9FA] p-8 rounded-xl"
+            >
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-16 h-16 bg-[#E6F3FF] rounded-xl flex items-center justify-center">
+                  <TrendingUp className="w-8 h-8 text-[#0079FF]" />
                 </div>
-                <div className="bg-white/20 px-4 py-2 rounded-lg">
-                  <span className="font-semibold">
-                    {language === "ko" ? "비용" : "Cost"}:{" "}
-                  </span>
-                  <span>
-                    {language === "ko"
-                      ? "프로젝트별 상담"
-                      : "Project-based consultation"}
-                  </span>
+                <div>
+                  <h3 className="text-[20px] font-bold text-[#0E1116] mb-1">
+                    {t.beforeAfter.after.title}
+                  </h3>
+                  <p className="text-[14px] text-[#666666]">
+                    {t.beforeAfter.after.subtitle}
+                  </p>
                 </div>
-                <div className="bg-white/20 px-4 py-2 rounded-lg">
-                  <span className="font-semibold">
-                    {language === "ko"
-                      ? "결과물"
-                      : "Deliverable"}
-                    :{" "}
-                  </span>
-                  <span>
-                    {language === "ko"
-                      ? "IT 전략 보고서"
-                      : "IT Strategy Report"}
-                  </span>
-                </div>
+              </div>
+              <div className="space-y-6">
+                {t.beforeAfter.after.items.map((item, idx) => (
+                  <div key={idx}>
+                    <p className="text-[14px] font-semibold text-[#0079FF] mb-2">
+                      {item.label}
+                    </p>
+                    <p className="text-[14px] text-[#666666] leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
               </div>
             </motion.div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Who Needs This */}
-        <section className="py-24 px-4 sm:px-8 xl:px-[62px] bg-gradient-to-br from-[#E6F3FF] to-[#F0F0F5] relative overflow-hidden">
-          <div className="max-w-[1156px] mx-auto relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-16"
+      {/* Why Us Section */}
+      <section className="py-32 px-8 bg-[#F8F9FA]">
+        <div className="max-w-[1156px] mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-20"
+          >
+            <p
+              className="text-[14px] font-semibold text-[#0079FF] mb-3"
+              style={{
+                fontFamily: "'Clash Display', sans-serif",
+              }}
             >
-              <h2 className="mb-0">
-                {language === "ko"
-                  ? "이런 분들에게 필요해요!"
-                  : "Perfect for These People!"}
-              </h2>
-            </motion.div>
+              {t.whyUs.label}
+            </p>
+            <h2 className="text-[32px] md:text-[40px] font-bold text-[#0E1116] mb-4">
+              {t.whyUs.title}
+            </h2>
+            <p className="text-[15px] text-[#666666] max-w-[600px] mx-auto">
+              {t.whyUs.description}
+            </p>
+          </motion.div>
 
-            {/* Cards - Vertical Stack */}
-            <div className="flex flex-col gap-5 items-center max-w-[800px] mx-auto">
-              {/* Card 1 */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="bg-white rounded-full px-10 py-5 shadow-[0px_0px_20px_0px_rgba(34,107,239,0.15)] border border-[#e3e3e3] w-full"
-              >
-                <p className="text-center leading-[1.7] text-black m-0">
-                  {language === "ko" ? (
-                    <>
-                      <span className="block mb-0">
-                        "IT 프로젝트를 시작하고 싶은데 어디서부터 시작해야 할지 모르겠어요."
-                      </span>
-                      <span className="block">
-                        IT 전환이 필요한{" "}
-                        <span className="text-[#226BEF]">
-                          스타트업 대표 및 사업 기획자
-                        </span>
-                      </span>
-                    </>
-                  ) : (
-                    <>
-                      <span className="block mb-0">
-                        "I want to start an IT project but don't know where to begin."
-                      </span>
-                      <span className="block">
-                        <span className="text-[#226BEF]">
-                          Startup CEOs & Business Planners
-                        </span>{" "}
-                        who need IT transformation
-                      </span>
-                    </>
-                  )}
-                </p>
-              </motion.div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {t.whyUs.points.map((point, idx) => {
+              const Icon = iconMap[point.icon as keyof typeof iconMap];
 
-              {/* Card 2 */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="bg-white rounded-full px-10 py-5 shadow-[0px_0px_20px_0px_rgba(34,107,239,0.15)] border border-[#e3e3e3] w-full"
-              >
-                <p className="text-center leading-[1.7] text-black m-0">
-                  {language === "ko" ? (
-                    <>
-                      <span className="block mb-0">
-                        "기존 시스템을 개선하고 싶은데 비용과 기간이 얼마나 들지 궁금해요."
-                      </span>
-                      <span className="block">
-                        시스템 개선이 필요한{" "}
-                        <span className="text-[#226BEF]">
-                          중소기업 및 서비스 운영자
-                        </span>
-                      </span>
-                    </>
-                  ) : (
-                    <>
-                      <span className="block mb-0">
-                        "I want to improve our existing system but need cost and timeline estimates."
-                      </span>
-                      <span className="block">
-                        <span className="text-[#226BEF]">
-                          SMEs & Service Operators
-                        </span>{" "}
-                        who need system improvements
-                      </span>
-                    </>
-                  )}
-                </p>
-              </motion.div>
-
-              {/* Card 3 */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="bg-white rounded-full px-10 py-5 shadow-[0px_0px_20px_0px_rgba(34,107,239,0.15)] border border-[#e3e3e3] w-full"
-              >
-                <p className="text-center leading-[1.7] text-black m-0">
-                  {language === "ko" ? (
-                    <>
-                      <span className="block mb-0">
-                        "디지털 전환 전략을 세우고 싶은데 전문가의 조언이 필요해요."
-                      </span>
-                      <span className="block">
-                        디지털 혁신이 필요한{" "}
-                        <span className="text-[#226BEF]">
-                          기업 임원 및 의사결정자
-                        </span>
-                      </span>
-                    </>
-                  ) : (
-                    <>
-                      <span className="block mb-0">
-                        "I need expert advice to develop a digital transformation strategy."
-                      </span>
-                      <span className="block">
-                        <span className="text-[#226BEF]">
-                          Corporate Executives & Decision Makers
-                        </span>{" "}
-                        who need digital innovation
-                      </span>
-                    </>
-                  )}
-                </p>
-              </motion.div>
-            </div>
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.6,
+                    delay: idx * 0.1,
+                  }}
+                  className="bg-white p-8 rounded-xl border border-[#E5E5E5]"
+                >
+                  <div className="w-12 h-12 bg-[#E6F3FF] rounded-xl flex items-center justify-center mb-6">
+                    <Icon className="w-6 h-6 text-[#0079FF]" />
+                  </div>
+                  <h3 className="text-[18px] font-bold mb-3 text-[#0E1116]">
+                    {point.title}
+                  </h3>
+                  <p className="text-[14px] text-[#666666] leading-relaxed whitespace-pre-line">
+                    {point.description}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Service Process */}
-        <section className="py-32 px-4 sm:px-8 xl:px-[62px] bg-gradient-to-br from-[#226BEF] to-[#1B54C0]">
-          <div className="max-w-[1156px] mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-16"
+      {/* Deliverables Section */}
+      <section className="py-32 px-8 bg-white">
+        <div className="max-w-[1156px] mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <p
+              className="text-[14px] font-semibold text-[#0079FF] mb-3"
+              style={{
+                fontFamily: "'Clash Display', sans-serif",
+              }}
             >
-              <p className="text-white/80 text-[14px] mb-2">
-                {language === "ko"
-                  ? "어떻게 진행되나요?"
-                  : "How does it proceed?"}
-              </p>
-              <h2 className="text-white mb-0 text-[32px]">
-                {language === "ko"
-                  ? "컨설팅 프로세스"
-                  : "Consulting Process"}
-              </h2>
-            </motion.div>
+              {t.deliverables.label}
+            </p>
+            <h2 className="text-[32px] md:text-[36px] font-bold text-[#0E1116] mb-4">
+              {t.deliverables.title}
+            </h2>
+            <p className="text-[15px] text-[#666666] max-w-[600px] mx-auto">
+              {t.deliverables.description}
+            </p>
+          </motion.div>
 
-            {/* 4 Process Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {/* Step 1 */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {t.deliverables.items.map((item, idx) => (
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition-shadow"
+                transition={{
+                  duration: 0.6,
+                  delay: idx * 0.1,
+                }}
+                className="bg-[#F8F9FA] p-6 rounded-xl border border-[#E5E5E5] hover:border-[#0079FF]/30 transition-all"
               >
-                <div className="bg-[#2D2D2D] h-[160px] flex items-center justify-center p-6">
-                  <Target className="w-20 h-20 text-[#226BEF]" />
+                <div className="w-10 h-10 bg-[#0079FF] rounded-lg flex items-center justify-center mb-4">
+                  <span className="text-white text-[16px] font-bold">
+                    {idx + 1}
+                  </span>
                 </div>
-                <div className="p-6">
-                  <p className="text-[#226BEF] text-[14px] font-semibold mb-2">
-                    Step 01
-                  </p>
-                  <h3 className="text-[20px] font-bold text-[#333333] mb-3">
-                    {language === "ko"
-                      ? "현황 분석"
-                      : "Current State Analysis"}
-                  </h3>
-                  <ul className="text-[14px] text-[#666666] leading-relaxed space-y-1">
-                    <li className="flex items-center gap-2">
-                      <span className="text-[#226BEF]">•</span>
-                      <span>
-                        {language === "ko"
-                          ? "비즈니스 목표 및 요구사항 파악"
-                          : "Identify business goals and requirements"}
-                      </span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-[#226BEF]">•</span>
-                      <span>
-                        {language === "ko"
-                          ? "기존 시스템 및 프로세스 분석"
-                          : "Analyze existing systems and processes"}
-                      </span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-[#226BEF]">•</span>
-                      <span>
-                        {language === "ko"
-                          ? "시장 및 경쟁사 벤치마킹"
-                          : "Market and competitor benchmarking"}
-                      </span>
-                    </li>
-                  </ul>
-                </div>
+                <h3 className="text-[16px] font-bold mb-2 text-[#0E1116]">
+                  {item.title}
+                </h3>
+                <p className="text-[14px] text-[#666666] leading-relaxed">
+                  {item.description}
+                </p>
               </motion.div>
-
-              {/* Step 2 */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition-shadow"
-              >
-                <div className="bg-[#2D2D2D] h-[160px] flex items-center justify-center p-6">
-                  <TrendingUp className="w-20 h-20 text-[#226BEF]" />
-                </div>
-                <div className="p-6">
-                  <p className="text-[#226BEF] text-[14px] font-semibold mb-2">
-                    Step 02
-                  </p>
-                  <h3 className="text-[20px] font-bold text-[#333333] mb-3">
-                    {language === "ko"
-                      ? "전략 수립"
-                      : "Strategy Development"}
-                  </h3>
-                  <ul className="text-[14px] text-[#666666] leading-relaxed space-y-1">
-                    <li className="flex items-center gap-2">
-                      <span className="text-[#226BEF]">•</span>
-                      <span>
-                        {language === "ko"
-                          ? "IT 전략 및 로드맵 설계"
-                          : "IT strategy and roadmap design"}
-                      </span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-[#226BEF]">•</span>
-                      <span>
-                        {language === "ko"
-                          ? "기술 스택 및 아키텍처 제안"
-                          : "Tech stack and architecture proposal"}
-                      </span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-[#226BEF]">•</span>
-                      <span>
-                        {language === "ko"
-                          ? "비용 및 일정 추정"
-                          : "Cost and timeline estimation"}
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </motion.div>
-
-              {/* Step 3 */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition-shadow"
-              >
-                <div className="bg-[#2D2D2D] h-[160px] flex items-center justify-center p-6">
-                  <Users className="w-20 h-20 text-[#226BEF]" />
-                </div>
-                <div className="p-6">
-                  <p className="text-[#226BEF] text-[14px] font-semibold mb-2">
-                    Step 03
-                  </p>
-                  <h3 className="text-[20px] font-bold text-[#333333] mb-3">
-                    {language === "ko"
-                      ? "실행 계획"
-                      : "Execution Planning"}
-                  </h3>
-                  <ul className="text-[14px] text-[#666666] leading-relaxed space-y-1">
-                    <li className="flex items-center gap-2">
-                      <span className="text-[#226BEF]">•</span>
-                      <span>
-                        {language === "ko"
-                          ? "단계별 실행 방안 제시"
-                          : "Phased execution plan presentation"}
-                      </span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-[#226BEF]">•</span>
-                      <span>
-                        {language === "ko"
-                          ? "리스크 관리 전략 수립"
-                          : "Risk management strategy development"}
-                      </span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-[#226BEF]">•</span>
-                      <span>
-                        {language === "ko"
-                          ? "팀 구성 및 역할 정의"
-                          : "Team composition and role definition"}
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </motion.div>
-
-              {/* Step 4 */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition-shadow"
-              >
-                <div className="bg-[#2D2D2D] h-[160px] flex items-center justify-center p-6">
-                  <CheckCircle2 className="w-20 h-20 text-[#226BEF]" />
-                </div>
-                <div className="p-6">
-                  <p className="text-[#226BEF] text-[14px] font-semibold mb-2">
-                    Step 04
-                  </p>
-                  <h3 className="text-[20px] font-bold text-[#333333] mb-3">
-                    {language === "ko"
-                      ? "지속 지원"
-                      : "Ongoing Support"}
-                  </h3>
-                  <ul className="text-[14px] text-[#666666] leading-relaxed space-y-1">
-                    <li className="flex items-center gap-2">
-                      <span className="text-[#226BEF]">•</span>
-                      <span>
-                        {language === "ko"
-                          ? "프로젝트 진행 모니터링"
-                          : "Project progress monitoring"}
-                      </span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-[#226BEF]">•</span>
-                      <span>
-                        {language === "ko"
-                          ? "정기적인 피드백 및 개선"
-                          : "Regular feedback and improvements"}
-                      </span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-[#226BEF]">•</span>
-                      <span>
-                        {language === "ko"
-                          ? "추가 컨설팅 및 자문"
-                          : "Additional consulting and advisory"}
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </motion.div>
-            </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Key Benefits */}
-        <section className="py-24 px-4 sm:px-8 xl:px-[62px] bg-white">
-          <div className="max-w-[1156px] mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-16"
+      {/* CTA Section */}
+      <section className="py-[66px] px-8 bg-[#0079FF]">
+        <div className="max-w-[800px] mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center"
+          >
+            <h2 className="text-[32px] md:text-[40px] font-bold mb-10 leading-relaxed text-white whitespace-pre-line">
+              {t.cta.title}
+            </h2>
+            <button
+              onClick={() => navigate("contact")}
+              className="bg-white text-[#0079FF] px-8 h-12 rounded-xl hover:bg-[#F5F5F5] transition-colors font-semibold text-[16px]"
             >
-              <h2 className="mb-3">
-                {language === "ko"
-                  ? "왜 포텐랩 IT 컨설팅인가요?"
-                  : "Why Potenlab IT Consulting?"}
-              </h2>
-              <p className="text-[#666666] text-[16px]">
-                {language === "ko"
-                  ? "다년간의 IT 프로젝트 경험을 바탕으로 최적의 솔루션을 제공합니다."
-                  : "We provide optimal solutions based on years of IT project experience."}
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Benefit 1 */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="bg-gradient-to-br from-[#E6F3FF] to-[#F0F0F5] p-8 rounded-3xl"
-              >
-                <div className="w-14 h-14 bg-[#226BEF] rounded-2xl flex items-center justify-center mb-4">
-                  <span className="text-white text-2xl font-bold">01</span>
-                </div>
-                <h3 className="text-[20px] font-bold mb-3">
-                  {language === "ko"
-                    ? "실전 경험 기반"
-                    : "Based on Real Experience"}
-                </h3>
-                <p className="text-[#666666] text-[14px] leading-relaxed">
-                  {language === "ko"
-                    ? "다양한 산업군의 IT 프로젝트를 직접 수행한 경험을 바탕으로 실질적인 조언을 제공합니다."
-                    : "We provide practical advice based on hands-on experience in IT projects across various industries."}
-                </p>
-              </motion.div>
-
-              {/* Benefit 2 */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="bg-gradient-to-br from-[#E6F3FF] to-[#F0F0F5] p-8 rounded-3xl"
-              >
-                <div className="w-14 h-14 bg-[#226BEF] rounded-2xl flex items-center justify-center mb-4">
-                  <span className="text-white text-2xl font-bold">02</span>
-                </div>
-                <h3 className="text-[20px] font-bold mb-3">
-                  {language === "ko"
-                    ? "비용 효율적"
-                    : "Cost-Effective"}
-                </h3>
-                <p className="text-[#666666] text-[14px] leading-relaxed">
-                  {language === "ko"
-                    ? "불필요한 비용을 최소화하고, 비즈니스 목표 달성에 필요한 핵심 요소에 집중합니다."
-                    : "Minimize unnecessary costs and focus on core elements needed to achieve business goals."}
-                </p>
-              </motion.div>
-
-              {/* Benefit 3 */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="bg-gradient-to-br from-[#E6F3FF] to-[#F0F0F5] p-8 rounded-3xl"
-              >
-                <div className="w-14 h-14 bg-[#226BEF] rounded-2xl flex items-center justify-center mb-4">
-                  <span className="text-white text-2xl font-bold">03</span>
-                </div>
-                <h3 className="text-[20px] font-bold mb-3">
-                  {language === "ko"
-                    ? "빠른 의사결정"
-                    : "Fast Decision Making"}
-                </h3>
-                <p className="text-[#666666] text-[14px] leading-relaxed">
-                  {language === "ko"
-                    ? "명확한 데이터와 분석을 통해 빠른 의사결정을 지원하고, 프로젝트 진행 속도를 높입니다."
-                    : "Support fast decision-making through clear data and analysis, accelerating project progress."}
-                </p>
-              </motion.div>
-
-              {/* Benefit 4 */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="bg-gradient-to-br from-[#E6F3FF] to-[#F0F0F5] p-8 rounded-3xl"
-              >
-                <div className="w-14 h-14 bg-[#226BEF] rounded-2xl flex items-center justify-center mb-4">
-                  <span className="text-white text-2xl font-bold">04</span>
-                </div>
-                <h3 className="text-[20px] font-bold mb-3">
-                  {language === "ko"
-                    ? "맞춤형 솔루션"
-                    : "Customized Solutions"}
-                </h3>
-                <p className="text-[#666666] text-[14px] leading-relaxed">
-                  {language === "ko"
-                    ? "획일적인 솔루션이 아닌, 각 기업의 상황과 목표에 맞는 맞춤형 전략을 제안합니다."
-                    : "We propose customized strategies tailored to each company's situation and goals, not one-size-fits-all solutions."}
-                </p>
-              </motion.div>
-
-              {/* Benefit 5 */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-                className="bg-gradient-to-br from-[#E6F3FF] to-[#F0F0F5] p-8 rounded-3xl"
-              >
-                <div className="w-14 h-14 bg-[#226BEF] rounded-2xl flex items-center justify-center mb-4">
-                  <span className="text-white text-2xl font-bold">05</span>
-                </div>
-                <h3 className="text-[20px] font-bold mb-3">
-                  {language === "ko"
-                    ? "최신 기술 트렌드"
-                    : "Latest Tech Trends"}
-                </h3>
-                <p className="text-[#666666] text-[14px] leading-relaxed">
-                  {language === "ko"
-                    ? "AI, 클라우드, 노코드 등 최신 기술 트렌드를 반영한 현실적인 전략을 제시합니다."
-                    : "We present practical strategies reflecting the latest tech trends such as AI, cloud, and no-code."}
-                </p>
-              </motion.div>
-
-              {/* Benefit 6 */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.6 }}
-                className="bg-gradient-to-br from-[#E6F3FF] to-[#F0F0F5] p-8 rounded-3xl"
-              >
-                <div className="w-14 h-14 bg-[#226BEF] rounded-2xl flex items-center justify-center mb-4">
-                  <span className="text-white text-2xl font-bold">06</span>
-                </div>
-                <h3 className="text-[20px] font-bold mb-3">
-                  {language === "ko"
-                    ? "원스톱 서비스"
-                    : "One-Stop Service"}
-                </h3>
-                <p className="text-[#666666] text-[14px] leading-relaxed">
-                  {language === "ko"
-                    ? "컨설팅부터 개발, 운영까지 전 과정을 지원하여 일관된 품질을 보장합니다."
-                    : "We support the entire process from consulting to development and operations, ensuring consistent quality."}
-                </p>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-24 px-4 sm:px-8 xl:px-[62px] bg-gradient-to-br from-[#226BEF] to-[#1B54C0]">
-          <div className="max-w-[1156px] mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-white mb-4">
-                {language === "ko"
-                  ? "IT 전략 컨설팅이 필요하신가요?"
-                  : "Need IT Strategy Consulting?"}
-              </h2>
-              <p className="text-white/90 text-[18px] mb-8 max-w-[600px] mx-auto">
-                {language === "ko"
-                  ? "포텐랩의 전문가가 귀사의 IT 전환을 성공적으로 이끌어드립니다."
-                  : "Potenlab's experts will successfully lead your IT transformation."}
-              </p>
-              <button
-                onClick={handleContact}
-                className="bg-white text-[#226BEF] px-8 py-4 rounded-xl font-semibold text-[16px] hover:bg-[#E6F3FF] transition-colors shadow-lg"
-              >
-                {language === "ko"
-                  ? "무료 상담 신청하기"
-                  : "Request Free Consultation"}
-              </button>
-            </motion.div>
-          </div>
-        </section>
-      </main>
+              {t.cta.button}
+            </button>
+          </motion.div>
+        </div>
+      </section>
 
       <Footer />
     </div>

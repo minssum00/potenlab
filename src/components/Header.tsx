@@ -14,12 +14,7 @@ export function Header() {
   const { navigate, setSelectedServiceId } = useRouter();
 
   const handleNavigate = (page: 'home' | 'services' | 'portfolio' | 'contents' | 'lecture' | 'about' | 'partner' | 'partner3' | 'poten-booster' | 'custom-product' | 'consulting') => {
-    if (page === 'consulting') {
-      setSelectedServiceId('it-consulting');
-      navigate('service');
-    } else {
-      navigate(page);
-    }
+    navigate(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setMobileMenuOpen(false);
     setServicesDropdownOpen(false);
