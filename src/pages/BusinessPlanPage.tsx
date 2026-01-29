@@ -364,7 +364,8 @@ export function BusinessPlanPage() {
             </p>
             <button
               onClick={() => navigate("contact")}
-              className="bg-[#0E1116] text-white px-8 h-12 rounded-xl hover:bg-[#1E293B] transition-colors font-semibold text-[16px] inline-flex items-center gap-2 shadow-lg"
+              className="px-8 h-12 rounded-xl hover:opacity-90 transition-colors font-semibold text-[16px] inline-flex items-center gap-2 shadow-lg"
+              style={{ backgroundColor: '#0E1116', color: '#FFFFFF' }}
             >
               {t.hero.cta}
             </button>
@@ -373,7 +374,7 @@ export function BusinessPlanPage() {
       </section>
 
       {/* Insight Quote Section */}
-      <section className="py-16 px-8 bg-[#0E1116]">
+      <section className="py-16 px-8" style={{ backgroundColor: '#0E1116' }}>
         <div className="max-w-[900px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -382,14 +383,14 @@ export function BusinessPlanPage() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <Quote className="w-10 h-10 text-[#0079FF] mx-auto mb-6" />
-            <p className="text-[24px] md:text-[28px] font-bold text-white leading-relaxed mb-6 whitespace-pre-line">
+            <Quote className="w-10 h-10 mx-auto mb-6" style={{ color: '#0079FF' }} />
+            <p className="text-[24px] md:text-[28px] font-bold leading-relaxed mb-6 whitespace-pre-line" style={{ color: '#FFFFFF' }}>
               {t.insight.quote}
             </p>
-            <p className="text-[14px] text-[#94A3B8] mb-6">
+            <p className="text-[14px] mb-6" style={{ color: '#94A3B8' }}>
               — {t.insight.author}
             </p>
-            <p className="text-[16px] text-[#CBD5E1] leading-relaxed max-w-[600px] mx-auto">
+            <p className="text-[16px] leading-relaxed max-w-[600px] mx-auto" style={{ color: '#CBD5E1' }}>
               {t.insight.description}
             </p>
           </motion.div>
@@ -756,7 +757,8 @@ export function BusinessPlanPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-8 bg-[#0E1116]">
+      {/* CTA Section */}
+      <section className="py-20 px-8" style={{ backgroundColor: '#0E1116' }}>
         <div className="max-w-[800px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -765,12 +767,13 @@ export function BusinessPlanPage() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h2 className="text-[32px] md:text-[40px] font-bold mb-10 leading-relaxed text-white whitespace-pre-line">
+            <h2 className="text-[32px] md:text-[40px] font-bold mb-10 leading-relaxed whitespace-pre-line" style={{ color: '#FFFFFF' }}>
               {t.cta.title}
             </h2>
             <button
               onClick={() => navigate("contact")}
-              className="bg-[#0079FF] text-white px-8 h-12 rounded-xl hover:bg-[#0066DD] transition-colors font-semibold text-[16px]"
+              className="px-8 h-12 rounded-xl hover:opacity-90 transition-colors font-semibold text-[16px]"
+              style={{ backgroundColor: '#0079FF', color: '#FFFFFF' }}
             >
               {t.cta.button}
             </button>
