@@ -1,3 +1,4 @@
+// IT Consulting Detail Component
 import { useMemo } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { ServiceDetail } from './ServiceDetail';
