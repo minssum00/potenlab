@@ -524,11 +524,12 @@ export function BusinessPlanPage() {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className={`relative p-8 rounded-2xl transition-all ${
                   pkg.premium
-                    ? "bg-gradient-to-br from-[#0E1116] to-[#1E293B] text-white border-2 border-[#0079FF]"
+                    ? "border-2 border-[#0079FF]"
                     : pkg.highlight
                     ? "bg-white border-2 border-[#0079FF] shadow-xl"
                     : "bg-white border-2 border-[#E2E8F0]"
                 }`}
+                style={pkg.premium ? { background: 'linear-gradient(to bottom right, #0E1116, #1E293B)' } : undefined}
               >
                 {pkg.badge && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
@@ -548,23 +549,20 @@ export function BusinessPlanPage() {
                     {pkg.name}
                   </p>
                   <h3
-                    className={`text-[20px] font-bold mb-4 ${
-                      pkg.premium ? "text-white" : "text-[#0E1116]"
-                    }`}
+                    className="text-[20px] font-bold mb-4"
+                    style={{ color: pkg.premium ? '#FFFFFF' : '#0E1116' }}
                   >
                     {pkg.subtitle}
                   </h3>
                   <p
-                    className={`text-[36px] font-bold mb-4 ${
-                      pkg.premium ? "text-white" : "text-[#0E1116]"
-                    }`}
+                    className="text-[36px] font-bold mb-4"
+                    style={{ color: pkg.premium ? '#FFFFFF' : '#0E1116' }}
                   >
                     {pkg.price}
                   </p>
                   <p
-                    className={`text-[14px] whitespace-pre-line leading-relaxed ${
-                      pkg.premium ? "text-[#94A3B8]" : "text-[#64748B]"
-                    }`}
+                    className="text-[14px] whitespace-pre-line leading-relaxed"
+                    style={{ color: pkg.premium ? '#94A3B8' : '#64748B' }}
                   >
                     {pkg.target}
                   </p>
@@ -575,14 +573,12 @@ export function BusinessPlanPage() {
                     {pkg.features.map((feature, fIdx) => (
                       <li key={fIdx} className="flex items-start gap-3">
                         <CheckCircle
-                          className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
-                            pkg.premium ? "text-[#0079FF]" : "text-[#22C55E]"
-                          }`}
+                          className="w-5 h-5 flex-shrink-0 mt-0.5"
+                          style={{ color: pkg.premium ? '#0079FF' : '#22C55E' }}
                         />
                         <span
-                          className={`text-[14px] ${
-                            pkg.premium ? "text-[#CBD5E1]" : "text-[#475569]"
-                          }`}
+                          className="text-[14px]"
+                          style={{ color: pkg.premium ? '#CBD5E1' : '#475569' }}
                         >
                           {feature}
                         </span>
