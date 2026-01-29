@@ -570,7 +570,7 @@ export function BusinessPlanPage() {
                   </p>
                 </div>
 
-                <div className="border-t border-dashed mb-6 pt-6 ${pkg.premium ? 'border-[#334155]' : 'border-[#E2E8F0]'}">
+                <div className={`border-t border-dashed mb-6 pt-6 ${pkg.premium ? 'border-[#334155]' : 'border-[#E2E8F0]'}`}>
                   <ul className="space-y-3">
                     {pkg.features.map((feature, fIdx) => (
                       <li key={fIdx} className="flex items-start gap-3">
