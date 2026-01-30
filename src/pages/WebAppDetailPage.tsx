@@ -34,7 +34,7 @@ export function WebAppDetailPage() {
 
       <main className="pt-[72px]">
         {/* Hero Section with Gradient */}
-        <section className="py-12 px-4 sm:px-8 xl:px-[62px] bg-gradient-to-br from-[#0079FF] to-[#00C8FF]">
+        <section className="py-12 px-4 sm:px-8 xl:px-[62px] bg-gradient-to-br from-[#10B981] to-[#059669]">
           <div className="max-w-[1156px] mx-auto">
             {/* Back Button */}
             <motion.button

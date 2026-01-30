@@ -23,7 +23,7 @@ export function UXUIDetailPage() {
 
       <main className="pt-[72px]">
         {/* Hero Section */}
-        <section className="py-12 px-4 sm:px-8 xl:px-[62px] bg-gradient-to-br from-[#FF9500] to-[#FF7A00]">
+        <section className="py-12 px-4 sm:px-8 xl:px-[62px] bg-gradient-to-br from-[#8B5CF6] to-[#7C3AED]">
           <div className="max-w-[1156px] mx-auto">
             {/* Back Button */}
             <motion.button
@@ -168,7 +168,7 @@ export function UXUIDetailPage() {
                   </div>
                   {/* Content Area */}
                   <div className="p-6">
-                    <p className="text-[#FF9500] text-[14px] font-semibold mb-2">Step 01</p>
+                    <p className="text-[#8B5CF6] text-[14px] font-semibold mb-2">Step 01</p>
                     <h3 className="text-[20px] font-bold text-[#333333] mb-3">
                       Task Flow
                     </h3>
@@ -201,7 +201,7 @@ export function UXUIDetailPage() {
                   </div>
                   {/* Content Area */}
                   <div className="p-6">
-                    <p className="text-[#FF9500] text-[14px] font-semibold mb-2">Step 02</p>
+                    <p className="text-[#8B5CF6] text-[14px] font-semibold mb-2">Step 02</p>
                     <h3 className="text-[20px] font-bold text-[#333333] mb-3">
                       {language === "ko" ? "와이어프레임" : "Wireframe"}
                     </h3>
@@ -240,7 +240,7 @@ export function UXUIDetailPage() {
                   </div>
                   {/* Content Area */}
                   <div className="p-6">
-                    <p className="text-[#FF9500] text-[14px] font-semibold mb-2">Step 03</p>
+                    <p className="text-[#8B5CF6] text-[14px] font-semibold mb-2">Step 03</p>
                     <h3 className="text-[20px] font-bold text-[#333333] mb-3">
                       {language === "ko" ? "기능명세서" : "Functional Spec"}
                     </h3>
@@ -283,7 +283,7 @@ export function UXUIDetailPage() {
                   </div>
                   {/* Content Area */}
                   <div className="p-6">
-                    <p className="text-[#FF9500] text-[14px] font-semibold mb-2">Step 04</p>
+                    <p className="text-[#8B5CF6] text-[14px] font-semibold mb-2">Step 04</p>
                     <h3 className="text-[20px] font-bold text-[#333333] mb-3">
                       {language === "ko" ? "정보구조도(I.A)" : "Information Architecture"}
                     </h3>
@@ -332,7 +332,7 @@ export function UXUIDetailPage() {
                 className="bg-[#FFF8F0] rounded-3xl p-8 relative overflow-hidden"
               >
                 {/* Decorative Lines */}
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#FF9500]/20 to-transparent"></div>
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#8B5CF6]/20 to-transparent"></div>
 
                 <div className="relative z-10">
                   <h3 className="text-[24px] font-bold text-[#333333] mb-6">
@@ -405,7 +405,7 @@ export function UXUIDetailPage() {
                   >
                     <path
                       d="M6 16H26M26 16L20 10M26 16L20 22"
-                      stroke="#0079FF"
+                      stroke="#8B5CF6"
                       strokeWidth="2.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -423,7 +423,7 @@ export function UXUIDetailPage() {
                 className="bg-[#1A1A1A] rounded-3xl p-8 relative overflow-hidden"
               >
                 {/* Decorative Lines */}
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#0079FF]/40 to-transparent"></div>
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#8B5CF6]/40 to-transparent"></div>
 
                 <div className="relative z-10">
                   <h3 className="text-[24px] font-bold text-white mb-6">
@@ -496,7 +496,7 @@ export function UXUIDetailPage() {
               >
                 <path
                   d="M16 6V26M16 26L10 20M16 26L22 20"
-                  stroke="#0079FF"
+                  stroke="#8B5CF6"
                   strokeWidth="2.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -514,7 +514,7 @@ export function UXUIDetailPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-32 px-4 sm:px-8 xl:px-[62px] bg-gradient-to-br from-[#FF9500] to-[#FF7A00]">
+        <section className="py-32 px-4 sm:px-8 xl:px-[62px] bg-gradient-to-br from-[#8B5CF6] to-[#7C3AED]">
           <div className="max-w-[1156px] mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -534,7 +534,7 @@ export function UXUIDetailPage() {
               </p>
               <button 
                 onClick={() => navigate('contact')}
-                className="bg-white text-[#FF9500] px-8 py-4 rounded-xl font-semibold hover:bg-white/90 transition-all hover:scale-105"
+                className="bg-white text-[#8B5CF6] px-8 py-4 rounded-xl font-semibold hover:bg-white/90 transition-all hover:scale-105"
               >
                 {language === "ko"
                   ? "무료 상담 신청하기"
