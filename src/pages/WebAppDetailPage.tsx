@@ -24,7 +24,7 @@ export function WebAppDetailPage() {
   };
 
   const handleContact = () => {
-    navigate("contact");
+    navigate("contact", null, null, { inquiryType: "project", subCategory: "product" });
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 

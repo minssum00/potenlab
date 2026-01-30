@@ -432,7 +432,7 @@ export function PotenBoosterPage() {
               {t.hero.description}
             </p>
             <button
-              onClick={() => navigate("contact")}
+              onClick={() => navigate("contact", null, null, { inquiryType: "potenbooster" })}
               className="bg-[#0079FF] text-white px-8 h-12 rounded-xl hover:bg-[#0066DD] transition-colors font-semibold text-[16px] inline-flex items-center gap-2 shadow-lg hover:shadow-xl"
             >
               {t.hero.cta}
@@ -783,7 +783,7 @@ export function PotenBoosterPage() {
                   ))}
                 </ul>
                 <button
-                  onClick={() => navigate("contact")}
+                  onClick={() => navigate("contact", null, null, { inquiryType: "potenbooster", subCategory: pkg.name.toLowerCase() })}
                   className="w-full h-12 rounded-xl font-semibold text-[15px] transition-all bg-white text-[#0079FF] border-2 border-[#0079FF] hover:bg-[#F0F8FF]"
                 >
                   신청하기
@@ -808,7 +808,7 @@ export function PotenBoosterPage() {
               {t.cta.title}
             </h2>
             <button
-              onClick={() => navigate("contact")}
+              onClick={() => navigate("contact", null, null, { inquiryType: "potenbooster" })}
               className="bg-white text-[#0079FF] px-8 h-12 rounded-xl hover:bg-[#F5F5F5] transition-colors font-semibold text-[16px]"
             >
               {t.cta.button}

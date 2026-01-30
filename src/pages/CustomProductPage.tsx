@@ -457,7 +457,12 @@ export function CustomProductPage() {
   const t = content[language];
 
   const handleContactClick = () => {
-    navigate("contact");
+    navigate("contact", null, null, { inquiryType: "project" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleContactWithSubCategory = (subCategory: string) => {
+    navigate("contact", null, null, { inquiryType: "project", subCategory });
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 

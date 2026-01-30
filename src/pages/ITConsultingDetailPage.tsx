@@ -369,7 +369,7 @@ export function ITConsultingDetailPage() {
               {t.hero.description}
             </p>
             <button
-              onClick={() => navigate("contact")}
+              onClick={() => navigate("contact", null, null, { inquiryType: "design", subCategory: "consulting" })}
               className="bg-[#0079FF] text-white px-8 h-12 rounded-xl hover:bg-[#0066DD] transition-colors font-semibold text-[16px] inline-flex items-center gap-2 shadow-lg hover:shadow-xl"
             >
               {t.hero.cta}
@@ -705,7 +705,7 @@ export function ITConsultingDetailPage() {
               {t.cta.title}
             </h2>
             <button
-              onClick={() => navigate("contact")}
+              onClick={() => navigate("contact", null, null, { inquiryType: "design", subCategory: "consulting" })}
               className="bg-white text-[#0079FF] px-8 h-12 rounded-xl hover:bg-[#F5F5F5] transition-colors font-semibold text-[16px]"
             >
               {t.cta.button}

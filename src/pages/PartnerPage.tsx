@@ -55,11 +55,11 @@ const content = {
         price: '월 150만 원',
         priceNote: '부터 시작',
         features: [
-          '무제한 디자인 요청 (순차 진행)',
-          '전담 시니어 디자이너 배치',
-          'UI/UX 및 마케팅 자산 포함',
+          '아이디어 단계부터 와이어프레임 및 UI 디자인 제작',
+          '전담 디자이너 배치',
+          'UI/UX 자산 포함',
           '2영업일 내 1차 시안 제공',
-          '무제한 수정 요청',
+          '유연한 디자인 수정 요청',
           '슬랙 실시간 피드백'
         ],
         comparison: '디자이너 1명 채용 시 월 500만 원 이상'
@@ -230,7 +230,7 @@ export function PartnerPage() {
   const [activeCheckpoint, setActiveCheckpoint] = useState<number | null>(null);
 
   const scrollToContact = () => {
-    navigate('contact');
+    navigate('contact', null, null, { inquiryType: 'subscription' });
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 

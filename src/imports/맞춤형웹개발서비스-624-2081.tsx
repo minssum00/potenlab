@@ -22,7 +22,7 @@ function LinkAsset() {
 
 function LinkButton() {
   return (
-    <div className="bg-[#226bef] content-stretch flex items-start p-[8px] relative rounded-[16px] shrink-0" data-name="Link Button">
+    <div className="bg-[#10B981] content-stretch flex items-start p-[8px] relative rounded-[16px] shrink-0" data-name="Link Button">
       <LinkAsset />
     </div>
   );
@@ -45,7 +45,7 @@ function LinkAsset1() {
 
 function LinkButton1() {
   return (
-    <div className="bg-[#226bef] content-stretch flex items-start p-[8px] relative rounded-[16px] shrink-0" data-name="Link Button">
+    <div className="bg-[#10B981] content-stretch flex items-start p-[8px] relative rounded-[16px] shrink-0" data-name="Link Button">
       <LinkAsset1 />
     </div>
   );
@@ -84,7 +84,7 @@ function LinkAsset2() {
 
 function LinkButton2() {
   return (
-    <div className="bg-[#226bef] content-stretch flex items-start p-[8px] relative rounded-[16px] shrink-0" data-name="Link Button">
+    <div className="bg-[#10B981] content-stretch flex items-start p-[8px] relative rounded-[16px] shrink-0" data-name="Link Button">
       <LinkAsset2 />
     </div>
   );
@@ -111,7 +111,7 @@ function LinkAsset3() {
 
 function LinkButton3() {
   return (
-    <div className="bg-[#226bef] content-stretch flex items-start p-[8px] relative rounded-[16px] shrink-0" data-name="Link Button">
+    <div className="bg-[#10B981] content-stretch flex items-start p-[8px] relative rounded-[16px] shrink-0" data-name="Link Button">
       <LinkAsset3 />
     </div>
   );
@@ -132,7 +132,7 @@ function LinkAsset4() {
 
 function LinkButton4() {
   return (
-    <div className="bg-[#226bef] content-stretch flex items-start p-[8px] relative rounded-[16px] shrink-0" data-name="Link Button">
+    <div className="bg-[#10B981] content-stretch flex items-start p-[8px] relative rounded-[16px] shrink-0" data-name="Link Button">
       <LinkAsset4 />
     </div>
   );
@@ -274,7 +274,7 @@ function Frame31() {
           <p className="leading-[1.7] mb-0">“이 비즈니스를 디지털화 하고 싶어”</p>
           <p className="leading-[1.7]">
             <span>{`기존 비즈니스를 디지털화 하고 싶은 `}</span>
-            <span className="text-[#226bef]">수익모델이 있는 스타트업</span>
+            <span className="text-[#10B981]">수익모델이 있는 스타트업</span>
           </p>
         </div>
       </div>
@@ -299,7 +299,7 @@ function Frame35() {
           <p className="leading-[1.7] mb-0">{`“내부 운영을 최적화하고 싶어"`}</p>
           <p className="leading-[1.7]">
             <span>{`IT를 통해 내부 운영을 최적화하고 싶은 `}</span>
-            <span className="text-[#226bef]">기업</span>
+            <span className="text-[#10B981]">기업</span>
           </p>
         </div>
       </div>
@@ -324,7 +324,7 @@ function Frame32() {
           <p className="leading-[1.7] mb-0">“장기적으로 플랫폼 운영을 할거야”</p>
           <p className="leading-[1.7]">
             <span>{`장기적 계획수립이 완료된 `}</span>
-            <span className="text-[#226bef]">서비스 운영자</span>
+            <span className="text-[#10B981]">서비스 운영자</span>
           </p>
         </div>
       </div>
@@ -406,7 +406,7 @@ function Frame25() {
 function Frame33() {
   return (
     <div className="content-stretch flex flex-col gap-[2px] items-center justify-center relative shrink-0">
-      <p className="font-['Pretendard_Variable:Bold',sans-serif] font-bold leading-[1.7] relative shrink-0 text-[#3fd4d5] text-[20px] text-center text-nowrap">Strength</p>
+      <p className="font-['Pretendard_Variable:Bold',sans-serif] font-bold leading-[1.7] relative shrink-0 text-[#10B981] text-[20px] text-center text-nowrap">Strength</p>
       <Frame25 />
     </div>
   );
@@ -708,7 +708,7 @@ function Frame27() {
 function Frame36() {
   return (
     <div className="content-stretch flex flex-col gap-[2px] items-center justify-center relative shrink-0">
-      <p className="font-['Pretendard_Variable:Bold',sans-serif] font-bold leading-[1.7] relative shrink-0 text-[#226bef] text-[40px] text-center w-[154px]">🖥️</p>
+      <p className="font-['Pretendard_Variable:Bold',sans-serif] font-bold leading-[1.7] relative shrink-0 text-[#10B981] text-[40px] text-center w-[154px]">🖥️</p>
       <Frame27 />
     </div>
   );
@@ -992,7 +992,7 @@ function Frame39() {
     <div className="basis-0 bg-white grow min-h-px min-w-px relative self-stretch shrink-0">
       <div className="overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex flex-col gap-[8px] items-start px-[22px] py-[24px] relative size-full">
-          <p className="font-['Pretendard_Variable:SemiBold',sans-serif] font-semibold leading-[1.5] relative shrink-0 text-[#226bef] text-[16px] text-nowrap">Step 01</p>
+          <p className="font-['Pretendard_Variable:SemiBold',sans-serif] font-semibold leading-[1.5] relative shrink-0 text-[#10B981] text-[16px] text-nowrap">Step 01</p>
           <p className="font-['Pretendard_Variable:Bold',sans-serif] font-bold leading-[1.5] relative shrink-0 text-[22px] text-black text-nowrap">IT 컨설팅</p>
           <ul className="block font-['Pretendard_Variable:Medium',sans-serif] font-medium leading-[0] min-w-full relative shrink-0 text-[#5a5e6a] text-[15px] w-[min-content]">
             <li className="mb-0 ms-[22.5px]">
@@ -1069,7 +1069,7 @@ function Frame41() {
     <div className="basis-0 bg-white grow min-h-px min-w-px relative self-stretch shrink-0">
       <div className="overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex flex-col gap-[8px] items-start px-[22px] py-[24px] relative size-full">
-          <p className="font-['Pretendard_Variable:SemiBold',sans-serif] font-semibold leading-[1.5] relative shrink-0 text-[#226bef] text-[16px] text-nowrap">Step 02</p>
+          <p className="font-['Pretendard_Variable:SemiBold',sans-serif] font-semibold leading-[1.5] relative shrink-0 text-[#10B981] text-[16px] text-nowrap">Step 02</p>
           <p className="font-['Pretendard_Variable:Bold',sans-serif] font-bold leading-[1.5] relative shrink-0 text-[22px] text-black text-nowrap">서비스 기획</p>
           <ul className="block font-['Pretendard_Variable:Medium',sans-serif] font-medium leading-[0] min-w-full relative shrink-0 text-[#5a5e6a] text-[15px] w-[min-content]">
             <li className="mb-0 ms-[22.5px]">
@@ -1100,11 +1100,11 @@ function Frame49() {
 function Group8() {
   return (
     <div className="absolute contents left-[23px] top-[62px]">
-      <div className="absolute border-[#3fd4d5] border-[1.164px] border-solid h-[71px] left-[28px] top-[67px] w-[202px]" />
-      <div className="absolute bg-white border-[#3fd4d5] border-[1.164px] border-solid left-[23px] size-[9.313px] top-[62px]" />
-      <div className="absolute bg-white border-[#3fd4d5] border-[1.164px] border-solid left-[23px] size-[9.313px] top-[133.01px]" />
-      <div className="absolute bg-white border-[#3fd4d5] border-[1.164px] border-solid left-[225px] size-[9.313px] top-[133.01px]" />
-      <div className="absolute bg-white border-[#3fd4d5] border-[1.164px] border-solid left-[225px] size-[9.313px] top-[63.16px]" />
+      <div className="absolute border-[#10B981] border-[1.164px] border-solid h-[71px] left-[28px] top-[67px] w-[202px]" />
+      <div className="absolute bg-white border-[#10B981] border-[1.164px] border-solid left-[23px] size-[9.313px] top-[62px]" />
+      <div className="absolute bg-white border-[#10B981] border-[1.164px] border-solid left-[23px] size-[9.313px] top-[133.01px]" />
+      <div className="absolute bg-white border-[#10B981] border-[1.164px] border-solid left-[225px] size-[9.313px] top-[133.01px]" />
+      <div className="absolute bg-white border-[#10B981] border-[1.164px] border-solid left-[225px] size-[9.313px] top-[63.16px]" />
     </div>
   );
 }
@@ -1149,7 +1149,7 @@ function Frame43() {
     <div className="basis-0 bg-white grow min-h-px min-w-px relative self-stretch shrink-0">
       <div className="overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex flex-col gap-[8px] items-start px-[22px] py-[24px] relative size-full">
-          <p className="font-['Pretendard_Variable:SemiBold',sans-serif] font-semibold leading-[1.5] relative shrink-0 text-[#226bef] text-[16px] text-nowrap">Step 03</p>
+          <p className="font-['Pretendard_Variable:SemiBold',sans-serif] font-semibold leading-[1.5] relative shrink-0 text-[#10B981] text-[16px] text-nowrap">Step 03</p>
           <p className="font-['Pretendard_Variable:Bold',sans-serif] font-bold leading-[1.5] relative shrink-0 text-[22px] text-black text-nowrap">UXUI 디자인</p>
           <ul className="block font-['Pretendard_Variable:Medium',sans-serif] font-medium leading-[0] min-w-full relative shrink-0 text-[#5a5e6a] text-[15px] w-[min-content]">
             <li className="mb-0 ms-[22.5px]">
@@ -1273,7 +1273,7 @@ function Frame45() {
     <div className="basis-0 bg-white grow min-h-px min-w-px relative self-stretch shrink-0">
       <div className="overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex flex-col gap-[8px] items-start px-[22px] py-[24px] relative size-full">
-          <p className="font-['Pretendard_Variable:SemiBold',sans-serif] font-semibold leading-[1.5] relative shrink-0 text-[#226bef] text-[16px] text-nowrap">Step 04</p>
+          <p className="font-['Pretendard_Variable:SemiBold',sans-serif] font-semibold leading-[1.5] relative shrink-0 text-[#10B981] text-[16px] text-nowrap">Step 04</p>
           <p className="font-['Pretendard_Variable:Bold',sans-serif] font-bold leading-[1.5] relative shrink-0 text-[22px] text-black text-nowrap">프로젝트 개발</p>
           <ul className="block font-['Pretendard_Variable:Medium',sans-serif] font-medium leading-[0] min-w-full relative shrink-0 text-[#5a5e6a] text-[15px] w-[min-content]">
             <li className="mb-0 ms-[22.5px]">
@@ -1423,7 +1423,7 @@ function Frame42() {
     <div className="basis-0 bg-white grow min-h-px min-w-px relative self-stretch shrink-0">
       <div className="overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex flex-col gap-[8px] items-start px-[22px] py-[24px] relative size-full">
-          <p className="font-['Pretendard_Variable:SemiBold',sans-serif] font-semibold leading-[1.5] relative shrink-0 text-[#226bef] text-[16px] text-nowrap">Step 05</p>
+          <p className="font-['Pretendard_Variable:SemiBold',sans-serif] font-semibold leading-[1.5] relative shrink-0 text-[#10B981] text-[16px] text-nowrap">Step 05</p>
           <p className="font-['Pretendard_Variable:Bold',sans-serif] font-bold leading-[1.5] relative shrink-0 text-[22px] text-black text-nowrap">운영 지원 or 인수인계</p>
           <ul className="block font-['Pretendard_Variable:Medium',sans-serif] font-medium leading-[0] relative shrink-0 text-[#5a5e6a] text-[15px] w-[287px]">
             <li className="mb-0 ms-[22.5px]">
@@ -1465,7 +1465,7 @@ function Frame56() {
 
 function Frame44() {
   return (
-    <div className="bg-[#226bef] relative shadow-[0px_-15px_21px_0px_rgba(0,0,0,0.05)] shrink-0 w-full">
+    <div className="bg-[#10B981] relative shadow-[0px_-15px_21px_0px_rgba(0,0,0,0.05)] shrink-0 w-full">
       <div className="flex flex-col items-center overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex flex-col gap-[34px] items-center pb-[100px] pt-[80px] px-[382px] relative w-full">
           <Frame38 />

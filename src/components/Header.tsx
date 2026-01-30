@@ -93,7 +93,13 @@ export function Header() {
                     onClick={() => handleNavigate('other-services')}
                     className="w-full text-left px-4 py-3 text-[14px] font-medium text-[#64748b] hover:text-[#0E1116] hover:bg-[#F8FAFC] transition-all duration-200"
                   >
-                    {language === 'ko' ? '기타 문의' : 'Other Services'}
+                    {language === 'ko' ? '디자인&컨설팅' : 'Design & Consulting'}
+                  </button>
+                  <button
+                    onClick={() => handleNavigate('partner')}
+                    className="w-full text-left px-4 py-3 text-[14px] font-medium text-[#64748b] hover:text-[#0E1116] hover:bg-[#F8FAFC] transition-all duration-200"
+                  >
+                    {language === 'ko' ? '구독 서비스' : 'Subscription Service'}
                   </button>
                 </motion.div>
               )}

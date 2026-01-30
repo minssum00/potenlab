@@ -18,7 +18,7 @@ export function OtherServicesPage() {
   const content = {
     ko: {
       hero: {
-        label: "기타 서비스",
+        label: "디자인&컨설팅",
         title: "다양한 전문 서비스로",
         titleHighlight: "비즈니스 성장을 지원합니다",
         description:
@@ -269,31 +269,29 @@ export function OtherServicesPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-8 bg-[#F8F9FA]">
-        <div className="max-w-[800px] mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center bg-white rounded-2xl p-10 border border-[#E5E5E5]"
+      {/* CTA Banner Section */}
+      <section className="py-20 px-8 bg-gradient-to-r from-[#0079FF] to-[#00C8FF]">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-[1156px] mx-auto text-center"
+        >
+          <h2 className="text-[28px] md:text-[36px] font-bold mb-4 text-white whitespace-pre-line">
+            {t.cta.title}
+          </h2>
+          <p className="text-[16px] md:text-[18px] text-white/90 mb-8 max-w-[600px] mx-auto">
+            {t.cta.description}
+          </p>
+          <button
+            onClick={() => navigate("contact", null, null, { inquiryType: "design" })}
+            className="bg-white text-[#0079FF] px-8 h-12 rounded-xl hover:bg-white/90 transition-all font-semibold text-[16px] inline-flex items-center gap-2 hover:scale-105"
           >
-            <h2 className="text-[28px] md:text-[32px] font-bold mb-4 text-[#0E1116] whitespace-pre-line">
-              {t.cta.title}
-            </h2>
-            <p className="text-[16px] text-[#666666] mb-8">
-              {t.cta.description}
-            </p>
-            <button
-              onClick={() => navigate("contact")}
-              className="bg-[#0079FF] text-white px-8 h-12 rounded-xl hover:bg-[#0066DD] transition-colors font-semibold text-[16px] inline-flex items-center gap-2 shadow-lg hover:shadow-xl"
-            >
-              {t.cta.button}
-              <ArrowRight className="w-5 h-5" />
-            </button>
-          </motion.div>
-        </div>
+            {t.cta.button}
+            <ArrowRight className="w-5 h-5" />
+          </button>
+        </motion.div>
       </section>
 
       <Footer />

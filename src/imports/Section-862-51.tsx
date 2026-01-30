@@ -43,7 +43,7 @@ function Group() {
 function Frame1() {
   return (
     <div className="bg-white content-stretch flex flex-col gap-[8px] items-start leading-[1.5] overflow-clip px-[22px] py-[24px] relative shadow-[0px_-3px_16px_0px_rgba(0,0,0,0.21)] shrink-0 w-[272.5px]">
-      <p className="css-ew64yg font-['Pretendard_Variable:SemiBold',sans-serif] font-semibold relative shrink-0 text-[#ff5e82] text-[16px]">Step 01</p>
+      <p className="css-ew64yg font-['Pretendard_Variable:SemiBold',sans-serif] font-semibold relative shrink-0 text-[#8B5CF6] text-[16px]">Step 01</p>
       <p className="css-ew64yg font-['Pretendard_Variable:Bold',sans-serif] font-bold relative shrink-0 text-[#2a2826] text-[22px]">디자인 시안 전달</p>
       <div className="font-['Pretendard_Variable:Regular',sans-serif] font-normal min-w-full relative shrink-0 text-[#5a5e6a] text-[15px] w-[min-content]">
         <p className="css-4hzbpn mb-0">사용자 경험 관점에서 UI 를 설계하고</p>
@@ -68,7 +68,7 @@ function Frame5() {
 function Frame2() {
   return (
     <div className="bg-white content-stretch flex flex-col gap-[8px] h-[193px] items-start leading-[1.5] overflow-clip px-[22px] py-[24px] relative shadow-[0px_-2px_20px_0px_rgba(0,0,0,0.2)] shrink-0 w-[272.5px]">
-      <p className="css-ew64yg font-['Pretendard_Variable:SemiBold',sans-serif] font-semibold relative shrink-0 text-[#ff5e82] text-[16px]">Step 02</p>
+      <p className="css-ew64yg font-['Pretendard_Variable:SemiBold',sans-serif] font-semibold relative shrink-0 text-[#8B5CF6] text-[16px]">Step 02</p>
       <p className="css-ew64yg font-['Pretendard_Variable:Bold',sans-serif] font-bold relative shrink-0 text-[#2a2826] text-[22px]">전체 GUI 디자인</p>
       <p className="css-4hzbpn font-['Pretendard_Variable:Regular',sans-serif] font-normal min-w-full relative shrink-0 text-[#5a5e6a] text-[15px] w-[min-content]">핵심 메뉴들 기반으로 필요한 화면을 그립니다. 소통을 통해 누락된 화면들을 추가 작업합니다.</p>
     </div>
@@ -89,7 +89,7 @@ function Frame6() {
 function Frame3() {
   return (
     <div className="bg-white content-stretch flex flex-col gap-[8px] h-[193px] items-start leading-[1.5] overflow-clip px-[22px] py-[24px] relative shrink-0 w-[272.5px]">
-      <p className="css-ew64yg font-['Pretendard_Variable:SemiBold',sans-serif] font-semibold relative shrink-0 text-[#ff5e82] text-[16px]">Step 03</p>
+      <p className="css-ew64yg font-['Pretendard_Variable:SemiBold',sans-serif] font-semibold relative shrink-0 text-[#8B5CF6] text-[16px]">Step 03</p>
       <p className="css-ew64yg font-['Pretendard_Variable:Bold',sans-serif] font-bold relative shrink-0 text-[#2a2826] text-[22px]">디자인 시스템 제작</p>
       <p className="css-4hzbpn font-['Pretendard_Variable:Regular',sans-serif] font-normal min-w-full relative shrink-0 text-[#5a5e6a] text-[15px] w-[min-content]">개발 공수를 고려하여 공통적으로 사용되는 폰트, 컬러, 컴포넌트 시스템을 제작합니다.</p>
     </div>
@@ -112,7 +112,7 @@ function Frame4() {
     <div className="bg-white flex-[1_0_0] min-h-px min-w-px relative w-full">
       <div className="overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex flex-col gap-[8px] items-start leading-[1.5] px-[22px] py-[24px] relative size-full">
-          <p className="css-ew64yg font-['Pretendard_Variable:SemiBold',sans-serif] font-semibold relative shrink-0 text-[#ff5e82] text-[16px]">Step 04</p>
+          <p className="css-ew64yg font-['Pretendard_Variable:SemiBold',sans-serif] font-semibold relative shrink-0 text-[#8B5CF6] text-[16px]">Step 04</p>
           <p className="css-ew64yg font-['Pretendard_Variable:Bold',sans-serif] font-bold relative shrink-0 text-[#2a2826] text-[22px]">프로토타입</p>
           <p className="css-4hzbpn font-['Pretendard_Variable:Regular',sans-serif] font-normal relative shrink-0 text-[#5a5e6a] text-[15px] w-[232px]">{`화면간 연결을 통해 미리 서비스의 동작을확인하고 개발 착수 전 최종 점검을 진행합니다. `}</p>
         </div>

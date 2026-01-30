@@ -11,9 +11,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../components/ui/select";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Send, Rocket, Code, Palette, MessageCircle } from "lucide-react";
 import { motion } from "motion/react";
 import { useLanguage } from "../contexts/LanguageContext";
+import { useRouter } from "../contexts/RouterContext";
 import {
   projectId,
   publicAnonKey,
@@ -22,15 +23,34 @@ import { toast } from "sonner@2.0.3";
 
 export function ContactPage() {
   const { t, language } = useLanguage();
+  const { getRouteParams } = useRouter();
   const [loading, setLoading] = useState(false);
+
+  // Get initial values from route params
+  const routeParams = getRouteParams();
+  const initialInquiryType = routeParams?.inquiryType || "potenbooster";
+  const initialSubCategory = routeParams?.subCategory || "";
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    inquiryType: "potenbooster",
-    subCategory: "standard",
+    inquiryType: initialInquiryType,
+    subCategory: initialSubCategory,
     message: "",
   });
+
+  // Update form when route params change
+  useEffect(() => {
+    const params = getRouteParams();
+    if (params?.inquiryType) {
+      setFormData(prev => ({
+        ...prev,
+        inquiryType: params.inquiryType,
+        subCategory: params.subCategory || "",
+      }));
+    }
+  }, []);
 
   // Texts for auto-translation
   const [texts, setTexts] = useState({
@@ -218,41 +238,92 @@ export function ContactPage() {
                   onSubmit={handleSubmit}
                   className="p-8 rounded-3xl bg-white border border-[#E5E5E5] shadow-lg space-y-6"
                 >
-                  <div className="space-y-2">
-                    <label
-                      htmlFor="inquiryType"
-                      className="block text-sm font-semibold text-left"
-                    >
+                  {/* Inquiry Type Cards */}
+                  <div className="space-y-3">
+                    <label className="block text-sm font-semibold text-left">
                       {language === "ko" ? "문의종류" : "Inquiry Type"} *
                     </label>
-                    <Select
-                      value={formData.inquiryType}
-                      onValueChange={(value) =>
-                        setFormData({ ...formData, inquiryType: value, subCategory: "" })
-                      }
-                      required
-                    >
-                      <SelectTrigger className={`!h-12 rounded-xl border-2 focus:border-[#0079FF] transition-colors ${formData.inquiryType ? 'border-[#0079FF] bg-[#F0F8FF]' : ''}`}>
-                        <SelectValue
-                          placeholder={
-                            language === "ko"
-                              ? "문의종류를 선택해주세요"
-                              : "Select inquiry type"
-                          }
-                        />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="potenbooster">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                      {/* 포텐부스터 Card */}
+                      <button
+                        type="button"
+                        onClick={() => setFormData({ ...formData, inquiryType: "potenbooster", subCategory: "" })}
+                        className={`p-4 rounded-xl border-2 transition-all duration-200 flex flex-col items-center gap-2 ${
+                          formData.inquiryType === "potenbooster"
+                            ? "border-[#0079FF] bg-[#F0F8FF] shadow-md"
+                            : "border-[#E5E5E5] hover:border-[#0079FF]/50 hover:bg-[#F8FAFC]"
+                        }`}
+                      >
+                        <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+                          formData.inquiryType === "potenbooster" ? "bg-[#0079FF]" : "bg-[#F0F4F8]"
+                        }`}>
+                          <Rocket className={`w-5 h-5 ${formData.inquiryType === "potenbooster" ? "text-white" : "text-[#64748B]"}`} />
+                        </div>
+                        <span className={`text-[12px] font-semibold text-center ${formData.inquiryType === "potenbooster" ? "text-[#0079FF]" : "text-[#424242]"}`}>
                           {language === "ko" ? "포텐부스터" : "Poten Booster"}
-                        </SelectItem>
-                        <SelectItem value="project">
-                          {language === "ko" ? "프로젝트 개발" : "Project Development"}
-                        </SelectItem>
-                        <SelectItem value="other">
-                          {language === "ko" ? "기타 문의" : "Other Inquiry"}
-                        </SelectItem>
-                      </SelectContent>
-                    </Select>
+                        </span>
+                      </button>
+
+                      {/* 커스텀 프로젝트 개발 Card */}
+                      <button
+                        type="button"
+                        onClick={() => setFormData({ ...formData, inquiryType: "project", subCategory: "" })}
+                        className={`p-4 rounded-xl border-2 transition-all duration-200 flex flex-col items-center gap-2 ${
+                          formData.inquiryType === "project"
+                            ? "border-[#0079FF] bg-[#F0F8FF] shadow-md"
+                            : "border-[#E5E5E5] hover:border-[#0079FF]/50 hover:bg-[#F8FAFC]"
+                        }`}
+                      >
+                        <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+                          formData.inquiryType === "project" ? "bg-[#0079FF]" : "bg-[#F0F4F8]"
+                        }`}>
+                          <Code className={`w-5 h-5 ${formData.inquiryType === "project" ? "text-white" : "text-[#64748B]"}`} />
+                        </div>
+                        <span className={`text-[12px] font-semibold text-center ${formData.inquiryType === "project" ? "text-[#0079FF]" : "text-[#424242]"}`}>
+                          {language === "ko" ? "커스텀 개발" : "Custom Build"}
+                        </span>
+                      </button>
+
+                      {/* 디자인 & 컨설팅 Card */}
+                      <button
+                        type="button"
+                        onClick={() => setFormData({ ...formData, inquiryType: "design", subCategory: "" })}
+                        className={`p-4 rounded-xl border-2 transition-all duration-200 flex flex-col items-center gap-2 ${
+                          formData.inquiryType === "design"
+                            ? "border-[#0079FF] bg-[#F0F8FF] shadow-md"
+                            : "border-[#E5E5E5] hover:border-[#0079FF]/50 hover:bg-[#F8FAFC]"
+                        }`}
+                      >
+                        <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+                          formData.inquiryType === "design" ? "bg-[#0079FF]" : "bg-[#F0F4F8]"
+                        }`}>
+                          <Palette className={`w-5 h-5 ${formData.inquiryType === "design" ? "text-white" : "text-[#64748B]"}`} />
+                        </div>
+                        <span className={`text-[12px] font-semibold text-center ${formData.inquiryType === "design" ? "text-[#0079FF]" : "text-[#424242]"}`}>
+                          {language === "ko" ? "디자인&컨설팅" : "Design & Strategy"}
+                        </span>
+                      </button>
+
+                      {/* 포텐랩구독 Card */}
+                      <button
+                        type="button"
+                        onClick={() => setFormData({ ...formData, inquiryType: "subscription", subCategory: "" })}
+                        className={`p-4 rounded-xl border-2 transition-all duration-200 flex flex-col items-center gap-2 ${
+                          formData.inquiryType === "subscription"
+                            ? "border-[#0079FF] bg-[#F0F8FF] shadow-md"
+                            : "border-[#E5E5E5] hover:border-[#0079FF]/50 hover:bg-[#F8FAFC]"
+                        }`}
+                      >
+                        <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+                          formData.inquiryType === "subscription" ? "bg-[#0079FF]" : "bg-[#F0F4F8]"
+                        }`}>
+                          <MessageCircle className={`w-5 h-5 ${formData.inquiryType === "subscription" ? "text-white" : "text-[#64748B]"}`} />
+                        </div>
+                        <span className={`text-[12px] font-semibold text-center ${formData.inquiryType === "subscription" ? "text-[#0079FF]" : "text-[#424242]"}`}>
+                          {language === "ko" ? "포텐랩구독" : "Subscription"}
+                        </span>
+                      </button>
+                    </div>
                   </div>
 
                   {formData.inquiryType === "potenbooster" && (
@@ -261,7 +332,7 @@ export function ContactPage() {
                         htmlFor="subCategory"
                         className="block text-sm font-semibold text-left"
                       >
-                        {language === "ko" ? "플랜 선택" : "Plan Selection"} *
+                        {language === "ko" ? "세부 유형" : "Sub Category"} *
                       </label>
                       <Select
                         value={formData.subCategory}
@@ -300,7 +371,7 @@ export function ContactPage() {
                         htmlFor="subCategory"
                         className="block text-sm font-semibold text-left"
                       >
-                        {language === "ko" ? "프로젝트 유형" : "Project Type"} *
+                        {language === "ko" ? "세부 유형" : "Sub Category"} *
                       </label>
                       <Select
                         value={formData.subCategory}
@@ -319,33 +390,27 @@ export function ContactPage() {
                           />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="uxui">
-                            {language === "ko" ? "UX/UI 디자인" : "UX/UI Design"}
-                          </SelectItem>
                           <SelectItem value="mvp">
-                            {language === "ko" ? "MVP 개발" : "MVP Development"}
+                            {language === "ko" ? "MVP 개발 - 시장 진입을 위한 핵심 기능 구현" : "MVP Development"}
                           </SelectItem>
-                          <SelectItem value="custom">
-                            {language === "ko" ? "커스텀 개발" : "Custom Development"}
+                          <SelectItem value="product">
+                            {language === "ko" ? "Product 개발 - 본격적인 스케일업 및 고도화 개발" : "Product Development"}
                           </SelectItem>
                           <SelectItem value="rnd">
-                            {language === "ko" ? "R&D 개발" : "R&D Development"}
-                          </SelectItem>
-                          <SelectItem value="website">
-                            {language === "ko" ? "홈페이지 구축" : "Website Development"}
+                            {language === "ko" ? "R&D 개발 - 고난도 기술 구현 및 연구 중심 프로젝트" : "R&D Development"}
                           </SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
                   )}
 
-                  {formData.inquiryType === "other" && (
+                  {formData.inquiryType === "design" && (
                     <div className="space-y-2">
                       <label
                         htmlFor="subCategory"
                         className="block text-sm font-semibold text-left"
                       >
-                        {language === "ko" ? "문의 유형" : "Inquiry Type"} *
+                        {language === "ko" ? "세부 유형" : "Sub Category"} *
                       </label>
                       <Select
                         value={formData.subCategory}
@@ -358,20 +423,59 @@ export function ContactPage() {
                           <SelectValue
                             placeholder={
                               language === "ko"
-                                ? "문의 유형을 선택해주세요"
-                                : "Select inquiry type"
+                                ? "세부 유형을 선택해주세요"
+                                : "Select sub category"
                             }
                           />
                         </SelectTrigger>
                         <SelectContent>
+                          <SelectItem value="uxui">
+                            {language === "ko" ? "UX/UI 디자인 - 사용자 경험 중심의 고퀄리티 인터페이스 설계" : "UX/UI Design"}
+                          </SelectItem>
                           <SelectItem value="consulting">
-                            {language === "ko" ? "컨설팅" : "Consulting"}
+                            {language === "ko" ? "IT/Biz 컨설팅 - 비즈니스 모델 진단 및 기술 로드맵 수립" : "IT/Biz Consulting"}
+                          </SelectItem>
+                          <SelectItem value="website">
+                            {language === "ko" ? "브랜드 웹사이트 - 브랜드의 가치를 담은 최적화된 홈페이지 제작" : "Brand Website"}
+                          </SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  )}
+
+                  {formData.inquiryType === "subscription" && (
+                    <div className="space-y-2">
+                      <label
+                        htmlFor="subCategory"
+                        className="block text-sm font-semibold text-left"
+                      >
+                        {language === "ko" ? "세부 유형" : "Sub Category"} *
+                      </label>
+                      <Select
+                        value={formData.subCategory}
+                        onValueChange={(value) =>
+                          setFormData({ ...formData, subCategory: value })
+                        }
+                        required
+                      >
+                        <SelectTrigger className={`!h-12 rounded-xl border-2 focus:border-[#0079FF] transition-colors ${formData.subCategory ? 'border-[#0079FF] bg-[#F0F8FF]' : ''}`}>
+                          <SelectValue
+                            placeholder={
+                              language === "ko"
+                                ? "구독 유형을 선택해주세요"
+                                : "Select subscription type"
+                            }
+                          />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="design-subscription">
+                            {language === "ko" ? "디자인 구독 - 월간 디자인 서비스 이용" : "Design Subscription"}
+                          </SelectItem>
+                          <SelectItem value="dev-subscription">
+                            {language === "ko" ? "개발팀 구독 - 월간 개발 리소스 이용" : "Dev Team Subscription"}
                           </SelectItem>
                           <SelectItem value="partnership">
-                            {language === "ko" ? "협업 제안" : "Partnership"}
-                          </SelectItem>
-                          <SelectItem value="etc">
-                            {language === "ko" ? "기타" : "Other"}
+                            {language === "ko" ? "파트너십 제안 - 협업 및 제휴 문의" : "Partnership Proposal"}
                           </SelectItem>
                         </SelectContent>
                       </Select>

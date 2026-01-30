@@ -8,7 +8,7 @@ export const translations = {
       contents: '콘텐츠',
       courses: '자료실',
       resources: '자료실',
-      contact: '신청하기'
+      contact: '문의하기'
     },
     // ... rest of the translations will be moved here
   },

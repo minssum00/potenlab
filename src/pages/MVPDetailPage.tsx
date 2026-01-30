@@ -1013,7 +1013,7 @@ export function MVPDetailPage() {
                 : "Develop core features quickly"}
             </h2>
             <button
-              onClick={() => navigate("contact")}
+              onClick={() => navigate("contact", null, null, { inquiryType: "project", subCategory: "mvp" })}
               className="bg-white text-[#28B8B9] px-8 py-3 rounded-xl font-semibold hover:bg-white/90 transition-all hover:scale-105 shadow-lg"
             >
               {language === "ko"

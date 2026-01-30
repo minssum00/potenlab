@@ -507,7 +507,7 @@ export function UXUIDetailPage() {
         </section>
 
         {/* Section 3: UXUI Design Process - 4 Steps */}
-        <section className="py-32 px-4 sm:px-8 xl:px-[62px] bg-[#0079FF] relative">
+        <section className="py-32 px-4 sm:px-8 xl:px-[62px] bg-gradient-to-br from-[#8B5CF6] to-[#7C3AED] relative">
           <div className="w-full h-[600px] relative">
             <Section />
           </div>

@@ -569,7 +569,7 @@ export function RnDDetailPage() {
               </p>
               <button
                 onClick={() => {
-                  navigate("contact");
+                  navigate("contact", null, null, { inquiryType: "project", subCategory: "rnd" });
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
                 className="bg-white text-[#10B981] px-8 h-12 rounded-xl font-semibold hover:bg-white/90 transition-colors"

@@ -56,21 +56,10 @@ export function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => {
-                    setSelectedServiceId('it-consulting');
-                    navigate("service");
-                  }}
+                  onClick={() => navigate("other-services")}
                   className="text-[#999999] hover:text-white transition-colors text-xs sm:text-sm"
                 >
-                  {language === "ko" ? "IT/Biz 기술 컨설팅" : "IT/Biz Strategic Consulting"}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => navigate("services")}
-                  className="text-[#999999] hover:text-white transition-colors text-xs sm:text-sm"
-                >
-                  {language === "ko" ? "서비스 의뢰" : "Request Service"}
+                  {language === "ko" ? "서비스 문의" : "Service Inquiry"}
                 </button>
               </li>
             </ul>
@@ -160,9 +149,14 @@ export function Footer() {
         </div>
 
         <div className="pt-6 sm:pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
-          <p className="text-[#999999] text-xs sm:text-sm text-center md:text-left">
-            {t("footer.rights")}
-          </p>
+          <div className="text-center md:text-left">
+            <p className="text-[#999999] text-xs sm:text-sm">
+              {t("footer.rights")}
+            </p>
+            <p className="text-[#666666] text-xs mt-1">
+              {language === "ko" ? "사업자등록번호: 322-03-03534" : "Business Registration: 322-03-03534"}
+            </p>
+          </div>
           <div className="flex gap-4 sm:gap-8 text-xs sm:text-sm items-center">
             <button
               onClick={() => navigate("admin")}

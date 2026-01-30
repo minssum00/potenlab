@@ -369,8 +369,9 @@ export function WebDevelopmentPage() {
               {t.hero.description}
             </p>
             <button
-              onClick={() => navigate("contact")}
-              className="bg-[#059669] text-white px-8 h-12 rounded-xl hover:bg-[#047857] transition-colors font-semibold text-[16px] inline-flex items-center gap-2 shadow-lg hover:shadow-xl"
+              onClick={() => navigate("contact", null, null, { inquiryType: "design", subCategory: "website" })}
+              className="px-8 h-12 rounded-xl transition-colors font-semibold text-[16px] inline-flex items-center gap-2 shadow-lg hover:shadow-xl hover:opacity-90"
+              style={{ backgroundColor: '#059669', color: '#FFFFFF' }}
             >
               {t.hero.cta}
             </button>
@@ -455,8 +456,11 @@ export function WebDevelopmentPage() {
                   }}
                   className="bg-white p-6 rounded-xl border border-[#E5E5E5] hover:border-[#059669]/30 transition-all"
                 >
-                  <div className="w-12 h-12 bg-[#ECFDF5] rounded-xl flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-[#059669]" />
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
+                    style={{ backgroundColor: '#ECFDF5' }}
+                  >
+                    <Icon className="w-6 h-6" style={{ color: '#059669' }} />
                   </div>
                   <div className="text-[13px] font-semibold text-[#059669] mb-2">
                     Step {idx + 1}
@@ -609,8 +613,11 @@ export function WebDevelopmentPage() {
                   }}
                   className="bg-white p-8 rounded-xl border border-[#E5E5E5]"
                 >
-                  <div className="w-12 h-12 bg-[#ECFDF5] rounded-xl flex items-center justify-center mb-6">
-                    <Icon className="w-6 h-6 text-[#059669]" />
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
+                    style={{ backgroundColor: '#ECFDF5' }}
+                  >
+                    <Icon className="w-6 h-6" style={{ color: '#059669' }} />
                   </div>
                   <h3 className="text-[18px] font-bold mb-3 text-[#0E1116]">
                     {point.title}
@@ -662,8 +669,11 @@ export function WebDevelopmentPage() {
                 }}
                 className="bg-[#F8F9FA] p-6 rounded-xl border border-[#E5E5E5] hover:border-[#059669]/30 transition-all"
               >
-                <div className="w-10 h-10 bg-[#059669] rounded-lg flex items-center justify-center mb-4">
-                  <span className="text-white text-[16px] font-bold">
+                <div
+                  className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
+                  style={{ backgroundColor: '#059669' }}
+                >
+                  <span className="text-[16px] font-bold" style={{ color: '#FFFFFF' }}>
                     {idx + 1}
                   </span>
                 </div>
@@ -680,7 +690,7 @@ export function WebDevelopmentPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-[66px] px-8 bg-[#059669]">
+      <section className="py-[66px] px-8" style={{ backgroundColor: '#059669' }}>
         <div className="max-w-[800px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -689,12 +699,13 @@ export function WebDevelopmentPage() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h2 className="text-[32px] md:text-[40px] font-bold mb-10 leading-relaxed text-white whitespace-pre-line">
+            <h2 className="text-[32px] md:text-[40px] font-bold mb-10 leading-relaxed whitespace-pre-line" style={{ color: '#FFFFFF' }}>
               {t.cta.title}
             </h2>
             <button
-              onClick={() => navigate("contact")}
-              className="bg-white text-[#059669] px-8 h-12 rounded-xl hover:bg-[#F5F5F5] transition-colors font-semibold text-[16px]"
+              onClick={() => navigate("contact", null, null, { inquiryType: "design", subCategory: "website" })}
+              className="px-8 h-12 rounded-xl hover:opacity-90 transition-all font-semibold text-[16px]"
+              style={{ backgroundColor: '#FFFFFF', color: '#059669' }}
             >
               {t.cta.button}
             </button>

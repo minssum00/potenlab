@@ -16,6 +16,7 @@ import {
   Layout,
   Smartphone,
   MousePointer,
+  Zap,
 } from "lucide-react";
 
 export function UXUIDesignPage() {
@@ -171,7 +172,7 @@ export function UXUIDesignPage() {
         ],
       },
       cta: {
-        title: "사용자가 사랑하는 제품,\n함께 만들어보세요.",
+        title: "생각은 깊게, 디자인은 쉽게 \n 잘하는 UXUI는 포텐랩에 문의주세요",
         button: "무료 상담 신청하기",
       },
     },
@@ -369,8 +370,9 @@ export function UXUIDesignPage() {
               {t.hero.description}
             </p>
             <button
-              onClick={() => navigate("contact")}
-              className="bg-[#9333EA] text-white px-8 h-12 rounded-xl hover:bg-[#7E22CE] transition-colors font-semibold text-[16px] inline-flex items-center gap-2 shadow-lg hover:shadow-xl"
+              onClick={() => navigate("contact", null, null, { inquiryType: "design", subCategory: "uxui" })}
+              className="px-8 h-12 rounded-xl transition-colors font-semibold text-[16px] inline-flex items-center gap-2 shadow-lg hover:shadow-xl hover:opacity-90"
+              style={{ backgroundColor: '#9333EA', color: '#FFFFFF' }}
             >
               {t.hero.cta}
             </button>
@@ -455,8 +457,11 @@ export function UXUIDesignPage() {
                   }}
                   className="bg-white p-6 rounded-xl border border-[#E5E5E5] hover:border-[#9333EA]/30 transition-all"
                 >
-                  <div className="w-12 h-12 bg-[#F3E8FF] rounded-xl flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-[#9333EA]" />
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
+                    style={{ backgroundColor: '#F3E8FF' }}
+                  >
+                    <Icon className="w-6 h-6" style={{ color: '#9333EA' }} />
                   </div>
                   <div className="text-[13px] font-semibold text-[#9333EA] mb-2">
                     Step {idx + 1}
@@ -570,7 +575,7 @@ export function UXUIDesignPage() {
         </div>
       </section>
 
-      {/* Why Us Section */}
+      {/* Why Us Section - Design System */}
       <section className="py-32 px-8 bg-[#F8F9FA]">
         <div className="max-w-[1156px] mx-auto">
           <motion.div
@@ -578,50 +583,168 @@ export function UXUIDesignPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-20"
+            className="text-center mb-16"
           >
             <p
-              className="text-[14px] font-semibold text-[#9333EA] mb-3"
-              style={{ fontFamily: "'Clash Display', sans-serif" }}
+              className="text-[14px] font-semibold mb-3"
+              style={{ fontFamily: "'Clash Display', sans-serif", color: '#9333EA' }}
             >
-              {t.whyUs.label}
+              Why Us
             </p>
             <h2 className="text-[32px] md:text-[40px] font-bold text-[#0E1116] mb-4">
-              {t.whyUs.title}
+              {language === "ko" ? "포텐랩 UX/UI의 차별점" : "What Sets Potenlab Apart"}
             </h2>
-            <p className="text-[15px] text-[#666666] max-w-[600px] mx-auto">
-              {t.whyUs.description}
-            </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {t.whyUs.points.map((point, idx) => {
-              const Icon = iconMap[point.icon as keyof typeof iconMap];
-              return (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.6,
-                    delay: idx * 0.1,
-                  }}
-                  className="bg-white p-8 rounded-xl border border-[#E5E5E5]"
-                >
-                  <div className="w-12 h-12 bg-[#F3E8FF] rounded-xl flex items-center justify-center mb-6">
-                    <Icon className="w-6 h-6 text-[#9333EA]" />
+          {/* Feature 1: Design System */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="grid md:grid-cols-2 gap-12 items-center mb-24"
+          >
+            {/* Image */}
+            <div className="rounded-2xl overflow-hidden shadow-xl bg-white p-4">
+              <img
+                src="/images/design-system.png"
+                alt="Design System"
+                className="w-full h-auto rounded-xl"
+              />
+            </div>
+
+            {/* Content */}
+            <div>
+              <div className="inline-block px-4 py-2 rounded-full mb-4" style={{ backgroundColor: '#F3E8FF' }}>
+                <span className="text-[14px] font-semibold" style={{ color: '#9333EA' }}>System</span>
+              </div>
+              <h3 className="text-[28px] md:text-[32px] font-bold text-[#0E1116] mb-6">
+                {language === "ko" ? "자체 디자인 시스템" : "In-house Design System"}
+              </h3>
+              <div className="space-y-5">
+                <div className="flex items-start gap-4">
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style={{ backgroundColor: '#F3E8FF' }}>
+                    <Zap className="w-4 h-4" style={{ color: '#9333EA' }} />
                   </div>
-                  <h3 className="text-[18px] font-bold mb-3 text-[#0E1116]">
-                    {point.title}
-                  </h3>
-                  <p className="text-[14px] text-[#666666] leading-relaxed whitespace-pre-line">
-                    {point.description}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
+                  <div>
+                    <p className="text-[16px] font-semibold text-[#0E1116] mb-1">
+                      {language === "ko" ? "효율 중심" : "Efficiency First"}
+                    </p>
+                    <p className="text-[14px] text-[#666666] leading-relaxed">
+                      {language === "ko"
+                        ? "반복되는 설계는 시스템에 맡기고, 우리는 고객의 '아이디어'에 더 집중합니다."
+                        : "Let the system handle repetitive design, so we can focus on your 'ideas'."}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style={{ backgroundColor: '#F3E8FF' }}>
+                    <Shield className="w-4 h-4" style={{ color: '#9333EA' }} />
+                  </div>
+                  <div>
+                    <p className="text-[16px] font-semibold text-[#0E1116] mb-1">
+                      {language === "ko" ? "완성도 중심" : "Quality First"}
+                    </p>
+                    <p className="text-[14px] text-[#666666] leading-relaxed">
+                      {language === "ko"
+                        ? "7년간 설계해본 경험 기반의 포텐랩만의 독자적인 디자인 시스템입니다."
+                        : "Perfect order that never breaks on any device - Potenlab's unique guidelines."}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style={{ backgroundColor: '#F3E8FF' }}>
+                    <TrendingUp className="w-4 h-4" style={{ color: '#9333EA' }} />
+                  </div>
+                  <div>
+                    <p className="text-[16px] font-semibold text-[#0E1116] mb-1">
+                      {language === "ko" ? "확장성 중심" : "Scalability First"}
+                    </p>
+                    <p className="text-[14px] text-[#666666] leading-relaxed">
+                      {language === "ko"
+                        ? "확장성을 고려하여 처음부터 확장 가능한 디자인을 설계합니다."
+                        : "A structure that doesn't collapse as your service grows - sustainable design from the start."}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Feature 2: Function Pages */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="grid md:grid-cols-2 gap-12 items-center"
+          >
+            {/* Content */}
+            <div className="order-2 md:order-1">
+              <div className="inline-block px-4 py-2 rounded-full mb-4" style={{ backgroundColor: '#F3E8FF' }}>
+                <span className="text-[14px] font-semibold" style={{ color: '#9333EA' }}>Function</span>
+              </div>
+              <h3 className="text-[28px] md:text-[32px] font-bold text-[#0E1116] mb-6">
+                {language === "ko" ? "기능별 기본 구성 페이지" : "Function-based Page Templates"}
+              </h3>
+              <div className="space-y-5">
+                <div className="flex items-start gap-4">
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style={{ backgroundColor: '#F3E8FF' }}>
+                    <Zap className="w-4 h-4" style={{ color: '#9333EA' }} />
+                  </div>
+                  <div>
+                    <p className="text-[16px] font-semibold text-[#0E1116] mb-1">
+                      {language === "ko" ? "속도 중심" : "Speed First"}
+                    </p>
+                    <p className="text-[14px] text-[#666666] leading-relaxed">
+                      {language === "ko"
+                        ? "공통된 화면은 이미 있습니다. 검증된 UI 패턴으로 제작 기간을 2배 더 앞당깁니다."
+                        : "No need to build from scratch. Proven UI patterns cut production time in half."}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style={{ backgroundColor: '#F3E8FF' }}>
+                    <MousePointer className="w-4 h-4" style={{ color: '#9333EA' }} />
+                  </div>
+                  <div>
+                    <p className="text-[16px] font-semibold text-[#0E1116] mb-1">
+                      {language === "ko" ? "사용성 중심" : "Usability First"}
+                    </p>
+                    <p className="text-[14px] text-[#666666] leading-relaxed">
+                      {language === "ko"
+                        ? "다양한 산업군의 플랫폼별 유형을 분석하고 구분하여 제작된 공통 핵심 기능화면들입니다."
+                        : "Optimal user flow for maximum comfort - layouts calculated down to 0.1 seconds of hesitation."}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style={{ backgroundColor: '#F3E8FF' }}>
+                    <Layout className="w-4 h-4" style={{ color: '#9333EA' }} />
+                  </div>
+                  <div>
+                    <p className="text-[16px] font-semibold text-[#0E1116] mb-1">
+                      {language === "ko" ? "유연함 중심" : "Flexibility First"}
+                    </p>
+                    <p className="text-[14px] text-[#666666] leading-relaxed">
+                      {language === "ko"
+                        ? "기능은 단단하게, 스타일은 유연하게. 비즈니스 성격에 맞춰 자유롭게 변형됩니다."
+                        : "Solid functionality, flexible style. Freely adaptable to your business needs."}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Image */}
+            <div className="order-1 md:order-2 rounded-2xl overflow-hidden shadow-xl bg-white p-4">
+              <img
+                src="/images/function-pages.png"
+                alt="Function Pages"
+                className="w-full h-auto rounded-xl"
+              />
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -662,8 +785,11 @@ export function UXUIDesignPage() {
                 }}
                 className="bg-[#F8F9FA] p-6 rounded-xl border border-[#E5E5E5] hover:border-[#9333EA]/30 transition-all"
               >
-                <div className="w-10 h-10 bg-[#9333EA] rounded-lg flex items-center justify-center mb-4">
-                  <span className="text-white text-[16px] font-bold">
+                <div
+                  className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
+                  style={{ backgroundColor: '#9333EA' }}
+                >
+                  <span className="text-[16px] font-bold" style={{ color: '#FFFFFF' }}>
                     {idx + 1}
                   </span>
                 </div>
@@ -680,7 +806,7 @@ export function UXUIDesignPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-[66px] px-8 bg-[#9333EA]">
+      <section className="py-[66px] px-8" style={{ backgroundColor: '#9333EA' }}>
         <div className="max-w-[800px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -689,12 +815,13 @@ export function UXUIDesignPage() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h2 className="text-[32px] md:text-[40px] font-bold mb-10 leading-relaxed text-white whitespace-pre-line">
+            <h2 className="text-[32px] md:text-[40px] font-bold mb-10 leading-relaxed whitespace-pre-line" style={{ color: '#FFFFFF' }}>
               {t.cta.title}
             </h2>
             <button
-              onClick={() => navigate("contact")}
-              className="bg-white text-[#9333EA] px-8 h-12 rounded-xl hover:bg-[#F5F5F5] transition-colors font-semibold text-[16px]"
+              onClick={() => navigate("contact", null, null, { inquiryType: "design", subCategory: "uxui" })}
+              className="px-8 h-12 rounded-xl hover:opacity-90 transition-all font-semibold text-[16px]"
+              style={{ backgroundColor: '#FFFFFF', color: '#9333EA' }}
             >
               {t.cta.button}
             </button>
