@@ -435,7 +435,7 @@ export function PotenBoosterPage() {
             </p>
             <button
               onClick={() => navigate("contact", null, null, { inquiryType: "potenbooster" })}
-              className="bg-[#0079FF] text-white px-8 sm:px-10 h-[54px] rounded-full hover:bg-[#0066DD] transition-all font-semibold text-[15px] sm:text-[17px] inline-flex items-center gap-2 shadow-[0_4px_20px_rgba(0,121,255,0.35)] hover:shadow-[0_6px_25px_rgba(0,121,255,0.45)] hover:scale-[1.02]"
+              className="px-[24px] h-[44px] text-[14px] font-medium rounded-[24px] transition-all duration-200 bg-[#0079FF] hover:bg-[#0066DD] text-white shadow-[0px_1px_3px_0px_rgba(0,121,255,0.2),0px_1px_2px_0px_rgba(0,121,255,0.2)] hover:shadow-[0px_2px_5px_0px_rgba(0,121,255,0.3)] inline-flex items-center gap-2"
             >
               {t.hero.cta}
             </button>

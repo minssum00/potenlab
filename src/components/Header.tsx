@@ -112,7 +112,7 @@ export function Header() {
             {t('header.portfolio')}
           </button>
           
-          {/* 운영서비스 Dropdown */}
+          {/* 인사이트 Dropdown */}
           <div
             className="relative"
             onMouseEnter={() => setInsightsDropdownOpen(true)}
@@ -121,7 +121,7 @@ export function Header() {
             <button
               className="h-[36px] px-[14px] text-[14px] font-medium text-[#64748b] hover:text-[#0E1116] hover:bg-[#F8FAFC] rounded-[24px] transition-all duration-200 flex items-center gap-1"
             >
-              {language === 'ko' ? '운영서비스' : 'Operations'}
+              {language === 'ko' ? '인사이트' : 'Insights'}
               <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${insightsDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
 
@@ -146,18 +146,14 @@ export function Header() {
                   >
                     {t('header.courses')}
                   </button>
-                  <button
-                    onClick={() => handleNavigate('poten-school')}
-                    className="w-full text-left px-4 py-3 text-[14px] font-medium text-[#64748b] hover:text-[#0E1116] hover:bg-[#F8FAFC] transition-all duration-200"
+                  <a
+                    href="https://potenschool.kr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full text-left px-4 py-3 text-[14px] font-medium text-[#64748b] hover:text-[#0E1116] hover:bg-[#F8FAFC] transition-all duration-200"
                   >
                     {language === 'ko' ? '포텐스쿨' : 'Poten School'}
-                  </button>
-                  <button
-                    onClick={() => handleNavigate('business-plan')}
-                    className="w-full text-left px-4 py-3 text-[14px] font-medium text-[#64748b] hover:text-[#0E1116] hover:bg-[#F8FAFC] transition-all duration-200"
-                  >
-                    {language === 'ko' ? '사업계획서 작성' : 'Business Plan'}
-                  </button>
+                  </a>
                 </motion.div>
               )}
             </AnimatePresence>
@@ -248,10 +244,10 @@ export function Header() {
               {t('header.portfolio')}
             </button>
 
-            {/* Mobile 운영서비스 Section */}
+            {/* Mobile 인사이트 Section */}
             <div className="space-y-1 pt-2">
               <div className="px-4 py-2 text-[12px] font-semibold text-[#94A3B8] uppercase tracking-wider">
-                {language === 'ko' ? '운영서비스' : 'Operations'}
+                {language === 'ko' ? '인사이트' : 'Insights'}
               </div>
               <button
                 onClick={() => handleNavigate('contents')}
@@ -265,18 +261,14 @@ export function Header() {
               >
                 {t('header.courses')}
               </button>
-              <button
-                onClick={() => handleNavigate('poten-school')}
-                className="block w-full text-left h-[40px] px-4 ml-4 text-[14px] font-medium text-[#64748b] hover:text-[#0E1116] hover:bg-[#F8FAFC] rounded-[24px] transition-all"
+              <a
+                href="https://potenschool.kr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-left h-[40px] px-4 ml-4 text-[14px] font-medium text-[#64748b] hover:text-[#0E1116] hover:bg-[#F8FAFC] rounded-[24px] transition-all leading-[40px]"
               >
                 {language === 'ko' ? '포텐스쿨' : 'Poten School'}
-              </button>
-              <button
-                onClick={() => handleNavigate('business-plan')}
-                className="block w-full text-left h-[40px] px-4 ml-4 text-[14px] font-medium text-[#64748b] hover:text-[#0E1116] hover:bg-[#F8FAFC] rounded-[24px] transition-all"
-              >
-                {language === 'ko' ? '사업계획서 작성' : 'Business Plan'}
-              </button>
+              </a>
             </div>
 
             {/* Mobile Language Toggle */}

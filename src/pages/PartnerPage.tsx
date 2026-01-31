@@ -274,14 +274,14 @@ export function PartnerPage() {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <button
                 onClick={scrollToContact}
-                className="px-6 sm:px-8 h-11 sm:h-12 bg-[#0079FF] text-white rounded-xl font-semibold hover:bg-[#0066DD] transition-colors flex items-center justify-center gap-2 shadow-lg hover:shadow-xl text-[14px] sm:text-[16px]"
+                className="px-[24px] h-[44px] text-[14px] font-medium rounded-[24px] transition-all duration-200 bg-[#0079FF] hover:bg-[#0066DD] text-white shadow-[0px_1px_3px_0px_rgba(0,121,255,0.2),0px_1px_2px_0px_rgba(0,121,255,0.2)] hover:shadow-[0px_2px_5px_0px_rgba(0,121,255,0.3)] flex items-center justify-center gap-2"
               >
                 {t.hero.cta1}
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                <ArrowRight className="w-4 h-4" />
               </button>
               <button
                 onClick={scrollToPricing}
-                className="px-6 sm:px-8 h-11 sm:h-12 border-2 border-[#0079FF] text-[#0079FF] rounded-xl font-semibold hover:bg-[#E6F3FF] transition-colors text-[14px] sm:text-[16px]"
+                className="px-[24px] h-[44px] text-[14px] font-medium rounded-[24px] transition-all duration-200 bg-white text-[#0079FF] border-2 border-[#0079FF] hover:bg-[#F0F8FF]"
               >
                 {t.hero.cta2}
               </button>
@@ -483,10 +483,10 @@ export function PartnerPage() {
           >
             <button
               onClick={scrollToContact}
-              className="px-6 sm:px-8 h-10 sm:h-11 lg:h-12 bg-[#0079FF] text-white rounded-xl font-semibold hover:bg-[#0066DD] transition-colors inline-flex items-center gap-2 shadow-lg hover:shadow-xl text-[14px] sm:text-[15px] lg:text-[16px]"
+              className="px-[24px] h-[44px] text-[14px] font-medium rounded-[24px] transition-all duration-200 bg-[#0079FF] hover:bg-[#0066DD] text-white shadow-[0px_1px_3px_0px_rgba(0,121,255,0.2),0px_1px_2px_0px_rgba(0,121,255,0.2)] hover:shadow-[0px_2px_5px_0px_rgba(0,121,255,0.3)] inline-flex items-center gap-2"
             >
               {t.subscription.cta}
-              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+              <ArrowRight className="w-4 h-4" />
             </button>
           </motion.div>
         </div>
@@ -569,10 +569,10 @@ export function PartnerPage() {
             </p>
             <button
               onClick={scrollToContact}
-              className="bg-white text-[#0079FF] px-6 sm:px-8 lg:px-10 h-10 sm:h-11 lg:h-12 rounded-xl hover:bg-[#F5F5F5] transition-colors font-semibold text-[14px] sm:text-[15px] lg:text-[16px] inline-flex items-center gap-2"
+              className="px-[24px] h-[44px] text-[14px] font-medium rounded-[24px] transition-all duration-200 bg-white text-[#0079FF] hover:bg-[#F0F8FF] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_0px_rgba(0,0,0,0.06)] hover:shadow-[0px_2px_5px_0px_rgba(0,0,0,0.15)] inline-flex items-center gap-2"
             >
               {language === 'ko' ? '지금 시작하기' : 'Get Started'}
-              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+              <ArrowRight className="w-4 h-4" />
             </button>
           </motion.div>
         </div>

@@ -471,29 +471,31 @@ export function CustomProductPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-[100px] sm:pt-[110px] lg:pt-[128px] pb-[40px] sm:pb-[50px] lg:pb-[60px] bg-white">
-        <div className="max-w-[1156px] mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="pt-[100px] sm:pt-[120px] lg:pt-[140px] pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#E6F3FF] via-[#F5F9FF] to-white">
+        <div className="max-w-[1156px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <p className="text-[#0079FF] text-[12px] sm:text-[13px] lg:text-[14px] font-semibold mb-3 sm:mb-4 tracking-wide uppercase">
-              {t.hero.label}
-            </p>
-            <h1 className="text-[24px] sm:text-[32px] lg:text-[40px] font-bold text-[#0E1116] mb-2 sm:mb-3 leading-tight break-keep">
+            <div className="mb-6 sm:mb-8">
+              <span className="inline-block text-[#0079FF] px-4 sm:px-5 py-1.5 sm:py-2 rounded-full text-[13px] sm:text-[14px] font-medium border border-[#0079FF]/30 bg-white/80">
+                🛠️ {t.hero.label}
+              </span>
+            </div>
+            <h1 className="text-[28px] sm:text-[36px] md:text-[44px] font-bold text-[#0E1116] leading-[1.2] mb-2 sm:mb-3 break-keep">
               {t.hero.title}
             </h1>
-            <h2 className="text-[24px] sm:text-[32px] lg:text-[40px] font-bold text-[#0E1116] mb-4 sm:mb-6 leading-tight break-keep">
+            <h2 className="text-[24px] sm:text-[32px] md:text-[40px] font-bold text-[#0079FF] mb-6 sm:mb-8 leading-[1.2] break-keep px-2">
               {t.hero.subtitle}
             </h2>
-            <p className="text-[14px] sm:text-[16px] lg:text-[18px] text-[#666666] mb-8 sm:mb-10 whitespace-pre-line max-w-[700px] mx-auto leading-relaxed px-2">
+            <p className="text-[15px] sm:text-[17px] md:text-[18px] leading-[1.8] text-[#666666] max-w-[700px] mx-auto whitespace-pre-line px-2 mb-8 sm:mb-10">
               {t.hero.description}
             </p>
             <button
               onClick={handleContactClick}
-              className="h-[48px] sm:h-[52px] lg:h-[56px] px-[24px] sm:px-[28px] lg:px-[32px] text-[14px] sm:text-[15px] lg:text-[16px] font-semibold rounded-[24px] sm:rounded-[28px] bg-[#0079FF] hover:bg-[#0066DD] text-white shadow-[0px_2px_8px_0px_rgba(0,121,255,0.3)] hover:shadow-[0px_4px_12px_0px_rgba(0,121,255,0.4)] transition-all duration-300 hover:scale-105"
+              className="px-[24px] h-[44px] text-[14px] font-medium rounded-[24px] transition-all duration-200 bg-[#0079FF] hover:bg-[#0066DD] text-white shadow-[0px_1px_3px_0px_rgba(0,121,255,0.2),0px_1px_2px_0px_rgba(0,121,255,0.2)] hover:shadow-[0px_2px_5px_0px_rgba(0,121,255,0.3)] inline-flex items-center gap-2"
             >
               {t.hero.cta}
             </button>
@@ -502,7 +504,7 @@ export function CustomProductPage() {
       </section>
 
       {/* Suitable Section */}
-      <section className="py-[32px] sm:py-[40px] lg:py-[48px] bg-white relative overflow-hidden">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white relative overflow-hidden">
         {/* Background Blur Gradient */}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] opacity-30">
           <div className="absolute inset-0 bg-gradient-radial from-[#E6F3FF] via-[#F0F9FF] to-transparent blur-[100px]" />
@@ -1045,10 +1047,10 @@ export function CustomProductPage() {
 
                   <button
                     onClick={handleContactClick}
-                    className={`w-full mt-6 h-[48px] rounded-[24px] font-semibold text-[15px] transition-all duration-300 ${
+                    className={`w-full mt-6 h-[44px] text-[14px] font-medium rounded-[24px] transition-all duration-200 ${
                       pkg.recommended
-                        ? "bg-[#0079FF] text-white hover:bg-[#0066DD] shadow-[0px_2px_8px_0px_rgba(0,121,255,0.3)]"
-                        : "bg-[#F8FAFC] text-[#0E1116] hover:bg-[#E6F3FF] border border-[#E5E7EB]"
+                        ? "bg-[#0079FF] hover:bg-[#0066DD] text-white shadow-[0px_1px_3px_0px_rgba(0,121,255,0.2),0px_1px_2px_0px_rgba(0,121,255,0.2)] hover:shadow-[0px_2px_5px_0px_rgba(0,121,255,0.3)]"
+                        : "bg-white text-[#0079FF] border-2 border-[#0079FF] hover:bg-[#F0F8FF]"
                     }`}
                   >
                     상담 신청
@@ -1061,8 +1063,8 @@ export function CustomProductPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 sm:py-16 lg:py-24 bg-[#0079FF]">
-        <div className="max-w-[1156px] mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12 sm:py-16 lg:py-[66px] px-4 sm:px-6 lg:px-8 bg-[#0079FF]">
+        <div className="max-w-[800px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1070,7 +1072,7 @@ export function CustomProductPage() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h2 className="text-[24px] sm:text-[30px] lg:text-[36px] font-bold text-white mb-3 sm:mb-4 break-keep px-2">
+            <h2 className="text-[22px] sm:text-[28px] md:text-[40px] font-bold mb-6 sm:mb-8 lg:mb-10 leading-relaxed text-white whitespace-pre-line break-keep px-2">
               {t.cta.title}
             </h2>
             <p className="text-[14px] sm:text-[15px] lg:text-[17px] text-white/90 mb-6 sm:mb-8 max-w-[600px] mx-auto leading-relaxed px-2">
@@ -1078,7 +1080,7 @@ export function CustomProductPage() {
             </p>
             <button
               onClick={handleContactClick}
-              className="h-[48px] sm:h-[52px] lg:h-[56px] px-[24px] sm:px-[28px] lg:px-[32px] text-[14px] sm:text-[15px] lg:text-[16px] font-semibold rounded-[24px] sm:rounded-[28px] bg-black hover:bg-[#1A1A1A] text-white shadow-[0px_2px_8px_0px_rgba(0,0,0,0.3)] hover:shadow-[0px_4px_12px_0px_rgba(0,0,0,0.4)] transition-all duration-300 hover:scale-105"
+              className="px-[24px] h-[44px] text-[14px] font-medium rounded-[24px] transition-all duration-200 bg-white text-[#0079FF] hover:bg-[#F0F8FF] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_0px_rgba(0,0,0,0.06)] hover:shadow-[0px_2px_5px_0px_rgba(0,0,0,0.15)]"
             >
               {t.cta.button}
             </button>

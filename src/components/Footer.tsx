@@ -75,7 +75,7 @@ export function Footer() {
 
           <div>
             <h4 className="text-sm sm:text-base font-medium mb-3 sm:mb-4 text-white">
-              {language === "ko" ? "운영서비스" : "Operations"}
+              {language === "ko" ? "인사이트" : "Insights"}
             </h4>
             <ul className="space-y-2 sm:space-y-3">
               <li>
@@ -91,24 +91,18 @@ export function Footer() {
                   onClick={() => navigate("lecture")}
                   className="text-[#999999] hover:text-white transition-colors text-xs sm:text-sm"
                 >
-                  {language === "ko" ? "강의" : "Courses"}
+                  {language === "ko" ? "자료실" : "Resources"}
                 </button>
               </li>
               <li>
-                <button
-                  onClick={() => navigate("poten-school")}
+                <a
+                  href="https://potenschool.kr"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-[#999999] hover:text-white transition-colors text-xs sm:text-sm"
                 >
                   {language === "ko" ? "포텐스쿨" : "Poten School"}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => navigate("business-plan")}
-                  className="text-[#999999] hover:text-white transition-colors text-xs sm:text-sm"
-                >
-                  {language === "ko" ? "사업계획서 작성" : "Business Plan"}
-                </button>
+                </a>
               </li>
             </ul>
           </div>
