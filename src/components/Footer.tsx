@@ -101,7 +101,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="text-[#999999] hover:text-white transition-colors text-xs sm:text-sm"
                 >
-                  {language === "ko" ? "포텐스쿨" : "Poten School"}
+                  {language === "ko" ? "포텐1스쿨" : "Poten School"}
                 </a>
               </li>
             </ul>
