@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 import { projectId } from '../utils/supabase/info';
 
-type Page = 'home' | 'services' | 'portfolio' | 'contents' | 'lecture' | 'resources' | 'about' | 'partner' | 'partner-test' | 'test3' | 'service' | 'portfolio-detail' | 'article-detail' | 'mvp-detail' | 'uxui-detail' | 'webapp-detail' | 'rnd-detail' | 'style-guide' | 'contact' | 'poten-booster' | 'custom-product' | 'consulting' | 'uxui-design' | 'web-development' | 'other-services' | 'business-plan' | 'poten-lamp' | 'admin' | 'admin-dashboard' | 'admin-inquiries' | 'admin-portfolio' | 'admin-article' | 'admin-article-form' | 'admin-seo' | 'admin-seo-global' | 'admin-seo-detail' | 'admin-courses' | 'admin-og-image' | 'naver-verification' | 'robots-txt' | 'sitemap-xml';
+type Page = 'home' | 'services' | 'portfolio' | 'contents' | 'lecture' | 'resources' | 'about' | 'partner' | 'partner-test' | 'test3' | 'service' | 'portfolio-detail' | 'article-detail' | 'mvp-detail' | 'uxui-detail' | 'webapp-detail' | 'rnd-detail' | 'style-guide' | 'contact' | 'poten-booster' | 'custom-product' | 'consulting' | 'uxui-design' | 'web-development' | 'other-services' | 'business-plan' | 'poten-lamp' | 'poten-school' | 'admin' | 'admin-dashboard' | 'admin-inquiries' | 'admin-portfolio' | 'admin-article' | 'admin-article-form' | 'admin-seo' | 'admin-seo-global' | 'admin-seo-detail' | 'admin-courses' | 'admin-og-image' | 'naver-verification' | 'robots-txt' | 'sitemap-xml';
 
 interface RouterContextType {
   currentPage: Page;
@@ -103,6 +103,8 @@ export function RouterProvider({ children }: { children: ReactNode }) {
         setCurrentPage('business-plan');
       } else if (path === '/poten-lamp') {
         setCurrentPage('poten-lamp');
+      } else if (path === '/poten-school') {
+        setCurrentPage('poten-school');
       } else if (path.startsWith('/potenlab/')) {
         // Extract portfolio ID from URL
         const portfolioId = path.replace('/potenlab/', '');
@@ -202,6 +204,7 @@ export function RouterProvider({ children }: { children: ReactNode }) {
       else if (page === 'other-services') url = '/other-services';
       else if (page === 'business-plan') url = '/business-plan';
       else if (page === 'poten-lamp') url = '/poten-lamp';
+      else if (page === 'poten-school') url = '/poten-school';
       else if (page === 'portfolio-detail' && (portfolioId || selectedPortfolioId)) {
         url = `/potenlab/${portfolioId || selectedPortfolioId}`;
       }

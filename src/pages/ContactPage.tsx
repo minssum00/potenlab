@@ -195,7 +195,7 @@ export function ContactPage() {
 
       <main className="pt-[72px]">
         {/* Hero Section */}
-        <section className="py-24 px-4 sm:px-8 xl:px-[62px] bg-white">
+        <section className="py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8 xl:px-[62px] bg-white">
           <div className="max-w-[1156px] mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -203,7 +203,7 @@ export function ContactPage() {
               transition={{ duration: 0.6 }}
             >
               <p
-                className="text-[#0079FF] text-[20px] font-semibold mb-2"
+                className="text-[#0079FF] text-[16px] sm:text-[18px] lg:text-[20px] font-semibold mb-2"
                 style={{
                   fontFamily: "Clash Display, sans-serif",
                   fontWeight: 600,
@@ -211,12 +211,12 @@ export function ContactPage() {
               >
                 Contact
               </p>
-              <h1 className="text-[36px] font-bold mb-3">
+              <h1 className="text-[24px] sm:text-[30px] lg:text-[36px] font-bold mb-2 sm:mb-3 break-keep px-2">
                 {language === "ko"
                   ? texts.title_ko
                   : texts.title_en}
               </h1>
-              <p className="text-[16px] text-[#666] mb-16">
+              <p className="text-[14px] sm:text-[15px] lg:text-[16px] text-[#666] mb-8 sm:mb-12 lg:mb-16 px-2">
                 {language === "ko"
                   ? texts.subtitle_ko
                   : texts.subtitle_en}
@@ -236,7 +236,7 @@ export function ContactPage() {
               >
                 <form
                   onSubmit={handleSubmit}
-                  className="p-8 rounded-3xl bg-white border border-[#E5E5E5] shadow-lg space-y-6"
+                  className="p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl bg-white border border-[#E5E5E5] shadow-lg space-y-4 sm:space-y-5 lg:space-y-6"
                 >
                   {/* Inquiry Type Cards */}
                   <div className="space-y-3">

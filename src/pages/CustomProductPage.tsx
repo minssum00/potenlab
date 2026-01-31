@@ -471,29 +471,29 @@ export function CustomProductPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-[128px] pb-[60px] bg-white pr-[0px] pl-[0px]">
-        <div className="max-w-[1156px] mx-auto px-8">
+      <section className="pt-[100px] sm:pt-[110px] lg:pt-[128px] pb-[40px] sm:pb-[50px] lg:pb-[60px] bg-white">
+        <div className="max-w-[1156px] mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <p className="text-[#0079FF] text-[14px] font-semibold mb-4 tracking-wide uppercase">
+            <p className="text-[#0079FF] text-[12px] sm:text-[13px] lg:text-[14px] font-semibold mb-3 sm:mb-4 tracking-wide uppercase">
               {t.hero.label}
             </p>
-            <h1 className="text-[40px] font-bold text-[#0E1116] mb-3 leading-tight">
+            <h1 className="text-[24px] sm:text-[32px] lg:text-[40px] font-bold text-[#0E1116] mb-2 sm:mb-3 leading-tight break-keep">
               {t.hero.title}
             </h1>
-            <h2 className="text-[40px] font-bold text-[#0E1116] mb-6 leading-tight">
+            <h2 className="text-[24px] sm:text-[32px] lg:text-[40px] font-bold text-[#0E1116] mb-4 sm:mb-6 leading-tight break-keep">
               {t.hero.subtitle}
             </h2>
-            <p className="text-[18px] text-[#666666] mb-10 whitespace-pre-line max-w-[700px] mx-auto leading-relaxed">
+            <p className="text-[14px] sm:text-[16px] lg:text-[18px] text-[#666666] mb-8 sm:mb-10 whitespace-pre-line max-w-[700px] mx-auto leading-relaxed px-2">
               {t.hero.description}
             </p>
             <button
               onClick={handleContactClick}
-              className="h-[56px] px-[32px] text-[16px] font-semibold rounded-[28px] bg-[#0079FF] hover:bg-[#0066DD] text-white shadow-[0px_2px_8px_0px_rgba(0,121,255,0.3)] hover:shadow-[0px_4px_12px_0px_rgba(0,121,255,0.4)] transition-all duration-300 hover:scale-105"
+              className="h-[48px] sm:h-[52px] lg:h-[56px] px-[24px] sm:px-[28px] lg:px-[32px] text-[14px] sm:text-[15px] lg:text-[16px] font-semibold rounded-[24px] sm:rounded-[28px] bg-[#0079FF] hover:bg-[#0066DD] text-white shadow-[0px_2px_8px_0px_rgba(0,121,255,0.3)] hover:shadow-[0px_4px_12px_0px_rgba(0,121,255,0.4)] transition-all duration-300 hover:scale-105"
             >
               {t.hero.cta}
             </button>
@@ -502,26 +502,26 @@ export function CustomProductPage() {
       </section>
 
       {/* Suitable Section */}
-      <section className="py-[48px] bg-white relative overflow-hidden px-[0px]">
+      <section className="py-[32px] sm:py-[40px] lg:py-[48px] bg-white relative overflow-hidden">
         {/* Background Blur Gradient */}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] opacity-30">
           <div className="absolute inset-0 bg-gradient-radial from-[#E6F3FF] via-[#F0F9FF] to-transparent blur-[100px]" />
         </div>
 
-        <div className="max-w-[1156px] mx-auto px-8 relative">
+        <div className="max-w-[1156px] mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-8 sm:mb-12 lg:mb-16"
           >
-            <h2 className="text-[36px] font-bold text-[#0E1116] leading-[54px]">
+            <h2 className="text-[22px] sm:text-[28px] lg:text-[36px] font-bold text-[#0E1116] leading-[1.4] sm:leading-[1.5] break-keep px-2">
               {t.suitable.title}
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {t.suitable.items.map((item, index) => {
               const images = [
                 imgImage10,
@@ -582,24 +582,24 @@ export function CustomProductPage() {
       </section>
 
       {/* Strength Section */}
-      <section className="py-24 bg-[#1A1A1A] relative overflow-hidden">
-        <div className="max-w-[1156px] mx-auto px-8">
+      <section className="py-12 sm:py-16 lg:py-24 bg-[#1A1A1A] relative overflow-hidden">
+        <div className="max-w-[1156px] mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-8 sm:mb-12 lg:mb-16"
           >
-            <p className="text-[#3FD4D5] text-[20px] font-bold mb-2">
+            <p className="text-[#3FD4D5] text-[16px] sm:text-[18px] lg:text-[20px] font-bold mb-2">
               {t.strength.subtitle}
             </p>
-            <h2 className="text-[32px] font-bold text-white">
+            <h2 className="text-[24px] sm:text-[28px] lg:text-[32px] font-bold text-white break-keep">
               {t.strength.title}
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {t.strength.items.map((item, index) => (
               <motion.div
                 key={index}
@@ -612,13 +612,13 @@ export function CustomProductPage() {
                 }}
                 className="text-center"
               >
-                <p className="text-[22px] font-bold text-[rgba(255,255,255,0.3)] mb-3">
+                <p className="text-[16px] sm:text-[18px] lg:text-[22px] font-bold text-[rgba(255,255,255,0.3)] mb-2 sm:mb-3">
                   {item.number}
                 </p>
-                <p className="text-[25px] font-bold text-white mb-3">
+                <p className="text-[16px] sm:text-[20px] lg:text-[25px] font-bold text-white mb-2 sm:mb-3">
                   {item.title}
                 </p>
-                <p className="text-[17px] text-[#C1C1C1] leading-[1.7]">
+                <p className="text-[12px] sm:text-[14px] lg:text-[17px] text-[#C1C1C1] leading-[1.7]">
                   {item.description}
                 </p>
               </motion.div>
@@ -628,24 +628,24 @@ export function CustomProductPage() {
       </section>
 
       {/* Products Section */}
-      <section className="py-24 bg-[#226bef] relative overflow-hidden shadow-[0px_-15px_21px_0px_rgba(0,0,0,0.05)]">
-        <div className="max-w-[1156px] mx-auto px-8">
+      <section className="py-12 sm:py-16 lg:py-24 bg-[#226bef] relative overflow-hidden shadow-[0px_-15px_21px_0px_rgba(0,0,0,0.05)]">
+        <div className="max-w-[1156px] mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-[34px]"
+            className="text-center mb-6 sm:mb-8 lg:mb-[34px]"
           >
-            <p className="text-[#00ffe0] text-[20px] font-bold leading-[1.7] mb-[2px]">
+            <p className="text-[#00ffe0] text-[16px] sm:text-[18px] lg:text-[20px] font-bold leading-[1.7] mb-[2px]">
               어떻게 진행되나요?
             </p>
-            <h2 className="text-[32px] font-bold text-white leading-[1.5]">
+            <h2 className="text-[24px] sm:text-[28px] lg:text-[32px] font-bold text-white leading-[1.5]">
               서비스 프로세스
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-4 gap-[24px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-[24px]">
             {/* Step 01 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -754,27 +754,27 @@ export function CustomProductPage() {
       </section>
 
       {/* Tech Stack Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-[1156px] mx-auto px-8">
+      <section className="py-12 sm:py-16 lg:py-24 bg-white">
+        <div className="max-w-[1156px] mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-[34px]"
+            className="text-center mb-6 sm:mb-8 lg:mb-[34px]"
           >
             <div className="flex flex-col items-center justify-center gap-[2px] mb-[12px]">
-              <p className="text-[40px] leading-[1.7] font-bold text-center">🖥️</p>
-              <h2 className="text-[32px] font-bold text-black leading-[1.5]">이런 기술들을 사용해요</h2>
+              <p className="text-[32px] sm:text-[36px] lg:text-[40px] leading-[1.7] font-bold text-center">🖥️</p>
+              <h2 className="text-[24px] sm:text-[28px] lg:text-[32px] font-bold text-black leading-[1.5]">이런 기술들을 사용해요</h2>
             </div>
-            <div className="text-[#3b3f4a] text-[18px] leading-[1.7] text-center max-w-[800px] mx-auto">
+            <div className="text-[#3b3f4a] text-[14px] sm:text-[16px] lg:text-[18px] leading-[1.7] text-center max-w-[800px] mx-auto px-2">
               <p className="mb-0">Javascript 기반의 Framework인 React를 통해 개발합니다.</p>
-              <p className="mb-0">React-Native는 App개발 시 Cross Platform (iOS , Android) 개발이 가능합니다.</p>
-              <p className="text-[#b1b1b1]">*고객요청 및 상황에 따라 일부 기술스택은 변경할 수 있습니다.</p>
+              <p className="mb-0 hidden sm:block">React-Native는 App개발 시 Cross Platform (iOS , Android) 개발이 가능합니다.</p>
+              <p className="text-[#b1b1b1] text-[12px] sm:text-[14px]">*고객요청 및 상황에 따라 일부 기술스택은 변경할 수 있습니다.</p>
             </div>
           </motion.div>
 
-          <div className="flex flex-col gap-[16px]">
+          <div className="flex flex-col gap-3 sm:gap-4 lg:gap-[16px] overflow-x-auto">
             {/* First Row */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -933,32 +933,32 @@ export function CustomProductPage() {
       </section>
 
       {/* Packages Section */}
-      <section className="py-32 bg-white">
-        <div className="max-w-[1156px] mx-auto px-8">
+      <section className="py-16 sm:py-24 lg:py-32 bg-white">
+        <div className="max-w-[1156px] mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-8 sm:mb-12 lg:mb-16"
           >
             <p
-              className="text-[#0079FF] text-[15px] font-semibold mb-4 tracking-wide"
+              className="text-[#0079FF] text-[12px] sm:text-[14px] lg:text-[15px] font-semibold mb-3 sm:mb-4 tracking-wide"
               style={{
                 fontFamily: "Clash Display, sans-serif",
               }}
             >
               {t.packages.subtitle}
             </p>
-            <h2 className="text-[42px] font-bold text-[#0E1116] mb-5">
+            <h2 className="text-[28px] sm:text-[34px] lg:text-[42px] font-bold text-[#0E1116] mb-3 sm:mb-4 lg:mb-5">
               {t.packages.title}
             </h2>
-            <p className="text-[17px] text-[#666666] max-w-[600px] mx-auto">
+            <p className="text-[14px] sm:text-[15px] lg:text-[17px] text-[#666666] max-w-[600px] mx-auto px-2">
               {t.packages.description}
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
             {t.packages.items.map((pkg, index) => {
               const Icon = iconMap[pkg.icon];
               return (
@@ -1061,8 +1061,8 @@ export function CustomProductPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-[#0079FF]">
-        <div className="max-w-[1156px] mx-auto px-8">
+      <section className="py-12 sm:py-16 lg:py-24 bg-[#0079FF]">
+        <div className="max-w-[1156px] mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1070,19 +1070,19 @@ export function CustomProductPage() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h2 className="text-[36px] font-bold text-white mb-4">
+            <h2 className="text-[24px] sm:text-[30px] lg:text-[36px] font-bold text-white mb-3 sm:mb-4 break-keep px-2">
               {t.cta.title}
             </h2>
-            <p className="text-[17px] text-white/90 mb-8 max-w-[600px] mx-auto leading-relaxed">
+            <p className="text-[14px] sm:text-[15px] lg:text-[17px] text-white/90 mb-6 sm:mb-8 max-w-[600px] mx-auto leading-relaxed px-2">
               {t.cta.description}
             </p>
             <button
               onClick={handleContactClick}
-              className="h-[56px] px-[32px] text-[16px] font-semibold rounded-[28px] bg-black hover:bg-[#1A1A1A] text-white shadow-[0px_2px_8px_0px_rgba(0,0,0,0.3)] hover:shadow-[0px_4px_12px_0px_rgba(0,0,0,0.4)] transition-all duration-300 hover:scale-105"
+              className="h-[48px] sm:h-[52px] lg:h-[56px] px-[24px] sm:px-[28px] lg:px-[32px] text-[14px] sm:text-[15px] lg:text-[16px] font-semibold rounded-[24px] sm:rounded-[28px] bg-black hover:bg-[#1A1A1A] text-white shadow-[0px_2px_8px_0px_rgba(0,0,0,0.3)] hover:shadow-[0px_4px_12px_0px_rgba(0,0,0,0.4)] transition-all duration-300 hover:scale-105"
             >
               {t.cta.button}
             </button>
-            <p className="text-[14px] text-white/80 mt-4">
+            <p className="text-[12px] sm:text-[13px] lg:text-[14px] text-white/80 mt-3 sm:mt-4">
               {t.cta.subtext}
             </p>
           </motion.div>

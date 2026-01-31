@@ -134,28 +134,28 @@ const content = {
           path: "/poten-booster",
         },
         {
-          title: "커스텀 프로덕트 개발",
-          subtitle: "Custom Product Development",
+          title: "커스텀 프로젝트 개발",
+          subtitle: "Custom Project Development",
           description:
             "상용화 및 고도화를 위한 정교한 제품 구축. 검증된 아이디어를 바탕으로 실제 비즈니스 운영이 가능한 완성도 높은 솔루션을 빌드합니다.",
           icon: "Code",
           path: "/custom-product",
         },
         {
-          title: "IT/Biz 기술 컨설팅",
-          subtitle: "Strategic Consulting",
+          title: "디자인&컨설팅",
+          subtitle: "Design & Consulting",
           description:
             "기술 타당성 검토 및 기획 고도화. 막막한 아이디어를 개발 가능한 기술 언어로 정의하고 사업계획서의 논리적 허점을 보완합니다.",
           icon: "Target",
-          path: "/consulting",
+          path: "/other-services",
         },
         {
-          title: "포텐의 램프 🧞",
-          subtitle: "Poten-Lamp | PRD AI [준비 중]",
+          title: "구독 서비스",
+          subtitle: "Subscription Service",
           description:
-            "아이디어만으로 기획 산출물을 자동 생성하는 AI 도구. 메뉴 구조, IA, 기능 명세서 등 복잡한 기획 단계를 챗봇과 대화하며 즉시 해결합니다.",
+            "월 정액으로 이용하는 IT 개발 및 유지보수 서비스. 지속적인 기술 지원과 업데이트로 비즈니스 성장을 함께합니다.",
           icon: "Sparkles",
-          path: "/poten-lamp",
+          path: "/partner",
         },
       ],
     },
@@ -328,28 +328,28 @@ const content = {
           path: "/poten-booster",
         },
         {
-          title: "Custom Product Development",
-          subtitle: "Custom Product Development",
+          title: "Custom Project Development",
+          subtitle: "Custom Project Development",
           description:
             "Sophisticated product construction for commercialization and advancement. Build high-quality solutions that enable actual business operations based on validated ideas.",
           icon: "Code",
           path: "/custom-product",
         },
         {
-          title: "IT/Biz Strategic Consulting",
-          subtitle: "Strategic Consulting",
+          title: "Design & Consulting",
+          subtitle: "Design & Consulting",
           description:
             "Technical feasibility review and planning enhancement. Define vague ideas into developable technical language and supplement logical gaps in business plans.",
           icon: "Target",
-          path: "/consulting",
+          path: "/other-services",
         },
         {
-          title: "Poten-Lamp 🧞",
-          subtitle: "Poten-Lamp | PRD AI [Coming Soon]",
+          title: "Subscription Service",
+          subtitle: "Subscription Service",
           description:
-            "AI tool that auto-generates planning outputs from ideas alone. Instantly solve complex planning stages like menu structure, IA, and functional specifications through chatbot conversations.",
+            "Monthly IT development and maintenance service. Continuous technical support and updates to grow your business together.",
           icon: "Sparkles",
-          path: "/poten-lamp",
+          path: "/partner",
         },
       ],
     },
@@ -886,9 +886,9 @@ export function PartnerTestPage() {
                     } else if (index === 1) {
                       navigate("custom-product");
                     } else if (index === 2) {
-                      navigate("consulting");
+                      navigate("other-services");
                     } else if (index === 3) {
-                      navigate("poten-lamp");
+                      navigate("partner");
                     } else if (item.path) {
                       navigate(item.path);
                     }

@@ -13,7 +13,7 @@ export function Header() {
   const { language, setLanguage, t } = useLanguage();
   const { navigate, setSelectedServiceId } = useRouter();
 
-  const handleNavigate = (page: 'home' | 'services' | 'portfolio' | 'contents' | 'lecture' | 'about' | 'partner' | 'partner3' | 'poten-booster' | 'custom-product' | 'consulting' | 'other-services' | 'business-plan') => {
+  const handleNavigate = (page: 'home' | 'services' | 'portfolio' | 'contents' | 'lecture' | 'about' | 'partner' | 'partner3' | 'poten-booster' | 'custom-product' | 'consulting' | 'other-services' | 'business-plan' | 'poten-school') => {
     navigate(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setMobileMenuOpen(false);
@@ -112,8 +112,8 @@ export function Header() {
             {t('header.portfolio')}
           </button>
           
-          {/* Insights Dropdown */}
-          <div 
+          {/* 운영서비스 Dropdown */}
+          <div
             className="relative"
             onMouseEnter={() => setInsightsDropdownOpen(true)}
             onMouseLeave={() => setInsightsDropdownOpen(false)}
@@ -121,10 +121,10 @@ export function Header() {
             <button
               className="h-[36px] px-[14px] text-[14px] font-medium text-[#64748b] hover:text-[#0E1116] hover:bg-[#F8FAFC] rounded-[24px] transition-all duration-200 flex items-center gap-1"
             >
-              {language === 'ko' ? '인사이트' : 'Insights'}
+              {language === 'ko' ? '운영서비스' : 'Operations'}
               <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${insightsDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
-            
+
             <AnimatePresence>
               {insightsDropdownOpen && (
                 <motion.div
@@ -145,6 +145,12 @@ export function Header() {
                     className="w-full text-left px-4 py-3 text-[14px] font-medium text-[#64748b] hover:text-[#0E1116] hover:bg-[#F8FAFC] transition-all duration-200"
                   >
                     {t('header.courses')}
+                  </button>
+                  <button
+                    onClick={() => handleNavigate('poten-school')}
+                    className="w-full text-left px-4 py-3 text-[14px] font-medium text-[#64748b] hover:text-[#0E1116] hover:bg-[#F8FAFC] transition-all duration-200"
+                  >
+                    {language === 'ko' ? '포텐스쿨' : 'Poten School'}
                   </button>
                   <button
                     onClick={() => handleNavigate('business-plan')}
@@ -203,23 +209,49 @@ export function Header() {
             >
               {t('header.about')}
             </button>
-            <button
-              onClick={() => handleNavigate('services')}
-              className="block w-full text-left h-[40px] px-4 text-[14px] font-medium text-[#64748b] hover:text-[#0E1116] hover:bg-[#F8FAFC] rounded-[24px] transition-all"
-            >
-              {t('header.services')}
-            </button>
+
+            {/* Mobile Services Section */}
+            <div className="space-y-1 pt-2">
+              <div className="px-4 py-2 text-[12px] font-semibold text-[#94A3B8] uppercase tracking-wider">
+                {language === 'ko' ? '핵심서비스' : 'Services'}
+              </div>
+              <button
+                onClick={() => handleNavigate('poten-booster')}
+                className="block w-full text-left h-[40px] px-4 ml-4 text-[14px] font-medium text-[#64748b] hover:text-[#0E1116] hover:bg-[#F8FAFC] rounded-[24px] transition-all"
+              >
+                {language === 'ko' ? '포텐 부스터' : 'Poten Booster'}
+              </button>
+              <button
+                onClick={() => handleNavigate('custom-product')}
+                className="block w-full text-left h-[40px] px-4 ml-4 text-[14px] font-medium text-[#64748b] hover:text-[#0E1116] hover:bg-[#F8FAFC] rounded-[24px] transition-all"
+              >
+                {language === 'ko' ? '커스텀 프로젝트 개발' : 'Custom Project Development'}
+              </button>
+              <button
+                onClick={() => handleNavigate('other-services')}
+                className="block w-full text-left h-[40px] px-4 ml-4 text-[14px] font-medium text-[#64748b] hover:text-[#0E1116] hover:bg-[#F8FAFC] rounded-[24px] transition-all"
+              >
+                {language === 'ko' ? '디자인&컨설팅' : 'Design & Consulting'}
+              </button>
+              <button
+                onClick={() => handleNavigate('partner')}
+                className="block w-full text-left h-[40px] px-4 ml-4 text-[14px] font-medium text-[#64748b] hover:text-[#0E1116] hover:bg-[#F8FAFC] rounded-[24px] transition-all"
+              >
+                {language === 'ko' ? '구독 서비스' : 'Subscription Service'}
+              </button>
+            </div>
+
             <button
               onClick={() => handleNavigate('portfolio')}
               className="block w-full text-left h-[40px] px-4 text-[14px] font-medium text-[#64748b] hover:text-[#0E1116] hover:bg-[#F8FAFC] rounded-[24px] transition-all"
             >
               {t('header.portfolio')}
             </button>
-            
-            {/* Mobile Insights Section */}
+
+            {/* Mobile 운영서비스 Section */}
             <div className="space-y-1 pt-2">
               <div className="px-4 py-2 text-[12px] font-semibold text-[#94A3B8] uppercase tracking-wider">
-                {language === 'ko' ? '인사이트' : 'Insights'}
+                {language === 'ko' ? '운영서비스' : 'Operations'}
               </div>
               <button
                 onClick={() => handleNavigate('contents')}
@@ -232,6 +264,12 @@ export function Header() {
                 className="block w-full text-left h-[40px] px-4 ml-4 text-[14px] font-medium text-[#64748b] hover:text-[#0E1116] hover:bg-[#F8FAFC] rounded-[24px] transition-all"
               >
                 {t('header.courses')}
+              </button>
+              <button
+                onClick={() => handleNavigate('poten-school')}
+                className="block w-full text-left h-[40px] px-4 ml-4 text-[14px] font-medium text-[#64748b] hover:text-[#0E1116] hover:bg-[#F8FAFC] rounded-[24px] transition-all"
+              >
+                {language === 'ko' ? '포텐스쿨' : 'Poten School'}
               </button>
               <button
                 onClick={() => handleNavigate('business-plan')}
@@ -249,10 +287,10 @@ export function Header() {
               <Globe className="w-4 h-4" />
               <span>{language === 'ko' ? 'English' : '한국어'}</span>
             </button>
-            
+
             <div className="pt-4">
               <button
-                onClick={handleContactClick} 
+                onClick={handleContactClick}
                 className="w-full h-[48px] px-6 text-[14px] font-medium rounded-[24px] bg-[#0079FF] hover:bg-[#0066DD] text-white shadow-[0px_1px_3px_0px_rgba(0,121,255,0.2),0px_1px_2px_0px_rgba(0,121,255,0.2)] transition-all duration-200"
               >
                 {t('header.contact')}

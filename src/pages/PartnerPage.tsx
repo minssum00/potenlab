@@ -246,35 +246,42 @@ export function PartnerPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-[168px] pb-32 bg-gradient-to-b from-[#E6F3FF] to-white">
-        <div className="max-w-[1156px] mx-auto px-8">
+      <section className="pt-[100px] sm:pt-[110px] lg:pt-[120px] pb-16 sm:pb-24 lg:pb-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#E6F3FF] via-[#F5F9FF] to-white">
+        <div className="max-w-[1156px] mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-[48px] md:text-[56px] font-bold text-[#0E1116] leading-[1.2] mb-6">
+            <div className="mb-3 sm:mb-4">
+              <span className="inline-block text-[#0079FF] px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-[12px] sm:text-[14px] font-semibold border border-[#0079FF]/20 bg-white/50">
+                💼 Partnership
+              </span>
+            </div>
+            <h1 className="text-[28px] sm:text-[36px] md:text-[48px] font-bold text-[#0E1116] leading-[1.2] mb-2">
               {t.hero.title}
-              <br />
-              <span className="text-[#0079FF]">{t.hero.titleHighlight}</span>
             </h1>
-            <p className="text-[18px] md:text-[20px] text-[#666666] max-w-3xl mx-auto leading-relaxed mb-8">
+            <h2 className="text-[22px] sm:text-[28px] md:text-[40px] font-bold mb-4 sm:mb-6 text-[#0079FF] break-keep px-2">
+              {t.hero.titleHighlight}
+            </h2>
+            <p className="text-[14px] sm:text-[16px] md:text-[18px] text-[#666666] max-w-[700px] mx-auto leading-relaxed mb-2 sm:mb-3 px-2">
               {t.hero.subtitle}
-              <br />
-              <span className="font-semibold text-[#0E1116]">{t.hero.subtitle2}</span>
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+            <p className="text-[14px] sm:text-[16px] md:text-[18px] font-semibold text-[#0E1116] mb-8 sm:mb-10 px-2">
+              {t.hero.subtitle2}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <button
                 onClick={scrollToContact}
-                className="px-8 h-12 bg-[#0079FF] text-white rounded-xl font-semibold hover:bg-[#0066DD] transition-colors flex items-center justify-center gap-2 shadow-sm"
+                className="px-6 sm:px-8 h-11 sm:h-12 bg-[#0079FF] text-white rounded-xl font-semibold hover:bg-[#0066DD] transition-colors flex items-center justify-center gap-2 shadow-lg hover:shadow-xl text-[14px] sm:text-[16px]"
               >
                 {t.hero.cta1}
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
               <button
                 onClick={scrollToPricing}
-                className="px-8 h-12 border-2 border-[#0079FF] text-[#0079FF] rounded-xl font-semibold hover:bg-[#E6F3FF] transition-colors"
+                className="px-6 sm:px-8 h-11 sm:h-12 border-2 border-[#0079FF] text-[#0079FF] rounded-xl font-semibold hover:bg-[#E6F3FF] transition-colors text-[14px] sm:text-[16px]"
               >
                 {t.hero.cta2}
               </button>
@@ -284,56 +291,54 @@ export function PartnerPage() {
       </section>
 
       {/* Difference Section */}
-      <section className="py-32 bg-white">
-        <div className="max-w-[1156px] mx-auto px-8">
+      <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-[1156px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-20"
+            className="text-center mb-10 sm:mb-14 lg:mb-20"
           >
-            <div className="mb-6">
-              <span 
-                className="text-[#0079FF] font-semibold text-[20px]"
-                style={{ fontFamily: 'Clash Display, sans-serif', fontWeight: 600 }}
-              >
-                Difference
-              </span>
-            </div>
-            <h2 className="text-[36px] md:text-[42px] font-bold text-[#0E1116] mb-4 leading-[1.2]">
+            <p
+              className="text-[12px] sm:text-[14px] font-semibold text-[#0079FF] mb-2 sm:mb-3"
+              style={{ fontFamily: "'Clash Display', sans-serif" }}
+            >
+              Difference
+            </p>
+            <h2 className="text-[24px] sm:text-[32px] md:text-[40px] font-bold text-[#0E1116] mb-3 sm:mb-4 leading-[1.2] break-keep px-2">
               {t.difference.title}
               <br />
               <span className="text-[#0079FF]">{t.difference.titleHighlight}</span>
             </h2>
-            <p className="text-[16px] text-[#666666] mt-6">
+            <p className="text-[13px] sm:text-[14px] lg:text-[15px] text-[#666666] max-w-[600px] mx-auto px-2">
               {t.difference.subtitle}
             </p>
           </motion.div>
 
           {/* Comparison Table */}
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
             {/* Agency Column */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-[#F8F9FA] rounded-xl p-8 border border-[#E5E7EB]"
+              className="bg-[#F8F9FA] rounded-xl p-5 sm:p-6 lg:p-8 border border-[#E5E7EB]"
             >
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-12 h-12 bg-[#E5E7EB] rounded-xl flex items-center justify-center">
-                  <X className="w-6 h-6 text-[#666666]" />
+              <div className="flex items-center gap-3 mb-6 sm:mb-8">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 bg-[#E5E7EB] rounded-xl flex items-center justify-center">
+                  <X className="w-5 h-5 sm:w-6 sm:h-6 text-[#666666]" />
                 </div>
-                <h3 className="text-[20px] font-bold text-[#666666]">{t.difference.agency}</h3>
+                <h3 className="text-[16px] sm:text-[18px] lg:text-[20px] font-bold text-[#666666]">{t.difference.agency}</h3>
               </div>
-              <ul className="space-y-5">
+              <ul className="space-y-4 sm:space-y-5">
                 {t.difference.items.map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-[#E5E7EB] flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <X className="w-4 h-4 text-[#666666]" />
+                    <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#E5E7EB] flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <X className="w-3 h-3 sm:w-4 sm:h-4 text-[#666666]" />
                     </div>
-                    <span className="text-[15px] text-[#666666] leading-relaxed">{item.agency}</span>
+                    <span className="text-[13px] sm:text-[14px] lg:text-[15px] text-[#666666] leading-relaxed">{item.agency}</span>
                   </li>
                 ))}
               </ul>
@@ -345,23 +350,23 @@ export function PartnerPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-gradient-to-br from-[#0079FF] to-[#0066DD] rounded-xl p-8 text-white border border-[#0079FF] shadow-lg"
+              className="bg-gradient-to-br from-[#0079FF] to-[#0066DD] rounded-xl p-5 sm:p-6 lg:p-8 text-white border border-[#0079FF] shadow-lg"
             >
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
-                  <Check className="w-6 h-6 text-white" />
+              <div className="flex items-center gap-3 mb-6 sm:mb-8">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
+                  <Check className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
-                <h3 className="text-[20px] font-bold">{t.difference.potenlab}</h3>
+                <h3 className="text-[16px] sm:text-[18px] lg:text-[20px] font-bold">{t.difference.potenlab}</h3>
               </div>
-              <ul className="space-y-5">
+              <ul className="space-y-4 sm:space-y-5">
                 {t.difference.items.map((item, index) => {
                   const Icon = item.icon;
                   return (
                     <li key={index} className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0 mt-0.5 backdrop-blur-sm">
-                        <Check className="w-4 h-4 text-white" />
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0 mt-0.5 backdrop-blur-sm">
+                        <Check className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                       </div>
-                      <span className="text-[15px] leading-relaxed font-medium">{item.potenlab}</span>
+                      <span className="text-[13px] sm:text-[14px] lg:text-[15px] leading-relaxed font-medium">{item.potenlab}</span>
                     </li>
                   );
                 })}
@@ -372,62 +377,60 @@ export function PartnerPage() {
       </section>
 
       {/* Subscription Pricing Section */}
-      <section id="pricing" className="py-32 bg-[#F8F9FA]">
-        <div className="max-w-[1156px] mx-auto px-8">
+      <section id="pricing" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-[#F8F9FA]">
+        <div className="max-w-[1156px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-20"
+            className="text-center mb-10 sm:mb-12 lg:mb-16"
           >
-            <div className="mb-6">
-              <span 
-                className="text-[#0079FF] font-semibold text-[20px]"
-                style={{ fontFamily: 'Clash Display, sans-serif', fontWeight: 600 }}
-              >
-                Pricing
-              </span>
-            </div>
-            <h2 className="text-[36px] md:text-[42px] font-bold text-[#0E1116] mb-4 leading-[1.2]">
+            <p
+              className="text-[12px] sm:text-[14px] font-semibold text-[#0079FF] mb-2 sm:mb-3"
+              style={{ fontFamily: "'Clash Display', sans-serif" }}
+            >
+              Pricing
+            </p>
+            <h2 className="text-[24px] sm:text-[28px] md:text-[36px] font-bold text-[#0E1116] mb-3 sm:mb-4 leading-[1.2]">
               {t.subscription.title}
               <span className="text-[#0079FF]"> {t.subscription.titleHighlight}</span>
             </h2>
-            <p className="text-[16px] text-[#666666] mt-6">
+            <p className="text-[13px] sm:text-[14px] lg:text-[15px] text-[#666666] max-w-[600px] mx-auto px-2">
               {t.subscription.subtitle}
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-5 lg:gap-6 mb-8 sm:mb-10 lg:mb-12">
             {/* Design Subscription */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-white rounded-xl p-8 border border-[#E5E7EB] hover:border-[#0079FF] hover:shadow-lg transition-all duration-300"
+              className="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-6 lg:p-8 border border-[#E5E7EB] hover:border-[#0079FF] hover:shadow-lg transition-all duration-300"
             >
-              <div className="inline-block px-4 py-1.5 bg-[#E6F3FF] text-[#0079FF] rounded-full text-[14px] font-semibold mb-6">
+              <div className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-[#E6F3FF] text-[#0079FF] rounded-full text-[12px] sm:text-[14px] font-semibold mb-4 sm:mb-6">
                 {t.subscription.serviceA.badge}
               </div>
-              <h3 className="text-[24px] font-bold text-[#0E1116] mb-3">
+              <h3 className="text-[18px] sm:text-[20px] lg:text-[24px] font-bold text-[#0E1116] mb-2 sm:mb-3">
                 {t.subscription.serviceA.title}
               </h3>
-              <div className="flex items-baseline gap-2 mb-8">
-                <span className="text-[40px] font-bold text-[#0079FF]">{t.subscription.serviceA.price}</span>
-                <span className="text-[16px] text-[#666666]">{t.subscription.serviceA.priceNote}</span>
+              <div className="flex items-baseline gap-2 mb-6 sm:mb-8">
+                <span className="text-[28px] sm:text-[32px] lg:text-[40px] font-bold text-[#0079FF]">{t.subscription.serviceA.price}</span>
+                <span className="text-[13px] sm:text-[14px] lg:text-[16px] text-[#666666]">{t.subscription.serviceA.priceNote}</span>
               </div>
-              <ul className="space-y-4 mb-8">
+              <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                 {t.subscription.serviceA.features.map((feature, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-[#0079FF] flex-shrink-0 mt-0.5" />
-                    <span className="text-[15px] text-[#666666] leading-relaxed">{feature}</span>
+                  <li key={index} className="flex items-start gap-2 sm:gap-3">
+                    <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#0079FF] flex-shrink-0 mt-0.5" />
+                    <span className="text-[12px] sm:text-[13px] lg:text-[15px] text-[#666666] leading-relaxed">{feature}</span>
                   </li>
                 ))}
               </ul>
-              <div className="pt-6 border-t border-[#E5E7EB]">
-                <p className="text-[14px] text-[#666666] flex items-start gap-2">
-                  <span className="text-[18px]">💰</span>
+              <div className="pt-4 sm:pt-6 border-t border-[#E5E7EB]">
+                <p className="text-[12px] sm:text-[13px] lg:text-[14px] text-[#666666] flex items-start gap-2">
+                  <span className="text-[16px] sm:text-[18px]">💰</span>
                   <span>{t.subscription.serviceA.comparison}</span>
                 </p>
               </div>
@@ -439,32 +442,32 @@ export function PartnerPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white rounded-xl p-8 border-2 border-[#0079FF] relative overflow-hidden shadow-lg"
+              className="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-6 lg:p-8 border-2 border-[#0079FF] relative overflow-hidden shadow-lg"
             >
-              <div className="absolute top-0 right-0 bg-[#0079FF] text-white px-6 py-2 text-[13px] font-bold">
+              <div className="absolute top-0 right-0 bg-[#0079FF] text-white px-4 sm:px-6 py-1.5 sm:py-2 text-[11px] sm:text-[13px] font-bold">
                 POPULAR
               </div>
-              <div className="inline-block px-4 py-1.5 bg-[#E6F3FF] text-[#0079FF] rounded-full text-[14px] font-semibold mb-6 mt-6">
+              <div className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-[#E6F3FF] text-[#0079FF] rounded-full text-[12px] sm:text-[14px] font-semibold mb-4 sm:mb-6 mt-4 sm:mt-6">
                 {t.subscription.serviceB.badge}
               </div>
-              <h3 className="text-[24px] font-bold text-[#0E1116] mb-3">
+              <h3 className="text-[18px] sm:text-[20px] lg:text-[24px] font-bold text-[#0E1116] mb-2 sm:mb-3">
                 {t.subscription.serviceB.title}
               </h3>
-              <div className="flex items-baseline gap-2 mb-8">
-                <span className="text-[40px] font-bold text-[#0079FF]">{t.subscription.serviceB.price}</span>
-                <span className="text-[16px] text-[#666666]">{t.subscription.serviceB.priceNote}</span>
+              <div className="flex items-baseline gap-2 mb-6 sm:mb-8">
+                <span className="text-[28px] sm:text-[32px] lg:text-[40px] font-bold text-[#0079FF]">{t.subscription.serviceB.price}</span>
+                <span className="text-[13px] sm:text-[14px] lg:text-[16px] text-[#666666]">{t.subscription.serviceB.priceNote}</span>
               </div>
-              <ul className="space-y-4 mb-8">
+              <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                 {t.subscription.serviceB.features.map((feature, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-[#0079FF] flex-shrink-0 mt-0.5" />
-                    <span className="text-[15px] text-[#666666] leading-relaxed">{feature}</span>
+                  <li key={index} className="flex items-start gap-2 sm:gap-3">
+                    <Check className="w-4 h-4 sm:w-5 sm:h-5 text-[#0079FF] flex-shrink-0 mt-0.5" />
+                    <span className="text-[12px] sm:text-[13px] lg:text-[15px] text-[#666666] leading-relaxed">{feature}</span>
                   </li>
                 ))}
               </ul>
-              <div className="pt-6 border-t border-[#E5E7EB]">
-                <p className="text-[14px] text-[#666666] flex items-start gap-2">
-                  <span className="text-[18px]">💰</span>
+              <div className="pt-4 sm:pt-6 border-t border-[#E5E7EB]">
+                <p className="text-[12px] sm:text-[13px] lg:text-[14px] text-[#666666] flex items-start gap-2">
+                  <span className="text-[16px] sm:text-[18px]">💰</span>
                   <span>{t.subscription.serviceB.comparison}</span>
                 </p>
               </div>
@@ -480,43 +483,41 @@ export function PartnerPage() {
           >
             <button
               onClick={scrollToContact}
-              className="px-8 h-12 bg-[#0079FF] text-white rounded-xl font-semibold hover:bg-[#0066DD] transition-colors inline-flex items-center gap-2 shadow-sm"
+              className="px-6 sm:px-8 h-10 sm:h-11 lg:h-12 bg-[#0079FF] text-white rounded-xl font-semibold hover:bg-[#0066DD] transition-colors inline-flex items-center gap-2 shadow-lg hover:shadow-xl text-[14px] sm:text-[15px] lg:text-[16px]"
             >
               {t.subscription.cta}
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
           </motion.div>
         </div>
       </section>
 
       {/* Checkpoint Section */}
-      <section className="py-32 bg-white">
-        <div className="max-w-[1156px] mx-auto px-8">
+      <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-[1156px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-20"
+            className="text-center mb-10 sm:mb-14 lg:mb-20"
           >
-            <div className="mb-6">
-              <span 
-                className="text-[#0079FF] font-semibold text-[20px]"
-                style={{ fontFamily: 'Clash Display, sans-serif', fontWeight: 600 }}
-              >
-                Checkpoint
-              </span>
-            </div>
-            <h2 className="text-[36px] md:text-[42px] font-bold text-[#0E1116] mb-4 leading-[1.2]">
+            <p
+              className="text-[12px] sm:text-[14px] font-semibold text-[#0079FF] mb-2 sm:mb-3"
+              style={{ fontFamily: "'Clash Display', sans-serif" }}
+            >
+              Checkpoint
+            </p>
+            <h2 className="text-[24px] sm:text-[32px] md:text-[40px] font-bold text-[#0E1116] mb-3 sm:mb-4 leading-[1.2]">
               {t.checkpoint.title}
               <span className="text-[#0079FF]"> {t.checkpoint.titleHighlight}</span>
             </h2>
-            <p className="text-[16px] text-[#666666] mt-6">
+            <p className="text-[13px] sm:text-[14px] lg:text-[15px] text-[#666666] max-w-[600px] mx-auto px-2">
               {t.checkpoint.subtitle}
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-5 lg:gap-6">
             {t.checkpoint.items.map((item, index) => (
               <motion.div
                 key={index}
@@ -524,20 +525,20 @@ export function PartnerPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`bg-white rounded-xl p-8 border-2 cursor-pointer transition-all duration-300 ${
+                className={`bg-white rounded-xl p-5 sm:p-6 lg:p-8 border-2 cursor-pointer transition-all duration-300 ${
                   activeCheckpoint === index
                     ? 'border-[#0079FF] shadow-lg'
                     : 'border-[#E5E7EB] hover:border-[#0079FF]/50 hover:shadow-md'
                 }`}
                 onClick={() => setActiveCheckpoint(activeCheckpoint === index ? null : index)}
               >
-                <div className="flex items-start gap-4">
-                  <div className="text-[44px] leading-none">{item.icon}</div>
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="text-[32px] sm:text-[38px] lg:text-[44px] leading-none flex-shrink-0">{item.icon}</div>
                   <div className="flex-1">
-                    <h3 className="text-[20px] font-bold text-[#0E1116] mb-3">
+                    <h3 className="text-[16px] sm:text-[18px] lg:text-[20px] font-bold text-[#0E1116] mb-2 sm:mb-3">
                       {item.question}
                     </h3>
-                    <p className="text-[15px] text-[#666666] leading-relaxed">
+                    <p className="text-[12px] sm:text-[13px] lg:text-[15px] text-[#666666] leading-relaxed">
                       {item.description}
                     </p>
                   </div>
@@ -548,9 +549,9 @@ export function PartnerPage() {
         </div>
       </section>
 
-      {/* Slogan Section */}
-      <section className="py-32 bg-gradient-to-b from-[#E6F3FF] to-white">
-        <div className="max-w-[1156px] mx-auto px-8">
+      {/* CTA Section */}
+      <section className="py-12 sm:py-16 lg:py-[66px] px-4 sm:px-6 lg:px-8 bg-[#0079FF]">
+        <div className="max-w-[800px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -558,20 +559,20 @@ export function PartnerPage() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h2 className="text-[48px] md:text-[56px] font-bold text-[#0E1116] leading-[1.2] mb-6">
+            <h2 className="text-[22px] sm:text-[28px] md:text-[40px] font-bold mb-3 sm:mb-4 leading-[1.2] text-white">
               {t.slogan.main}
               <br />
-              <span className="text-[#0079FF]">{t.slogan.highlight}</span>
+              <span className="text-white/90">{t.slogan.highlight}</span>
             </h2>
-            <p className="text-[18px] text-[#666666] max-w-2xl mx-auto mb-10">
+            <p className="text-[13px] sm:text-[14px] lg:text-[16px] text-white/80 max-w-2xl mx-auto mb-6 sm:mb-8 lg:mb-10 px-2">
               {t.slogan.description}
             </p>
             <button
               onClick={scrollToContact}
-              className="px-10 h-14 bg-[#0079FF] text-white rounded-xl font-semibold hover:bg-[#0066DD] transition-colors inline-flex items-center gap-2 text-[16px] shadow-lg"
+              className="bg-white text-[#0079FF] px-6 sm:px-8 lg:px-10 h-10 sm:h-11 lg:h-12 rounded-xl hover:bg-[#F5F5F5] transition-colors font-semibold text-[14px] sm:text-[15px] lg:text-[16px] inline-flex items-center gap-2"
             >
               {language === 'ko' ? '지금 시작하기' : 'Get Started'}
-              <ArrowRight className="w-6 h-6" />
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
           </motion.div>
         </div>

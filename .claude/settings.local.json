@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(start http://localhost:3000)"
+      "Bash(start http://localhost:3000)",
+      "Bash(git config:*)",
+      "Bash(npx vercel:*)",
+      "Bash(git commit:*)"
     ]
   }
 }

@@ -35,7 +35,7 @@ export function Footer() {
 
           <div>
             <h4 className="text-sm sm:text-base font-medium mb-3 sm:mb-4 text-white">
-              {language === "ko" ? "핵심 서비스" : "Core Services"}
+              {language === "ko" ? "핵심서비스" : "Core Services"}
             </h4>
             <ul className="space-y-2 sm:space-y-3">
               <li>
@@ -51,7 +51,7 @@ export function Footer() {
                   onClick={() => navigate("custom-product")}
                   className="text-[#999999] hover:text-white transition-colors text-xs sm:text-sm"
                 >
-                  {language === "ko" ? "커스텀 프로덕트 개발" : "Custom Product Development"}
+                  {language === "ko" ? "커스텀 프로젝트 개발" : "Custom Project Development"}
                 </button>
               </li>
               <li>
@@ -59,7 +59,15 @@ export function Footer() {
                   onClick={() => navigate("other-services")}
                   className="text-[#999999] hover:text-white transition-colors text-xs sm:text-sm"
                 >
-                  {language === "ko" ? "서비스 문의" : "Service Inquiry"}
+                  {language === "ko" ? "디자인&컨설팅" : "Design & Consulting"}
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => navigate("partner")}
+                  className="text-[#999999] hover:text-white transition-colors text-xs sm:text-sm"
+                >
+                  {language === "ko" ? "구독 서비스" : "Subscription Service"}
                 </button>
               </li>
             </ul>
@@ -67,35 +75,40 @@ export function Footer() {
 
           <div>
             <h4 className="text-sm sm:text-base font-medium mb-3 sm:mb-4 text-white">
-              {language === "ko" ? "운영 서비스" : "Operating Services"}
+              {language === "ko" ? "운영서비스" : "Operations"}
             </h4>
             <ul className="space-y-2 sm:space-y-3">
               <li>
                 <button
-                  onClick={() => navigate("partner")}
+                  onClick={() => navigate("contents")}
                   className="text-[#999999] hover:text-white transition-colors text-xs sm:text-sm"
                 >
-                  {language === "ko" ? "포텐랩 구독 서비스" : "Poten Lab Subscription"}
+                  {language === "ko" ? "콘텐츠" : "Contents"}
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => navigate("poten-lamp")}
+                  onClick={() => navigate("lecture")}
                   className="text-[#999999] hover:text-white transition-colors text-xs sm:text-sm"
                 >
-                  {language === "ko" ? "포텐의 램프 🧞" : "Poten-Lamp 🧞"}
+                  {language === "ko" ? "강의" : "Courses"}
                 </button>
               </li>
-
               <li>
-                <a
-                  href="https://potenmakers.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => navigate("poten-school")}
                   className="text-[#999999] hover:text-white transition-colors text-xs sm:text-sm"
                 >
-                  {language === "ko" ? "포텐메이커스" : "Poten Makers"}
-                </a>
+                  {language === "ko" ? "포텐스쿨" : "Poten School"}
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => navigate("business-plan")}
+                  className="text-[#999999] hover:text-white transition-colors text-xs sm:text-sm"
+                >
+                  {language === "ko" ? "사업계획서 작성" : "Business Plan"}
+                </button>
               </li>
             </ul>
           </div>

@@ -82,9 +82,10 @@ export function PotenBoosterPage() {
       },
       pricing: {
         label: "Price Guide",
-        title: "단계별 선택 가이드",
+        title: "상세 패키지",
         description:
           "프로젝트의 목표와 상황에 따라 적합한 단계를 선택하세요.",
+        button: "무료 진단 및 상담 신청하기",
         packages: [
           {
             name: "Basic",
@@ -159,7 +160,7 @@ export function PotenBoosterPage() {
           subtitle: "데이터로 증명하는 확실한 비즈니스",
           items: [
             {
-              label: "동작하는 실체",
+              label: "실재하는 서비스 모델",
               description:
                 "이미 존재하는 서비스가 곧 신뢰의 기반입니다.",
             },
@@ -266,9 +267,10 @@ export function PotenBoosterPage() {
       },
       pricing: {
         label: "Price Guide",
-        title: "Step-by-Step Selection Guide",
+        title: "Package Details",
         description:
           "Choose the right package based on your project goals and situation.",
+        button: "Get Free Consultation",
         packages: [
           {
             name: "Basic",
@@ -409,7 +411,7 @@ export function PotenBoosterPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-[120px] pb-32 px-8 bg-gradient-to-b from-[#E6F3FF] via-[#F5F9FF] to-white">
+      <section className="pt-[100px] sm:pt-[120px] lg:pt-[140px] pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#E6F3FF] via-[#F5F9FF] to-white">
         <div className="max-w-[1156px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -417,23 +419,23 @@ export function PotenBoosterPage() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <div className="mb-4">
-              <span className="inline-block text-[#0079FF] px-4 py-1.5 rounded-full text-[14px] font-semibold border border-[#0079FF]/20 bg-white/50">
+            <div className="mb-6 sm:mb-8">
+              <span className="inline-block text-[#0079FF] px-4 sm:px-5 py-1.5 sm:py-2 rounded-full text-[13px] sm:text-[14px] font-medium border border-[#0079FF]/30 bg-white/80">
                 🚀 {t.hero.label}
               </span>
             </div>
-            <h1 className="md:text-[48px] font-bold mb-2 text-[#0E1116] text-[40px] m-[0px]">
+            <h1 className="text-[32px] sm:text-[40px] md:text-[48px] font-bold text-[#0E1116] leading-[1.1] mb-1 sm:mb-2">
               {t.hero.title}
             </h1>
-            <h2 className="text-[32px] md:text-[40px] font-bold mb-6 text-[#0079FF]">
+            <h2 className="text-[28px] sm:text-[40px] md:text-[48px] font-bold text-[#0079FF] break-keep px-2 leading-[1.2] mb-6 sm:mb-8">
               {t.hero.titleHighlight}
             </h2>
-            <p className="text-[16px] md:text-[18px] leading-relaxed mb-10 text-[#666666] max-w-[700px] mx-auto">
+            <p className="text-[15px] sm:text-[17px] md:text-[18px] leading-[1.8] text-[#666666] max-w-[700px] mx-auto whitespace-pre-line px-2 mb-8 sm:mb-10">
               {t.hero.description}
             </p>
             <button
               onClick={() => navigate("contact", null, null, { inquiryType: "potenbooster" })}
-              className="bg-[#0079FF] text-white px-8 h-12 rounded-xl hover:bg-[#0066DD] transition-colors font-semibold text-[16px] inline-flex items-center gap-2 shadow-lg hover:shadow-xl"
+              className="bg-[#0079FF] text-white px-8 sm:px-10 h-[54px] rounded-full hover:bg-[#0066DD] transition-all font-semibold text-[15px] sm:text-[17px] inline-flex items-center gap-2 shadow-[0_4px_20px_rgba(0,121,255,0.35)] hover:shadow-[0_6px_25px_rgba(0,121,255,0.45)] hover:scale-[1.02]"
             >
               {t.hero.cta}
             </button>
@@ -442,7 +444,7 @@ export function PotenBoosterPage() {
       </section>
 
       {/* Problem Section */}
-      <section className="py-20 px-8 bg-white">
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-[1156px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -450,10 +452,10 @@ export function PotenBoosterPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-[28px] md:text-[32px] font-bold mb-12 text-center leading-relaxed whitespace-pre-line text-[#0E1116]">
+            <h2 className="text-[20px] sm:text-[24px] md:text-[32px] font-bold mb-8 sm:mb-10 lg:mb-12 text-center leading-relaxed whitespace-pre-line text-[#0E1116] px-2 break-keep">
               {t.problem.title}
             </h2>
-            <div className="space-y-4 max-w-[900px] mx-auto">
+            <div className="space-y-3 sm:space-y-4 max-w-[900px] mx-auto">
               {t.problem.checks.map((check, idx) => (
                 <motion.div
                   key={idx}
@@ -464,11 +466,11 @@ export function PotenBoosterPage() {
                     duration: 0.6,
                     delay: idx * 0.1,
                   }}
-                  className="bg-[#E6F3FF] p-6 rounded-xl border border-[#B3D9FF]"
+                  className="bg-[#E6F3FF] p-4 sm:p-5 lg:p-6 rounded-xl border border-[#B3D9FF]"
                 >
-                  <div className="flex items-start gap-4">
+                  <div className="flex items-start gap-3 sm:gap-4">
                     <AlertCircle className="w-5 h-5 text-[#0079FF] flex-shrink-0 mt-0.5" />
-                    <p className="text-[15px] leading-relaxed text-[#424242]">
+                    <p className="text-[13px] sm:text-[14px] lg:text-[15px] leading-relaxed text-[#424242]">
                       {check}
                     </p>
                   </div>
@@ -480,41 +482,41 @@ export function PotenBoosterPage() {
       </section>
 
       {/* Solution Timeline */}
-      <section id="process-section" className="py-32 px-8 bg-[#F8F9FA]">
+      <section id="process-section" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-[#F8F9FA]">
         <div className="max-w-[1156px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-12 lg:mb-16"
           >
             <p
-              className="text-[14px] font-semibold text-[#0079FF] mb-3"
+              className="text-[16px] font-semibold text-[#0079FF] mb-2 sm:mb-3"
               style={{
                 fontFamily: "'Clash Display', sans-serif",
               }}
             >
               {t.solution.label}
             </p>
-            <h2 className="text-[32px] md:text-[36px] font-bold text-[#0E1116] mb-4">
+            <h2 className="text-[24px] sm:text-[28px] md:text-[36px] font-bold text-[#0E1116] mb-3 sm:mb-4 break-keep">
               {t.solution.title}
             </h2>
-            <p className="text-[15px] text-[#666666] max-w-[600px] mx-auto">
+            <p className="text-[13px] sm:text-[14px] lg:text-[15px] text-[#666666] max-w-[600px] mx-auto px-2">
               {t.solution.description}
             </p>
           </motion.div>
 
           {/* Timeline */}
           <div className="relative">
-            {/* Horizontal Line */}
+            {/* Horizontal Line - Only visible on md+ screens */}
             <div
-              className="absolute top-8 left-0 right-0 h-[2px] bg-[#0079FF]"
-              style={{ left: "10%", right: "10%" }}
+              className="absolute top-[32px] h-[2px] bg-[#E0E0E0] hidden md:block"
+              style={{ left: "5%", right: "5%" }}
             />
 
-            {/* Steps Grid */}
-            <div className="grid grid-cols-5 gap-4">
+            {/* Steps Grid - Responsive: 2 cols on mobile, 3 on sm, 5 on md+ */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 md:gap-4 lg:gap-6">
               {t.solution.steps.map((step, idx) => (
                 <motion.div
                   key={idx}
@@ -528,23 +530,23 @@ export function PotenBoosterPage() {
                   className="flex flex-col items-center"
                 >
                   {/* Circle Number */}
-                  <div className="relative z-10 w-16 h-16 bg-[#0079FF] rounded-full flex items-center justify-center mb-3 border-4 border-white">
-                    <span className="text-[20px] font-bold text-white">
+                  <div className="relative z-10 w-14 h-14 sm:w-16 sm:h-16 lg:w-[64px] lg:h-[64px] bg-[#0079FF] rounded-full flex items-center justify-center mb-3 border-4 border-[#F8F9FA] shadow-md">
+                    <span className="text-[18px] sm:text-[20px] lg:text-[22px] font-bold text-white">
                       {idx + 1}
                     </span>
                   </div>
 
                   {/* Day Label */}
-                  <p className="text-[13px] font-semibold text-[#0079FF] mb-4">
+                  <p className="text-[12px] sm:text-[13px] lg:text-[14px] font-semibold text-[#0079FF] mb-3 lg:mb-4">
                     {step.day}
                   </p>
 
                   {/* Card */}
-                  <div className="bg-white p-4 rounded-xl w-full min-h-[70px] flex flex-col justify-center text-center">
-                    <h3 className="text-[14px] font-bold mb-1 text-[#0E1116]">
+                  <div className="bg-white p-4 sm:p-5 rounded-2xl w-full min-h-[100px] sm:min-h-[110px] lg:min-h-[120px] flex flex-col justify-center text-center shadow-sm border border-[#E5E7EB]">
+                    <h3 className="text-[13px] sm:text-[14px] lg:text-[15px] font-bold mb-2 text-[#0E1116]">
                       {step.title}
                     </h3>
-                    <p className="text-[12px] text-[#666666] leading-snug">
+                    <p className="text-[14px] text-[#666666] leading-relaxed">
                       {step.description}
                     </p>
                   </div>
@@ -556,132 +558,155 @@ export function PotenBoosterPage() {
       </section>
 
       {/* Before/After Section */}
-      <section className="py-32 px-8 bg-white">
+      <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-[1156px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-20"
+            className="text-center mb-10 sm:mb-14 lg:mb-20"
           >
             <p
-              className="text-[14px] font-semibold text-[#0079FF] mb-3"
+              className="text-[16px] font-semibold text-[#0079FF] mb-2 sm:mb-3"
               style={{
                 fontFamily: "'Clash Display', sans-serif",
               }}
             >
               {t.beforeAfter.label}
             </p>
-            <h2 className="text-[32px] md:text-[40px] font-bold text-[#0E1116] mb-4">
+            <h2 className="text-[24px] sm:text-[32px] md:text-[40px] font-bold text-[#0E1116] mb-3 sm:mb-4">
               {t.beforeAfter.title}
             </h2>
-            <p className="text-[15px] text-[#666666] max-w-[600px] mx-auto">
+            <p className="text-[13px] sm:text-[14px] lg:text-[15px] text-[#666666] max-w-[600px] mx-auto px-2">
               {t.beforeAfter.description}
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Before */}
+          <div className="relative">
+            {/* VS Circle - Center positioned on top of cards */}
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="bg-[#F8F9FA] p-8 rounded-xl"
+              transition={{ duration: 0.4, delay: 0.3 }}
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 hidden md:flex"
             >
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-16 h-16 bg-[#FFE5E5] rounded-xl flex items-center justify-center">
-                  <XCircle className="w-8 h-8 text-[#FF6B6B]" />
-                </div>
-                <div>
-                  <h3 className="text-[20px] font-bold text-[#0E1116] mb-1">
-                    {t.beforeAfter.before.title}
-                  </h3>
-                  <p className="text-[14px] text-[#666666]">
-                    {t.beforeAfter.before.subtitle}
-                  </p>
-                </div>
-              </div>
-              <div className="space-y-6">
-                {t.beforeAfter.before.items.map((item, idx) => (
-                  <div key={idx}>
-                    <p className="text-[14px] font-semibold text-[#FF6B6B] mb-2">
-                      {item.label}
-                    </p>
-                    <p className="text-[14px] text-[#666666] leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                ))}
+              <div className="w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(0,121,255,0.3)] border-4 border-[#0079FF]">
+                <span className="text-[#0079FF] font-bold text-[16px] lg:text-[20px]">VS</span>
               </div>
             </motion.div>
 
-            {/* After */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="bg-[#F8F9FA] p-8 rounded-xl"
-            >
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-16 h-16 bg-[#E6F3FF] rounded-xl flex items-center justify-center">
-                  <TrendingUp className="w-8 h-8 text-[#0079FF]" />
-                </div>
-                <div>
-                  <h3 className="text-[20px] font-bold text-[#0E1116] mb-1">
-                    {t.beforeAfter.after.title}
-                  </h3>
-                  <p className="text-[14px] text-[#666666]">
-                    {t.beforeAfter.after.subtitle}
-                  </p>
-                </div>
-              </div>
-              <div className="space-y-6">
-                {t.beforeAfter.after.items.map((item, idx) => (
-                  <div key={idx}>
-                    <p className="text-[14px] font-semibold text-[#0079FF] mb-2">
-                      {item.label}
-                    </p>
-                    <p className="text-[14px] text-[#666666] leading-relaxed">
-                      {item.description}
+            {/* Cards */}
+            <div className="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
+              {/* Before */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="bg-[#F8F9FA] p-6 sm:p-7 lg:p-8 rounded-2xl border border-[#E5E7EB]"
+              >
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 bg-[#FFE5E5] rounded-lg flex items-center justify-center">
+                    <XCircle className="w-5 h-5 text-[#FF6B6B]" />
+                  </div>
+                  <div>
+                    <h3 className="text-[16px] sm:text-[18px] lg:text-[20px] font-bold text-[#0E1116]">
+                      {t.beforeAfter.before.title}
+                    </h3>
+                    <p className="text-[12px] sm:text-[13px] text-[#666666]">
+                      {t.beforeAfter.before.subtitle}
                     </p>
                   </div>
-                ))}
+                </div>
+                <div className="space-y-5 sm:space-y-6">
+                  {t.beforeAfter.before.items.map((item, idx) => (
+                    <div key={idx} className="pb-5 sm:pb-6 border-b border-[#E5E7EB] last:border-b-0 last:pb-0">
+                      <p className="text-[18px] sm:text-[14px] lg:text-[15px] font-semibold text-[#FF6B6B] mb-2">
+                        {item.label}
+                      </p>
+                      <p className="text-[14px] sm:text-[14px] lg:text-[15px] text-[#666666] leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Mobile VS Divider */}
+              <div className="flex md:hidden items-center justify-center">
+                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(0,121,255,0.3)] border-4 border-[#0079FF]">
+                  <span className="text-[#0079FF] font-bold text-[14px]">VS</span>
+                </div>
               </div>
-            </motion.div>
+
+              {/* After - Emphasized */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="bg-gradient-to-br from-[#E6F3FF] to-[#F0F8FF] p-6 sm:p-7 lg:p-8 rounded-2xl border-2 border-[#0079FF] shadow-[0_4px_20px_rgba(0,121,255,0.12)]"
+              >
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 bg-[#0079FF] rounded-lg flex items-center justify-center">
+                    <TrendingUp className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-[16px] sm:text-[18px] lg:text-[20px] font-bold text-[#0E1116]">
+                      {t.beforeAfter.after.title}
+                    </h3>
+                    <p className="text-[12px] sm:text-[13px] text-[#666666]">
+                      {t.beforeAfter.after.subtitle}
+                    </p>
+                  </div>
+                </div>
+                <div className="space-y-5 sm:space-y-6">
+                  {t.beforeAfter.after.items.map((item, idx) => (
+                    <div key={idx} className="pb-5 sm:pb-6 border-b border-[#0079FF]/20 last:border-b-0 last:pb-0">
+                      <p className="text-[18px] sm:text-[14px] lg:text-[15px] font-semibold text-[#0079FF] mb-2">
+                        {item.label}
+                      </p>
+                      <p className="text-[14px] sm:text-[14px] lg:text-[15px] text-[#666666] leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Why Us Section */}
-      <section className="py-32 px-8 bg-[#F8F9FA]">
+      <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-[#F8F9FA]">
         <div className="max-w-[1156px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-20"
+            className="text-center mb-10 sm:mb-14 lg:mb-20"
           >
             <p
-              className="text-[14px] font-semibold text-[#0079FF] mb-3"
+              className="text-[16px] font-semibold text-[#0079FF] mb-2 sm:mb-3"
               style={{
                 fontFamily: "'Clash Display', sans-serif",
               }}
             >
               {t.whyUs.label}
             </p>
-            <h2 className="text-[32px] md:text-[40px] font-bold text-[#0E1116] mb-4">
+            <h2 className="text-[24px] sm:text-[32px] md:text-[40px] font-bold text-[#0E1116] mb-3 sm:mb-4">
               {t.whyUs.title}
             </h2>
-            <p className="text-[15px] text-[#666666] max-w-[600px] mx-auto">
+            <p className="text-[13px] sm:text-[14px] lg:text-[15px] text-[#666666] max-w-[600px] mx-auto px-2">
               {t.whyUs.description}
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {t.whyUs.points.map((point, idx) => {
               const Icon =
                 iconMap[point.icon as keyof typeof iconMap];
@@ -696,15 +721,15 @@ export function PotenBoosterPage() {
                     duration: 0.6,
                     delay: idx * 0.1,
                   }}
-                  className="bg-white p-8 rounded-xl border border-[#E5E5E5]"
+                  className="bg-white p-5 sm:p-6 lg:p-8 rounded-xl border border-[#E5E5E5]"
                 >
-                  <div className="w-12 h-12 bg-[#E6F3FF] rounded-xl flex items-center justify-center mb-6">
-                    <Icon className="w-6 h-6 text-[#0079FF]" />
+                  <div className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 bg-[#E6F3FF] rounded-xl flex items-center justify-center mb-4 sm:mb-5 lg:mb-6">
+                    <Icon className="w-5 h-5 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-[#0079FF]" />
                   </div>
-                  <h3 className="text-[18px] font-bold mb-3 text-[#0E1116]">
+                  <h3 className="text-[18px] sm:text-[16px] lg:text-[18px] font-bold mb-2 sm:mb-3 text-[#0E1116]">
                     {point.title}
                   </h3>
-                  <p className="text-[14px] text-[#666666] leading-relaxed whitespace-pre-line">
+                  <p className="text-[14px] sm:text-[13px] lg:text-[14px] text-[#666666] leading-relaxed whitespace-pre-line">
                     {point.description}
                   </p>
                 </motion.div>
@@ -715,32 +740,32 @@ export function PotenBoosterPage() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-32 px-8 bg-white">
+      <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-[1156px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-12 lg:mb-16"
           >
             <p
-              className="text-[14px] font-semibold text-[#0079FF] mb-3"
+              className="text-[16px] font-semibold text-[#0079FF] mb-2 sm:mb-3"
               style={{
                 fontFamily: "'Clash Display', sans-serif",
               }}
             >
               {t.pricing.label}
             </p>
-            <h2 className="text-[32px] md:text-[36px] font-bold text-[#0E1116] mb-4">
+            <h2 className="text-[24px] sm:text-[28px] md:text-[36px] font-bold text-[#0E1116] mb-3 sm:mb-4">
               {t.pricing.title}
             </h2>
-            <p className="text-[15px] text-[#666666] max-w-[600px] mx-auto">
+            <p className="text-[13px] sm:text-[14px] lg:text-[15px] text-[#666666] max-w-[600px] mx-auto px-2">
               {t.pricing.description}
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="flex flex-col md:flex-row justify-center gap-5 lg:gap-6 items-center md:items-end">
             {t.pricing.packages.map((pkg, idx) => (
               <motion.div
                 key={idx}
@@ -748,24 +773,28 @@ export function PotenBoosterPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="p-8 rounded-2xl relative bg-white border-2 border-[#E0E0E0] transition-all hover:border-[#0079FF]/30"
+                className={`w-full sm:w-[274px] p-6 rounded-2xl relative bg-white transition-all ${
+                  pkg.recommended
+                    ? "border-2 border-[#0079FF] shadow-[0_8px_30px_rgba(0,121,255,0.15)] md:-mt-4"
+                    : "border border-[#E5E7EB] shadow-[0_4px_20px_rgba(0,0,0,0.06)]"
+                }`}
               >
                 {pkg.recommended && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#0079FF] text-white px-5 py-1.5 rounded-full text-[13px] font-semibold shadow-sm">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#0079FF] text-white px-4 py-1.5 rounded-full text-[13px] font-semibold shadow-sm">
                     추천
                   </div>
                 )}
                 <div className="text-center mb-6">
-                  <h3 className="text-[28px] font-bold mb-3 text-[#0E1116]">
+                  <h3 className="text-[24px] font-bold mb-2 text-[#0E1116]">
                     {pkg.name}
                   </h3>
                   <p className="text-[14px] font-semibold text-[#0079FF] mb-4">
                     {pkg.subtitle}
                   </p>
-                  <p className="text-[15px] text-[#666666] leading-relaxed mb-6 min-h-[48px]">
+                  <p className="text-[14px] text-[#666666] leading-relaxed mb-6 min-h-[48px] whitespace-pre-line">
                     {pkg.value}
                   </p>
-                  <p className="text-[40px] font-bold text-[#0079FF] mb-6">
+                  <p className="text-[36px] font-bold text-[#0079FF] mb-6">
                     {pkg.price}
                   </p>
                 </div>
@@ -784,9 +813,13 @@ export function PotenBoosterPage() {
                 </ul>
                 <button
                   onClick={() => navigate("contact", null, null, { inquiryType: "potenbooster", subCategory: pkg.name.toLowerCase() })}
-                  className="w-full h-12 rounded-xl font-semibold text-[15px] transition-all bg-white text-[#0079FF] border-2 border-[#0079FF] hover:bg-[#F0F8FF]"
+                  className={`w-full h-[44px] text-[14px] font-medium rounded-[24px] transition-all duration-200 ${
+                    pkg.recommended
+                      ? "bg-[#0079FF] hover:bg-[#0066DD] text-white shadow-[0px_1px_3px_0px_rgba(0,121,255,0.2),0px_1px_2px_0px_rgba(0,121,255,0.2)] hover:shadow-[0px_2px_5px_0px_rgba(0,121,255,0.3)]"
+                      : "bg-white text-[#0079FF] border-2 border-[#0079FF] hover:bg-[#F0F8FF]"
+                  }`}
                 >
-                  신청하기
+                  {t.pricing.button}
                 </button>
               </motion.div>
             ))}
@@ -795,7 +828,7 @@ export function PotenBoosterPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-[66px] px-8 bg-[#0079FF]">
+      <section className="py-12 sm:py-16 lg:py-[66px] px-4 sm:px-6 lg:px-8 bg-[#0079FF]">
         <div className="max-w-[800px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -804,12 +837,12 @@ export function PotenBoosterPage() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h2 className="text-[32px] md:text-[40px] font-bold mb-10 leading-relaxed text-white whitespace-pre-line">
+            <h2 className="text-[22px] sm:text-[28px] md:text-[40px] font-bold mb-6 sm:mb-8 lg:mb-10 leading-relaxed text-white whitespace-pre-line break-keep px-2">
               {t.cta.title}
             </h2>
             <button
               onClick={() => navigate("contact", null, null, { inquiryType: "potenbooster" })}
-              className="bg-white text-[#0079FF] px-8 h-12 rounded-xl hover:bg-[#F5F5F5] transition-colors font-semibold text-[16px]"
+              className="bg-white text-[#0079FF] px-[24px] h-[44px] text-[14px] font-medium rounded-[24px] hover:bg-[#F5F5F5] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_0px_rgba(0,0,0,0.06)] hover:shadow-[0px_2px_5px_0px_rgba(0,0,0,0.15)] transition-all duration-200"
             >
               {t.cta.button}
             </button>

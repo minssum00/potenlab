@@ -186,6 +186,7 @@ function AppContent() {
     case "other-services": return <OtherServicesPage />;
     case "business-plan": return <BusinessPlanPage />;
     case "poten-lamp": return <PotenLampPage />;
+    case "poten-school": return <Courses />;
     case "admin":
       if (isAdminAuthenticated) return null;
       return <AdminLogin onLogin={handleAdminLogin} />;
