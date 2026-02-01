@@ -1,5 +1,5 @@
+import React, { useState, useEffect } from 'react';
 import { defaultSEO, updateMetaTags } from './utils/seo';
-import { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { ServiceDetail } from './components/ServiceDetail';
@@ -16,6 +16,7 @@ import { WebAppDetailPage } from './pages/WebAppDetailPage';
 import { RnDDetailPage } from './pages/RnDDetailPage';
 import { StyleGuidePage } from './pages/StyleGuidePage';
 import { ContactPage } from './pages/ContactPage';
+import { ContactSuccessPage } from './pages/ContactSuccessPage';
 import { AboutPage } from './pages/AboutPage';
 import { PartnerPage } from './pages/PartnerPage';
 import { PartnerTestPage } from './pages/PartnerTestPage';
@@ -176,6 +177,7 @@ function AppContent() {
     case "rnd-detail": return <RnDDetailPage />;
     case "style-guide": return <StyleGuidePage />;
     case "contact": return <ContactPage />;
+    case "contact-success": return <ContactSuccessPage />;
     case "about": return <AboutPage />;
     case "partner": return <PartnerPage />;
     case "poten-booster": return <PotenBoosterPage />;

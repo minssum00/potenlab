@@ -23,7 +23,7 @@ import { toast } from "sonner@2.0.3";
 
 export function ContactPage() {
   const { t, language } = useLanguage();
-  const { getRouteParams } = useRouter();
+  const { getRouteParams, navigate } = useRouter();
   const [loading, setLoading] = useState(false);
 
   // Get initial values from route params
@@ -162,21 +162,8 @@ export function ContactPage() {
 
       console.log("Inquiry submitted successfully:", result);
 
-      toast.success(
-        language === "ko"
-          ? "문의가 성공적으로 접수되었습니다!"
-          : "Your inquiry has been submitted successfully!",
-      );
-
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        inquiryType: "potenbooster",
-        subCategory: "standard",
-        message: "",
-      });
+      // Navigate to success page
+      navigate("contact-success");
     } catch (error) {
       console.error("Error submitting inquiry:", error);
       toast.error(

@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 import { projectId } from '../utils/supabase/info';
 
-type Page = 'home' | 'services' | 'portfolio' | 'contents' | 'lecture' | 'resources' | 'about' | 'partner' | 'partner-test' | 'partner3' | 'test3' | 'service' | 'portfolio-detail' | 'article-detail' | 'mvp-detail' | 'uxui-detail' | 'webapp-detail' | 'rnd-detail' | 'style-guide' | 'contact' | 'poten-booster' | 'custom-product' | 'consulting' | 'uxui-design' | 'web-development' | 'other-services' | 'business-plan' | 'poten-lamp' | 'poten-school' | 'admin' | 'admin-dashboard' | 'admin-inquiries' | 'admin-portfolio' | 'admin-article' | 'admin-article-form' | 'admin-seo' | 'admin-seo-global' | 'admin-seo-detail' | 'admin-courses' | 'admin-og-image' | 'naver-verification' | 'robots-txt' | 'sitemap-xml';
+type Page = 'home' | 'services' | 'portfolio' | 'contents' | 'lecture' | 'resources' | 'about' | 'partner' | 'partner-test' | 'partner3' | 'test3' | 'service' | 'portfolio-detail' | 'article-detail' | 'mvp-detail' | 'uxui-detail' | 'webapp-detail' | 'rnd-detail' | 'style-guide' | 'contact' | 'contact-success' | 'poten-booster' | 'custom-product' | 'consulting' | 'uxui-design' | 'web-development' | 'other-services' | 'business-plan' | 'poten-lamp' | 'poten-school' | 'admin' | 'admin-dashboard' | 'admin-inquiries' | 'admin-portfolio' | 'admin-article' | 'admin-article-form' | 'admin-seo' | 'admin-seo-global' | 'admin-seo-detail' | 'admin-courses' | 'admin-og-image' | 'naver-verification' | 'robots-txt' | 'sitemap-xml';
 
 interface RouterContextType {
   currentPage: Page;
