@@ -63,11 +63,11 @@ const content = {
       },
       item2: {
         title: 'MVP부터 스케일업까지의 실전 경험',
-        description: '아이디어 단계, PoC, MVP, 운영, 고도화까지 실제로 시장에 올려본 경험을 기반으로 개발합니다.'
+        description: '아이디어 단계, PoC, MVP, 운영, 고도화까지 실제로 시장에 출시한 경험을 기반으로 개발합니다.'
       },
       item3: {
         title: '기획–디자인–개발–운영의 유기적 연결',
-        description: '단절된 공정이 아닌, 하나의 흐름으로 이어지는 개발 프로세스를 제공합니다.'
+        description: '전 구성원이 소통에 참여하여 하나의 흐름으로 이어지는 개발 프로세스를 제공합니다.'
       },
       item4: {
         title: '스타트업과 기업 모두를 이해',
@@ -90,10 +90,10 @@ const content = {
       }
     },
     cta: {
-      title1: 'POTENLAB',
-      title2: 'is for Builders',
-      description1: '아이디어만 있는 팀도, 기술만 있는 팀도 아닙니다.',
-      description2: '아이디어를 현실로 만드는 사람들과 함께합니다.',
+      title1: 'PJust Make it Real',
+      title2: '',
+      description1: '포텐랩은 아이디어를 가장 빠른 현실로 증명해내기 위해',
+      description2: '비즈니스와 개발을 연구하는 실행형 테크 랩입니다.',
       button: 'Contact us'
     }
   },
