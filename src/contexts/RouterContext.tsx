@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 import { projectId } from '../utils/supabase/info';
 
-type Page = 'home' | 'services' | 'portfolio' | 'contents' | 'lecture' | 'resources' | 'about' | 'partner' | 'partner-test' | 'partner3' | 'test3' | 'service' | 'portfolio-detail' | 'article-detail' | 'mvp-detail' | 'uxui-detail' | 'webapp-detail' | 'rnd-detail' | 'style-guide' | 'contact' | 'contact-success' | 'poten-booster' | 'custom-product' | 'consulting' | 'uxui-design' | 'web-development' | 'other-services' | 'business-plan' | 'poten-lamp' | 'poten-school' | 'admin' | 'admin-dashboard' | 'admin-inquiries' | 'admin-portfolio' | 'admin-article' | 'admin-article-form' | 'admin-seo' | 'admin-seo-global' | 'admin-seo-detail' | 'admin-courses' | 'admin-og-image' | 'naver-verification' | 'robots-txt' | 'sitemap-xml';
+type Page = 'home' | 'services' | 'portfolio' | 'contents' | 'lecture' | 'resources' | 'about' | 'partner' | 'partner-test' | 'partner3' | 'test3' | 'service' | 'portfolio-detail' | 'article-detail' | 'mvp-detail' | 'uxui-detail' | 'webapp-detail' | 'rnd-detail' | 'style-guide' | 'contact' | 'contact-success' | 'poten-booster' | 'poten-booster-backup' | 'custom-product' | 'consulting' | 'uxui-design' | 'web-development' | 'other-services' | 'business-plan' | 'poten-lamp' | 'poten-school' | 'admin' | 'admin-dashboard' | 'admin-inquiries' | 'admin-portfolio' | 'admin-article' | 'admin-article-form' | 'admin-seo' | 'admin-seo-global' | 'admin-seo-detail' | 'admin-courses' | 'admin-og-image' | 'naver-verification' | 'robots-txt' | 'sitemap-xml';
 
 interface RouterContextType {
   currentPage: Page;
@@ -79,6 +79,8 @@ export function RouterProvider({ children }: { children: ReactNode }) {
         setCurrentPage('style-guide');
       } else if (path === '/contact') {
         setCurrentPage('contact');
+      } else if (path === '/contact-success') {
+        setCurrentPage('contact-success');
       } else if (path === '/about') {
         setCurrentPage('about');
       } else if (path === '/partner') {
@@ -89,6 +91,8 @@ export function RouterProvider({ children }: { children: ReactNode }) {
         setCurrentPage('test3');
       } else if (path === '/poten-booster') {
         setCurrentPage('poten-booster');
+      } else if (path === '/poten-booster-backup') {
+        setCurrentPage('poten-booster-backup');
       } else if (path === '/custom-product') {
         setCurrentPage('custom-product');
       } else if (path === '/consulting') {
@@ -192,11 +196,13 @@ export function RouterProvider({ children }: { children: ReactNode }) {
       else if (page === 'rnd-detail') url = '/rnd-detail';
       else if (page === 'style-guide') url = '/style-guide';
       else if (page === 'contact') url = '/contact';
+      else if (page === 'contact-success') url = '/contact-success';
       else if (page === 'about') url = '/about';
       else if (page === 'partner') url = '/partner';
       else if (page === 'partner-test') url = '/partner-test';
       else if (page === 'test3') url = '/test3';
       else if (page === 'poten-booster') url = '/poten-booster';
+      else if (page === 'poten-booster-backup') url = '/poten-booster-backup';
       else if (page === 'custom-product') url = '/custom-product';
       else if (page === 'consulting') url = '/consulting';
       else if (page === 'uxui-design') url = '/uxui-design';

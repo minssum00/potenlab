@@ -21,6 +21,7 @@ import { AboutPage } from './pages/AboutPage';
 import { PartnerPage } from './pages/PartnerPage';
 import { PartnerTestPage } from './pages/PartnerTestPage';
 import { PotenBoosterPage } from './pages/PotenBoosterPage';
+import { PotenBoosterBackupPage } from './pages/PotenBoosterBackupPage';
 import { CustomProductPage } from './pages/CustomProductPage';
 import { ITConsultingDetailPage } from './pages/ITConsultingDetailPage';
 import { UXUIDesignPage } from './pages/UXUIDesignPage';
@@ -181,6 +182,7 @@ function AppContent() {
     case "about": return <AboutPage />;
     case "partner": return <PartnerPage />;
     case "poten-booster": return <PotenBoosterPage />;
+    case "poten-booster-backup": return <PotenBoosterBackupPage />;
     case "custom-product": return <CustomProductPage />;
     case "consulting": return <ITConsultingDetailPage />;
     case "uxui-design": return <UXUIDesignPage />;
